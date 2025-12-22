@@ -1,92 +1,140 @@
 # Vaibhav Gurunathan - Personal Website
 
-A modern, responsive personal portfolio website built with HTML, CSS, and JavaScript.
+A modern, interactive personal portfolio website built with HTML, CSS, and JavaScript featuring GitHub integration, dynamic timelines, and comprehensive project showcases.
 
-## Features
+## 🚀 Features
 
-- **Tabbed Navigation**: Clean section-based navigation
-- **Dynamic Typing Effect**: Animated welcome text
-- **Dark Mode Toggle**: Theme switching with local storage
-- **Responsive Design**: Mobile-first approach
-- **Smooth Animations**: Scroll-triggered animations and hover effects
-- **Individual Project Pages**: Detailed project showcases
-- **Contact Integration**: Direct links to email and LinkedIn
+### **Core Navigation & Design**
+- **Tabbed Navigation**: Clean section-based navigation (Home, Experience, Projects, Blog)
+- **Dynamic Typing Effect**: Animated welcome text with smooth character-by-character reveal
+- **Responsive Design**: Mobile-first approach with adaptive layouts
+- **Smooth Animations**: Scroll-triggered animations, hover effects, and transitions
+- **Progress Bar**: Visual scroll progress indicator
 
-## Project Structure
+### **GitHub Integration**
+- **Repository Display**: Shows latest 6 repositories sorted by most recent commits
+- **Language Badges**: Color-coded programming language indicators with authentic GitHub colors
+- **Commit Activity Stats**: Real-time statistics for last 24h, 30 days, and 12 months
+- **Relative Timestamps**: "Updated X days ago" formatting for repository activity
+- **GitHub Pages Compatible**: Graceful fallbacks when API access is restricted
+
+### **Interactive Experience Timeline**
+- **Category Filtering**: Filter experiences by Work, Education, Research, or All
+- **Expandable Markers**: Click timeline nodes to expand detailed information
+- **Visual Timeline**: Gradient line with animated markers and hover effects
+- **Smooth Filtering**: Animated transitions when switching between categories
+
+### **Project Showcases**
+- **Individual Project Pages**: Dedicated pages for detailed project descriptions
+- **Technology Tags**: Language and framework badges for each project
+- **Live Demos & Source Code**: Direct links to deployed applications and repositories
+
+### **Blog System**
+- **Rich Content**: Support for embedded videos, images, and formatted text
+- **Organized Posts**: Chronological blog post listings with previews
+- **Video Integration**: YouTube and custom video embedding support
+
+## 📁 Project Structure
 
 ```
 /
-├── index.html                 # Main portfolio page
+├── index.html                          # Main portfolio page
 ├── assets/
-│   ├── css/style.css         # Main stylesheet
-│   └── js/script.js          # JavaScript functionality
-├── projects/                  # Individual project pages
-│   ├── ecommerce.html
-│   ├── weather.html
-│   ├── taskmanager.html
-│   ├── mlclassifier.html
-│   ├── portfolio.html
-│   └── chat.html
-├── blog/                      # Blog pages
-│   └── welcome.html
-├── images/                    # Project images
-│   ├── ecommerce.jpg
-│   ├── weather.jpg
-│   ├── taskmanager.jpg
-│   ├── mlclassifier.jpg
-│   ├── portfolio.jpg
-│   └── chat.jpg
-└── README.md                  # This file
+│   ├── css/style.css                  # Main stylesheet with animations
+│   └── js/script.js                   # JavaScript functionality
+├── projects/                           # Individual project pages
+│   ├── studystream.html               # AI educational tool
+│   ├── music-classifier.html          # ML music genre classifier
+│   ├── eduardo.html                   # AR educational guide
+│   ├── wordle-solver.html             # Wordle solver algorithm
+│   ├── primegpt.html                  # Amazon product chatbot
+│   ├── calculator-fpga.html           # FPGA calculator implementation
+│   ├── euchre.html                    # C++ card game
+│   ├── robot-maze.html                # Autonomous robot navigation
+│   └── mlclassifier.html              # Machine learning classifier
+├── blog/                              # Blog posts
+│   ├── fall-2022.html                 # First semester at UMich
+│   ├── winter-2023.html               # Second semester
+│   ├── summer-2023.html               # Community college classes
+│   ├── fall-2023.html                 # Sophomore year start
+│   ├── winter-2024.html               # Progress updates
+│   ├── summer-2024.html               # Summer activities
+│   ├── fall-2024.html                 # Technical coursework
+│   ├── winter-2025.html               # NLP and robotics
+│   ├── amazon-internship.html         # Edge AI internship
+│   ├── kudan-internship.html          # Robotics software internship
+│   ├── fall-2025.html                 # Advanced coursework
+│   ├── instructor-assistant.html      # Teaching assistant role
+│   ├── stryker-autonomous-stretcher.html # Hospital robotics project
+│   ├── underwater-slam-research.html  # Current research project
+│   ├── instructor-assistant-winter-2026.html # Future teaching role
+│   ├── winter-2026.html               # Upcoming semester
+│   ├── expected-graduation.html       # Graduation timeline
+│   └── example-video-blog.html        # Video blog example
+├── images/
+│   └── profile.jpg                    # Profile image
+└── README.md                          # This documentation
 ```
 
-## Adding Images
+## 🛠️ Customization Guide
 
-### Project Card Images
-Place your project images in the `images/` folder with these naming conventions:
+### **GitHub Integration Setup**
+To display your own GitHub repositories, update the username in `assets/js/script.js`:
 
-- `ecommerce.jpg` - E-Commerce Platform
-- `weather.jpg` - Weather Dashboard
-- `taskmanager.jpg` - Task Management App
-- `mlclassifier.jpg` - Machine Learning Image Classifier
-- `portfolio.jpg` - Portfolio Website
-- `chat.jpg` - Chat Application
+```javascript
+// Change this line to your GitHub username
+const username = 'your-github-username';
+```
+
+**Features included:**
+- Latest 6 repositories sorted by recent activity
+- Language badges with authentic GitHub colors
+- Commit activity statistics (24h, 30 days, 12 months)
+- Relative timestamps ("Updated 2 days ago")
+- GitHub Pages compatible with fallback links
+
+### **Timeline Configuration**
+The experience timeline supports categorization. To add new experiences:
+
+1. **Add to HTML** in `index.html` within the timeline section:
+```html
+<div class="timeline-item" data-category="work">
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+        <h3><a href="blog/your-experience.html">Your Position</a></h3>
+        <span class="timeline-year">Date Range</span>
+        <p>Your description here</p>
+    </div>
+</div>
+```
+
+2. **Categories Available:**
+   - `work` - Work/internship experiences
+   - `education` - Academic experiences
+   - `research` - Research projects
+
+### **Contact Information**
+Update your contact details in `index.html`:
+```html
+<p>Contact me at <a href="mailto:your-email@domain.com">your-email@domain.com</a> or connect with me on <a href="https://www.linkedin.com/in/your-profile" target="_blank">LinkedIn</a>.</p>
+```
+
+### **Project Images**
+Place project images in the `images/` folder. Currently using:
+- `profile.jpg` - Your profile photo
 
 **Image Specifications:**
-- **Size**: 600x400px or larger (will be cropped to fit)
 - **Format**: JPG, PNG, or WebP
-- **Aspect Ratio**: 3:2 works best
+- **Profile Photo**: Square aspect ratio recommended (300x300px+)
 
-If an image doesn't exist, it will be hidden gracefully without breaking the layout.
+### **Blog Posts**
+Add new blog posts by:
+1. Creating HTML files in the `blog/` folder
+2. Adding entries to the blog section in `index.html`
+3. Following the existing post format with title, date, and description
 
-### Customizing Content
-
-#### 1. Update Contact Information
-Edit `index.html`:
-```html
-<a href="mailto:your-email@example.com" class="contact-link email-link">
-<a href="https://www.linkedin.com/in/your-profile" target="_blank" class="contact-link linkedin-link">
-```
-
-#### 2. Modify Resume Section
-Edit the resume content in `index.html` within the `#resume` tab:
-```html
-<h3>Education</h3>
-<p>Your education details</p>
-
-<h3>Experience</h3>
-<p>Your work experience</p>
-
-<h3>Skills</h3>
-<ul>
-    <li>Your skills</li>
-</ul>
-```
-
-#### 3. Add Blog Posts
-Create new blog files in the `blog/` folder following the pattern of `welcome.html`, then add links to `index.html`.
-
-#### 4. Add Videos to Posts
-You can embed videos in both blog posts and project pages:
+### **Video Embedding**
+Embed videos in blog posts and project pages:
 
 **YouTube Videos:**
 ```html
@@ -101,61 +149,70 @@ You can embed videos in both blog posts and project pages:
 </div>
 ```
 
-**Example Files:**
-- `blog/example-video-blog.html` - Blog post with video
-- `projects/example-video-project.html` - Project page with video
+## 🎨 Customization Options
 
-#### 5. Customize Project Details
-Edit individual project pages in the `projects/` folder to update:
-- Project descriptions
-- Technical details
-- Links to live demos and source code
+### **Colors & Theme**
+The design uses a professional color palette:
+- **Primary Gradient**: `#667eea` to `#764ba2`
+- **Text Colors**: Professional grays and blues
+- **GitHub Colors**: Authentic language color codes
 
-## Customization Options
+### **Typography**
+Using Google Fonts "Poppins" for clean, modern typography.
 
-### Colors
-The design uses a clean color palette. To customize:
-- Primary blue: `#667eea`
-- Secondary blue: `#764ba2`
-- Text colors: Various grays defined in CSS
+### **Animation Settings**
+- **Typing Speed**: 2ms per character (fast, professional pace)
+- **Scroll Animations**: Intersection Observer triggered
+- **Hover Effects**: Smooth 0.3s transitions
 
-### Fonts
-Currently using Google Fonts "Poppins". Change in `assets/css/style.css`:
-```css
-@import url('https://fonts.googleapis.com/css2?family=Your-Font:wght@300;400;500;600;700&display=swap');
-```
+## 🚀 Deployment
 
-### Animations
-- **Typing Speed**: Modify in `assets/js/script.js` (currently 20ms per character)
-- **Hover Effects**: Adjust in `assets/css/style.css`
-- **Scroll Animations**: Intersection Observer settings in JavaScript
+### **GitHub Pages (Recommended)**
+1. **Push to GitHub**: Upload all files to a GitHub repository
+2. **Enable Pages**: Go to Settings → Pages
+3. **Configure**: Select "Deploy from a branch" → Choose main/master branch
+4. **Access**: Site available at `https://yourusername.github.io/repository-name`
 
-## Deployment
+**GitHub Pages Compatibility**: ✅ Fully compatible with API fallbacks
 
-### GitHub Pages
-1. Push to GitHub repository
-2. Enable GitHub Pages in repository settings
-3. Select main branch as source
-
-The site is fully static and GitHub Pages compatible.
-
-### Local Development
+### **Local Development**
 ```bash
-# Open index.html in your browser
+# Using Python (recommended)
+python3 -m http.server 8000
+# Visit http://localhost:8000
+
+# Or simply open index.html in browser
 open index.html
 ```
 
-## Browser Support
+### **Other Hosting Options**
+- **Netlify**: Drag & drop deployment
+- **Vercel**: Git integration deployment
+- **AWS S3**: Static website hosting
+- **Traditional Web Hosting**: FTP upload
 
-- Chrome/Edge 88+
-- Firefox 85+
-- Safari 14+
-- Mobile browsers
+## 🌐 Browser Support
 
-## Contributing
+- **Chrome/Edge**: 88+
+- **Firefox**: 85+
+- **Safari**: 14+
+- **Mobile Browsers**: iOS Safari, Chrome Mobile
 
-This is a personal website, but feel free to fork and customize for your own use!
+## 📝 Recent Updates
 
-## License
+- ✅ **GitHub Integration**: Repository display with language badges and activity stats
+- ✅ **Interactive Timeline**: Filterable experience timeline with expandable markers
+- ✅ **Commit Statistics**: Activity tracking for 24h, 30 days, and 12 months
+- ✅ **GitHub Pages Support**: Graceful API fallbacks for static hosting
+- ✅ **Responsive Design**: Optimized for all device sizes
 
-Personal project - feel free to use as inspiration for your own portfolio.
+## 🤝 Contributing
+
+This is a personal portfolio website, but feel free to:
+- Fork and adapt for your own use
+- Submit improvement suggestions
+- Use as inspiration for similar projects
+
+## 📄 License
+
+Personal project - no specific license, but attribution appreciated if you use significant portions.
