@@ -176,16 +176,27 @@ function scrollToPost(postHref) {
 async function fetchGitHubData() {
     const username = 'vaibhavgurunathan'; // Replace with your GitHub username
     const reposContainer = document.getElementById('github-repos');
+    const contributionGraph = document.getElementById('contribution-graph');
+
+    // Set a timeout for the fetch request
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
 
     try {
         // Fetch user repositories
-        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
-        const repos = await reposResponse.json();
+        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`, {
+            signal: controller.signal,
+            headers: {
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+        clearTimeout(timeoutId);
 
-        if (repos.message) {
-            reposContainer.innerHTML = '<p>Unable to load GitHub data. Please check back later.</p>';
-            return;
+        if (!reposResponse.ok) {
+            throw new Error(`GitHub API error: ${reposResponse.status}`);
         }
+
+        const repos = await reposResponse.json();
 
         // Display repositories
         reposContainer.innerHTML = repos.map(repo => `
@@ -217,18 +228,32 @@ async function fetchGitHubData() {
             </div>
         `).join('');
 
-        // Try to load contribution graph (GitHub doesn't provide this via API, so we'll show a placeholder)
-        const contributionGraph = document.getElementById('contribution-graph');
+        // Load contribution graph
         contributionGraph.innerHTML = `
             <div style="text-align: center; padding: 20px;">
                 <p>View my full contribution graph on <a href="https://github.com/${username}" target="_blank">GitHub</a></p>
-                <img src="https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=transparent&hide_border=true" alt="GitHub stats" style="max-width: 100%; border-radius: 8px;">
+                <img src="https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=transparent&hide_border=true" alt="GitHub stats" style="max-width: 100%; border-radius: 8px;" loading="lazy">
             </div>
         `;
 
     } catch (error) {
+        clearTimeout(timeoutId);
         console.error('Error fetching GitHub data:', error);
-        reposContainer.innerHTML = '<p>Unable to load GitHub data. Please check your internet connection.</p>';
+
+        // Show fallback content for GitHub Pages
+        reposContainer.innerHTML = `
+            <div style="text-align: center; padding: 30px; color: #7f8c8d;">
+                <p>🔗 <a href="https://github.com/${username}?tab=repositories" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my repositories on GitHub</a></p>
+                <p style="font-size: 0.9em; margin-top: 10px;">API access limited on static hosting</p>
+            </div>
+        `;
+
+        contributionGraph.innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+                <p>📊 <a href="https://github.com/${username}" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my GitHub profile</a></p>
+                <p style="font-size: 0.9em; color: #7f8c8d; margin-top: 10px;">For contribution graphs and stats</p>
+            </div>
+        `;
     }
 }
 
