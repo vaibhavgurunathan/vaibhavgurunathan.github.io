@@ -135,6 +135,17 @@ main {
     color: #005885 !important;
 }
 
+.github-link {
+    color: #333 !important;
+    text-decoration: underline;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.github-link:hover {
+    color: #24292e !important;
+}
+
 .about-text p {
     margin-bottom: 20px;
 }

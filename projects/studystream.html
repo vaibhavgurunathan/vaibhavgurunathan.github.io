@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Vaibhav Gurunathan</h1>
+        <h1 onclick="window.location.href='../index.html'" style="cursor: pointer; transition: opacity 0.3s;">Vaibhav Gurunathan</h1>
         <nav>
             <a href="javascript:history.back()" class="back-link">← Back</a>
         </nav>
@@ -18,39 +18,45 @@
         <article class="project-detail">
             <h2>StudyStream - MHacks 2024</h2>
             <div class="project-meta">
-                <span class="tech-stack">React • Node.js • Computer Vision • Vector Database • Text-to-Speech</span>
+                <span class="tech-stack">Python • Streamlit • ChromaDB • Gemini • MoviePy</span>
             </div>
 
             <div class="project-content">
-                <h3>Overview</h3>
-                <p>StudyStream was my hackathon submission for MHacks 2024. It's an AI-powered educational tool that converts text content into engaging, synchronized video lectures with visuals and audio narration.</p>
+                <h3>Inspiration</h3>
+                <p>A couple days ago, I really needed to study for my class but I didn't understand lecture at all and I didn't have the energy or focus to read the textbook. I thought that there has to be a better system than just trying to spend more time understanding the textbook. I reread each section about three times before I gave up and moved on to my next class.</p>
 
-                <h3>How It Works</h3>
-                <p>The frontend takes input either as a file or copy/pasted text along with desired video length. It sends this to the backend which performs several sophisticated AI operations:</p>
+                <h3>What it does</h3>
+                <p>Studystream works by studying your notes for you, finding the most relevant pieces for your learning. It then scours the internet to find the best images and graphics to help explain the concepts to you. This creates tailored videos however long you need them.</p>
 
-                <ol>
-                    <li><strong>Text Segmentation:</strong> Splits the text into logical sections based on the requested video length</li>
-                    <li><strong>Image Selection:</strong> Scrapes Google Images and uses computer vision to find the most relevant image for each concept</li>
-                    <li><strong>Vector Search:</strong> Converts image descriptions to vectors and queries a vector database to find the best matches</li>
-                    <li><strong>Audio Generation:</strong> Uses text-to-speech conversion to create narration for each section</li>
-                    <li><strong>Video Assembly:</strong> Combines images, bullet points, and audio into a cohesive video</li>
-                </ol>
+                <h3>How we built it</h3>
+                <p>The frontend takes in an input either as a file or as copy/pasted text and a length for the video. It then sends the text and type of input to the backend which does all the heavy lifting. First it splits up the text to dedicate a section to each concept based on the length of the video requested. Then it finds the best image for each concept. It scrapes google images and can compare as many images as you want. Then it finds which image is most relevant to the text. To do this, it converts the image to text with a computer vision model. Then it puts all these descriptions in a vector db and then queries the vector db to find the closest match to the request. After it has the correct image and description, it uses all this input to generate the audio with a text to speech conversion. It also creates bullet points to concisely communicate the material. It combines the images and text and stitches this with the audio to create a video. It does this for each chunk and finally combines everything together for your final video.</p>
 
-                <h3>Technical Implementation</h3>
-                <p>The system leverages multiple AI technologies:</p>
+                <h3>Challenges we ran into</h3>
+                <p>Moviepy library was the only way to merge images/videos and it was super difficult to work with. Chromadb is extremely confusing to use with streamlit and I had a hard time getting them to be compatible even though there is documentation for this.</p>
+
+                <h3>Accomplishments that we're proud of</h3>
+                <p>I got a working product done within 24 hours. I am super proud of the fact that this product works and that I was able to get this done relatively quickly. I am probably going to keep tuning it and then use it for my class.</p>
+
+                <h3>What we learned</h3>
+                <p>I learned a lot about how to interact the frontend with the backend, how to use vector dbs, different techniques to compare images to text, etc.</p>
+
+                <h3>What's next for StudyStream</h3>
+                <p>Tune the model. Make the voice sound like a real person. Make the images higher quality. Give the frontend LLM vector db context.</p>
+
+                <h3>Built With</h3>
                 <ul>
-                    <li><strong>Computer Vision:</strong> For image-to-text conversion and analysis</li>
-                    <li><strong>Natural Language Processing:</strong> For text segmentation and bullet point generation</li>
-                    <li><strong>Vector Databases:</strong> For efficient similarity search of image descriptions</li>
-                    <li><strong>Text-to-Speech:</strong> For high-quality audio narration</li>
-                    <li><strong>Video Processing:</strong> For combining multimedia elements</li>
+                    <li>Beautiful-Soup</li>
+                    <li>ChromaDB</li>
+                    <li>Gemini</li>
+                    <li>gTTS</li>
+                    <li>MoviePy</li>
+                    <li>Pillow</li>
+                    <li>Pygame</li>
+                    <li>pyt2s</li>
+                    <li>Python</li>
+                    <li>Streamlit</li>
+                    <li>Transformers</li>
                 </ul>
-
-                <h3>Demo Video</h3>
-                <div class="video-placeholder">
-                    <p><em>Demo video coming soon - StudyStream MHacks 2024 presentation</em></p>
-                    <p>The video will showcase the complete workflow from text input to finished educational video with AI-generated visuals and narration.</p>
-                </div>
             </div>
         </article>
     </main>

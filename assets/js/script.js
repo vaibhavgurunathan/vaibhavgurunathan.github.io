@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (i < text.length) {
                         element.textContent += text.charAt(i);
                         i++;
-                        setTimeout(typeWriter, 4); // 5x faster typing speed (~300 WPM)
+                        setTimeout(typeWriter, 2); // 5x faster typing speed (~300 WPM)
                     } else {
                         currentIndex++;
                         // Start typing the contact line after the main text is done
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const typeContactLine = () => {
-        // Set the contact line HTML content with proper link
-        contactLine.innerHTML = 'Contact me at gvaibhav@umich.edu or connect with me on <a href="https://www.linkedin.com/in/vaibhavgurunathan/" target="_blank" class="linkedin-link">LinkedIn</a>.';
+        // Set the contact line HTML content with proper links
+        contactLine.innerHTML = 'Contact me at gvaibhav@umich.edu or connect with me on <a href="https://www.linkedin.com/in/vaibhavgurunathan/" target="_blank" class="linkedin-link">LinkedIn</a>. See more about my work here: <a href="https://github.com/vaibhavgurunathan" target="_blank" class="github-link">GitHub</a>.';
         contactLine.style.opacity = '1';
 
         // Show profile image after contact line appears

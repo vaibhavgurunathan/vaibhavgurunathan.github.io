@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Vaibhav Gurunathan</h1>
+        <h1 onclick="window.location.href='../index.html'" style="cursor: pointer; transition: opacity 0.3s;">Vaibhav Gurunathan</h1>
         <nav>
             <a href="javascript:history.back()" class="back-link">← Back</a>
         </nav>
@@ -18,47 +18,50 @@
         <article class="project-detail">
             <h2>PrimeGPT – MHacks 16</h2>
             <div class="project-meta">
-                <span class="tech-stack">NLP • ChatGPT API • Web Scraping • React • Node.js</span>
+                <span class="tech-stack">HTML5 • JavaScript • LangChain • Python • Rainforest</span>
             </div>
 
             <div class="project-content">
-                <h3>Overview</h3>
-                <p>PrimeGPT is an intelligent chatbot designed to answer queries about specific products on Amazon. Built for MHacks 16, it combines natural language processing with real-time web scraping to provide accurate, product-specific information.</p>
+                <h3>What We Made</h3>
+                <p>Over the last 24 hours, we made an AI Chatbot capable of analyzing Amazon web pages and answering user questions about online products. This Chrome extension will analyze data on the web page of an Amazon product, find the relevant information from the text, and then respond to user questions about the product.</p>
 
-                <h3>Core Functionality</h3>
-                <p>The chatbot can answer detailed questions about Amazon products by:</p>
+                <h3>Inspiration</h3>
+                <p>Our hackathon team identified a common challenge faced by online shoppers - the overwhelming task of sifting through long product descriptions and thousands of reviews on Amazon and still not knowing what to buy. Recognizing the need for a tool that could answer users' personalized questions about a product, we were inspired to develop a solution that enhances the online shopping experience. This led to the creation of our Chrome extension, PrimeGPT. PrimeGPT is designed to assist users in finding scattered information about an Amazon Prime product before adding it to their shopping cart. The extension utilizes large language models & Amazon product data to deploy a chatbot that can answer user questions about an online product. The chatbot can summarize customer reviews, describe recent price updates, detail important product features, and answer any other FAQs a shopper might have surrounding a product.</p>
+
+                <h3>How we built it</h3>
+                <h4>Frontend</h4>
+                <p>Our team initially lacked front-end experience, so we began by immersing ourselves in YouTube tutorials and public code demos. This gave us a foundation, but we had to invest considerable time refining the code and troubleshooting issues. Gradually, we became adept at crafting what we needed for our extension.</p>
+                <p>To broaden our understanding, we studied various repositories to observe how others kickstarted their own Chrome extensions. Once we grasped the fundamentals, we embarked on an iterative improvement process. We started by enhancing the search and response boxes and then focused on improving the clarity of images and additional information. Once we learned how to make the front end, adapting it became a lot simpler. We were able to successfully call all of the required APIs to send and receive the required information. We also formatted the extension to make it more clear to users.</p>
+                <p>This incremental approach has brought us to a point where we've developed a Chrome extension that we're eager to soon publish on the web store.</p>
+
+                <h4>Backend</h4>
+                <p>Our team initially attempted to web-scrape all of the necessary product data from the Amazon page, however, this proved to be far too difficult, so we resorted to using an existing API to retrieve product data. We also discovered that simply passing in thousands of customer reviews to the LLM would be very costly, inefficient, and exceed GPT-4's input limits. Thus, we sought a solution to utilize OpenAI's text embedding model (vector representation of text) to only pass in the most relevant context necessary.</p>
+                <p>With the product data, we generated and stored its text embedding vectors along with necessary metadata including star rating, ASIN, product description, etc in a Pinecone vector database. This database of vectors would serve as the knowledge base for our LLM.</p>
+                <p>When PrimeGPT receives a user question, it generates the embedding vector of the query and searches for the most similar vectors in the Pinecone database. The most similar vectors will be able to provide the most relevant context to the LLM to answer the user's question. Using LangChain, the similar vectors are retrieved from Pinecone and a prompt to GPT-4 is generated using the relevant context information as well as the user's question.</p>
+
+                <h3>Challenges we ran into</h3>
+                <p>Creating the front end posed several challenges. Coordinating asynchronous requests and timing API calls with user interactions demanded meticulous handling to ensure smooth operation. Achieving responsiveness across different browsers was particularly tough. Synchronizing calls required attention to detail and thorough error handling. Additionally, integrating user interactions and input validation into the application logic demanded precise implementation to maintain seamless functionality. Overall, managing these aspects involved careful handling and extensive debugging.</p>
+                <p>Transitioning from data acquisition to processing, we faced a significant milestone in generating embeddings for product information, reviews, and customer questions and answers. This involved the intricate task of inputting this information into a vector database. However, this stage presented its own set of challenges. Working with Google Cloud posed challenges that required on-the-spot problem-solving and a steep learning curve. From configuration hurdles to deployment issues, each obstacle became a learning opportunity.</p>
+                <p>Our journey included intricate dealings with LangChain, where accessing our vector database with the chatbot became a focal point. We encountered and surmounted various obstacles, showcasing our adaptability and determination. The learning curve included navigating through the nuances of LangChain and fine-tuning our integration process.</p>
+                <p>In summary, our product journey was filled with challenges that pushed us to think creatively and learn continuously. From overcoming integration hurdles to navigating Google Cloud intricacies and delving into front-end design, each step taught us valuable lessons. The complexities of working with LangChain and Pinecone reinforced our team's adaptability. Through these experiences, we not only improved our technical skills but also embraced a culture of resilience and ongoing learning. Our journey has been a hands-on lesson in product development, leaving us with a wealth of knowledge.</p>
+
+                <h3>Accomplishments that we're proud of</h3>
+                <p>We're immensely proud of building the first prototype of PrimeGPT. For many of us, this was our first experience in creating a completed application, and it's been a rewarding journey. We believe that the current limitations of PrimeGPT, like response time and data breadth, are just hurdles that can be overcome with more research and effort. Seeing PrimeGPT accurately identify an Amazon product page, effectively scrape relevant information, and adeptly answer various user questions (that frequent shoppers might not even be able to answer) has been a significant achievement. It's exciting to see the foundation of the app already established, and we are enthusiastic about the potential for PrimeGPT to grow and evolve in its capabilities.</p>
+
+                <h3>What we learned</h3>
+                <p>Our team's main strength is in backend development, so creating a working frontend posed a challenge. Additionally, linking the several API calls together throughout the program was a significant hardship. As a result, our team gained valuable hands-on experience creating a user friendly frontend as well as coordinating the different pieces of our application.</p>
+
+                <h3>What's next for Prime GPT</h3>
+                <p>Building on the success of PrimeGPT, our next step is to enhance the speed and efficiency of our web scraping and chatbot functionalities. Currently, the response time for user inquiries is slower than desired, especially when compared to other chatbot services. To address this, we're focusing on optimizing our algorithms and infrastructure to significantly reduce user wait time. Additionally, we plan to expand the breadth of information PrimeGPT can access on Amazon Prime, including details like local availability for pickup/shipping and related product suggestions. Lastly, we see potential in adapting PrimeGPT for use on other popular e-commerce platforms, such as eBay, broadening our reach and utility in the online shopping sphere.</p>
+
+                <h3>Built With</h3>
                 <ul>
-                    <li><strong>Product Research:</strong> Scraping current product information from Amazon</li>
-                    <li><strong>Intelligent Responses:</strong> Using NLP to understand and answer specific queries</li>
-                    <li><strong>Real-time Data:</strong> Providing up-to-date pricing, reviews, and specifications</li>
-                    <li><strong>Contextual Understanding:</strong> Maintaining conversation context for follow-up questions</li>
+                    <li>HTML5</li>
+                    <li>JavaScript</li>
+                    <li>LangChain</li>
+                    <li>Python</li>
+                    <li>Rainforest</li>
                 </ul>
-
-                <h3>Technical Implementation</h3>
-                <p>Built using modern web technologies:</p>
-                <ul>
-                    <li><strong>Frontend:</strong> React for interactive chat interface</li>
-                    <li><strong>Backend:</strong> Node.js for API handling and web scraping</li>
-                    <li><strong>NLP Engine:</strong> Integration with ChatGPT API for intelligent responses</li>
-                    <li><strong>Data Processing:</strong> Real-time Amazon data scraping and parsing</li>
-                    <li><strong>State Management:</strong> Conversation history and context tracking</li>
-                </ul>
-
-                <h3>Key Challenges Solved</h3>
-                <ul>
-                    <li><strong>Dynamic Data:</strong> Handling constantly changing product information</li>
-                    <li><strong>Query Understanding:</strong> Accurately interpreting user questions about products</li>
-                    <li><strong>Response Accuracy:</strong> Ensuring information is current and correct</li>
-                    <li><strong>User Experience:</strong> Creating an intuitive chat interface</li>
-                </ul>
-
-                <h3>Hackathon Achievement</h3>
-                <p>Developed during MHacks 16, this project demonstrates the integration of AI language models with e-commerce data to create intelligent, context-aware shopping assistants.</p>
-
-                <div class="project-links">
-                    <a href="#" class="project-link">View Devpost</a>
-                    <a href="#" class="project-link">Live Demo</a>
-                </div>
             </div>
         </article>
     </main>
