@@ -56,6 +56,15 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
+    // Load GitHub data immediately if Projects tab is active
+    if (document.querySelector('[data-tab="projects"].active')) {
+        setTimeout(() => {
+            if (document.getElementById('github-repos') && !document.getElementById('github-repos').hasChildNodes()) {
+                fetchGitHubData();
+            }
+        }, 100);
+    }
+
     // Add typing effect to home page text elements in sequence
     const typeTextElements = document.querySelectorAll('.type-text');
     const contactLine = document.querySelector('.contact-line');
@@ -386,136 +395,243 @@ function generateContributionHeatmap(repos) {
     return heatmapHTML;
 }
 
-// GitHub Integration - Load static data from GitHub
-async function fetchGitHubData() {
+// GitHub Data - Updated by update-github-data.py script
+// DO NOT EDIT MANUALLY - This section is auto-generated
+const githubData = {
+  "username": "vaibhavgurunathan",
+  "lastUpdated": "2025-12-22T14:32:02.594814",
+  "repositories": [
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Website for testing",
+      "updated_at": "2025-12-22T20:36:04Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 111302,
+        "JavaScript": 28314,
+        "CSS": 23010,
+        "Python": 12774,
+        "Shell": 375
+      },
+      "topLanguages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
+      "relativeTime": "1 hour ago"
+    },
+    {
+      "name": "vaibhavgurunathan",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
+      "description": "No description available",
+      "updated_at": "2025-12-21T03:41:18Z",
+      "language": null,
+      "languages": {},
+      "topLanguages": [],
+      "relativeTime": "1 day ago"
+    },
+    {
+      "name": "CompilersForAI",
+      "full_name": "vaibhavgurunathan/CompilersForAI",
+      "html_url": "https://github.com/vaibhavgurunathan/CompilersForAI",
+      "description": "No description available",
+      "updated_at": "2025-12-20T17:44:12Z",
+      "language": "Python",
+      "languages": {
+        "Python": 9119
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "2 days ago"
+    },
+    {
+      "name": "wordle-rl",
+      "full_name": "vaibhavgurunathan/wordle-rl",
+      "html_url": "https://github.com/vaibhavgurunathan/wordle-rl",
+      "description": "No description available",
+      "updated_at": "2025-12-20T04:53:12Z",
+      "language": "Jupyter Notebook",
+      "languages": {
+        "Jupyter Notebook": 13418
+      },
+      "topLanguages": [
+        "Jupyter Notebook"
+      ],
+      "relativeTime": "2 days ago"
+    },
+    {
+      "name": "studystream",
+      "full_name": "vaibhavgurunathan/studystream",
+      "html_url": "https://github.com/vaibhavgurunathan/studystream",
+      "description": "mhacks 2024 submission",
+      "updated_at": "2024-09-29T16:28:08Z",
+      "language": "Python",
+      "languages": {
+        "Python": 16227
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "14 months ago"
+    },
+    {
+      "name": "Eduardo",
+      "full_name": "vaibhavgurunathan/Eduardo",
+      "html_url": "https://github.com/vaibhavgurunathan/Eduardo",
+      "description": "No description available",
+      "updated_at": "2024-09-29T16:20:51Z",
+      "language": null,
+      "languages": {
+        "C#": 26215956,
+        "C++": 776007,
+        "ShaderLab": 98036,
+        "Mathematica": 69546,
+        "HLSL": 21151,
+        "Objective-C++": 13913,
+        "C": 12454,
+        "Objective-C": 11252,
+        "GAP": 9254,
+        "GLSL": 4183,
+        "Python": 1414,
+        "CMake": 426
+      },
+      "topLanguages": [
+        "C#",
+        "C++",
+        "ShaderLab"
+      ],
+      "relativeTime": "14 months ago"
+    }
+  ],
+  "commitStats": {
+    "lastDay": 10,
+    "lastMonth": 137,
+    "lastYear": 862
+  },
+  "languageColors": {
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "Python": "#3572A5",
+    "Java": "#b07219",
+    "C++": "#f34b7d",
+    "C": "#555555",
+    "C#": "#239120",
+    "PHP": "#4F5D95",
+    "Ruby": "#701516",
+    "Go": "#00ADD8",
+    "Rust": "#dea584",
+    "Swift": "#ffac45",
+    "Kotlin": "#F18E33",
+    "Dart": "#00B4AB",
+    "HTML": "#e34c26",
+    "CSS": "#1572B6",
+    "SCSS": "#c6538c",
+    "Shell": "#89e051",
+    "PowerShell": "#012456",
+    "R": "#198CE7",
+    "MATLAB": "#e16737",
+    "Verilog": "#b2b7f8",
+    "VHDL": "#adb2cb",
+    "Assembly": "#6E4C13",
+    "Makefile": "#427819",
+    "Dockerfile": "#384d54",
+    "YAML": "#cb171e",
+    "JSON": "#292929",
+    "Markdown": "#083fa1",
+    "TeX": "#3D6117",
+    "Jupyter Notebook": "#DA5B0B"
+  }
+};
+// // END AUTO-GENERATED SECTION
+
+// GitHub Integration - Display hardcoded data
+function displayGitHubData() {
     const reposContainer = document.getElementById('github-repos');
     const contributionGraph = document.getElementById('contribution-graph');
 
-    try {
-        // Load static GitHub data from GitHub repository (instant loading)
-        const response = await fetch('https://raw.githubusercontent.com/vaibhavgurunathan/vaibhavgurunathan.github.io/main/github-data.json', {
-            cache: 'no-cache' // Ensure fresh data
-        });
+    const repos = githubData.repositories;
+    const commitStats = githubData.commitStats;
+    const languageColors = githubData.languageColors;
 
-        if (!response.ok) {
-            throw new Error('Failed to load GitHub data');
-        }
-
-        const githubData = await response.json();
-        const repos = githubData.repositories;
-        const commitStats = githubData.commitStats;
-        const languageColors = githubData.languageColors;
-
-        // Display repositories
-        reposContainer.innerHTML = repos.map(repo => {
-            const topLanguages = repo.topLanguages || [];
-
-            return `
-                <div class="github-repo-card">
-                    <div class="github-repo-header">
-                        <div class="github-repo-title">
-                            <a href="${repo.html_url}" target="_blank">${repo.name}</a>
-                        </div>
-                        <div class="github-repo-updated">
-                            Updated ${repo.relativeTime}
-                        </div>
+    reposContainer.innerHTML = repos.map(repo => {
+        const topLanguages = repo.topLanguages || [];
+        return `
+            <div class="github-repo-card">
+                <div class="github-repo-header">
+                    <div class="github-repo-title">
+                        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
                     </div>
-                    <div class="github-repo-description">
-                        ${repo.description}
-                    </div>
-                    <div class="github-repo-languages">
-                        ${topLanguages.map(lang => `
-                            <span class="language-badge" style="background-color: ${languageColors[lang] || '#586069'}">
-                                ${lang}
-                            </span>
-                        `).join('')}
+                    <div class="github-repo-updated">
+                        Updated ${repo.relativeTime}
                     </div>
                 </div>
-            `;
-        }).join('');
-
-        // Display commit statistics
-        contributionGraph.innerHTML = `
-            <div class="contribution-section">
-                <h4>Commit Activity</h4>
-                <div class="commit-stats-grid">
-                    <div class="commit-stat-card">
-                        <div class="stat-content">
-                            <div class="stat-number">${commitStats.lastDay}</div>
-                            <div class="stat-label">Last 24h</div>
-                        </div>
-                    </div>
-                    <div class="commit-stat-card">
-                        <div class="stat-content">
-                            <div class="stat-number">${commitStats.lastMonth}</div>
-                            <div class="stat-label">Last 30 days</div>
-                        </div>
-                    </div>
-                    <div class="commit-stat-card">
-                        <div class="stat-content">
-                            <div class="stat-number">${commitStats.lastYear}</div>
-                            <div class="stat-label">Last 12 months</div>
-                        </div>
-                    </div>
+                <div class="github-repo-description">
+                    ${repo.description}
                 </div>
-                <div class="activity-summary">
-                    <div class="activity-stat">
-                        <span class="activity-number">${repos.length}</span>
-                        <span class="activity-label">Active Repositories</span>
-                    </div>
-                    <div class="activity-stat">
-                        <span class="activity-number">${new Set(repos.flatMap(repo => repo.topLanguages || [])).size}</span>
-                        <span class="activity-label">Programming Languages</span>
-                    </div>
-                    <div class="activity-stat">
-                        <span class="activity-number">${repos.length > 0 ? repos[0].relativeTime : 'Recently'}</span>
-                        <span class="activity-label">Last Updated</span>
-                    </div>
-                </div>
-                <div class="data-timestamp">
-                    <small style="color: #7f8c8d; font-size: 0.8em;">
-                        Data last updated: ${new Date(githubData.lastUpdated).toLocaleDateString()}
-                    </small>
+                <div class="github-repo-languages">
+                    ${topLanguages.map(lang => `
+                        <span class="language-badge" style="background-color: ${languageColors[lang] || '#586069'}">
+                            ${lang}
+                        </span>
+                    `).join('')}
                 </div>
             </div>
         `;
+    }).join('');
 
-    } catch (error) {
-        console.error('Error loading GitHub data:', error);
-
-        // Show fallback content - try loading local file as backup
-        try {
-            const localResponse = await fetch('github-data.json');
-            if (localResponse.ok) {
-                const localData = await localResponse.json();
-                // Use local data as fallback
-                displayGitHubData(localData);
-                return;
-            }
-        } catch (localError) {
-            console.error('Local fallback also failed:', localError);
-        }
-
-        // Show fallback links
-        reposContainer.innerHTML = `
-            <div style="text-align: center; padding: 30px; color: #7f8c8d;">
-                <p>🔗 <a href="https://github.com/vaibhavgurunathan?tab=repositories" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my repositories on GitHub</a></p>
-                <p style="font-size: 0.9em; margin-top: 10px;">Loading from remote source...</p>
-            </div>
-        `;
-
-        contributionGraph.innerHTML = `
-            <div class="contribution-section">
-                <h4>Commit Activity</h4>
-                <div class="contribution-heatmap">
-                    <div class="heatmap-placeholder">
-                        <p>📊 <a href="https://github.com/vaibhavgurunathan" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my GitHub profile</a></p>
-                        <p style="font-size: 0.9em; color: #7f8c8d; margin-top: 8px;">For contribution graphs and stats</p>
+    contributionGraph.innerHTML = `
+        <div class="contribution-section">
+            <h4>Commit Activity</h4>
+            <div class="commit-stats-grid">
+                <div class="commit-stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">${commitStats.lastDay}</div>
+                        <div class="stat-label">Last 24h</div>
+                    </div>
+                </div>
+                <div class="commit-stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">${commitStats.lastMonth}</div>
+                        <div class="stat-label">Last 30 days</div>
+                    </div>
+                </div>
+                <div class="commit-stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">${commitStats.lastYear}</div>
+                        <div class="stat-label">Last 12 months</div>
                     </div>
                 </div>
             </div>
-        `;
-    }
+            <div class="activity-summary">
+                <div class="activity-stat">
+                    <span class="activity-number">${repos.length}</span>
+                    <span class="activity-label">Active Repositories</span>
+                </div>
+                <div class="activity-stat">
+                    <span class="activity-number">${new Set(repos.flatMap(repo => repo.topLanguages || [])).size}</span>
+                    <span class="activity-label">Programming Languages</span>
+                </div>
+                <div class="activity-stat">
+                    <span class="activity-number">${repos.length > 0 ? repos[0].relativeTime : 'Recently'}</span>
+                    <span class="activity-label">Last Updated</span>
+                </div>
+            </div>
+            <div class="data-timestamp">
+                <small style="color: #7f8c8d; font-size: 0.8em;">
+                    Data last updated: ${new Date(githubData.lastUpdated).toLocaleDateString()}
+                </small>
+            </div>
+        </div>
+    `;
+}
+
+// Simplified GitHub data loading - just display hardcoded data
+function fetchGitHubData() {
+    displayGitHubData();
 }
 
 // Helper function to display GitHub data
