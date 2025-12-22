@@ -15,6 +15,7 @@ Or set up a cron job:
 import json
 import os
 import sys
+import subprocess
 from datetime import datetime, timedelta
 import requests
 from typing import Dict, List, Any
@@ -194,18 +195,64 @@ def process_repositories(repos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     return processed_repos
 
+def run_git_command(command: List[str]) -> bool:
+    """Run a git command and return success status"""
+    try:
+        result = subprocess.run(['git'] + command, capture_output=True, text=True, check=True)
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"Git command failed: {' '.join(command)}")
+        print(f"Error: {e.stderr}")
+        return False
+    except FileNotFoundError:
+        print("Git command not found. Make sure git is installed.")
+        return False
+
+def git_add_commit_push() -> bool:
+    """Add, commit, and push the updated GitHub data"""
+    print("📝 Updating git repository...")
+
+    # Check if there are changes to commit
+    try:
+        result = subprocess.run(['git', 'status', '--porcelain', OUTPUT_FILE],
+                              capture_output=True, text=True)
+        if not result.stdout.strip():
+            print("ℹ️  No changes to commit")
+            return True
+    except:
+        pass
+
+    # Add the file
+    if not run_git_command(['add', OUTPUT_FILE]):
+        return False
+
+    # Create commit message with timestamp
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    commit_message = f"Update GitHub data - {timestamp}"
+
+    # Commit
+    if not run_git_command(['commit', '-m', commit_message]):
+        return False
+
+    # Push
+    if not run_git_command(['push']):
+        return False
+
+    print("✅ Successfully committed and pushed GitHub data updates")
+    return True
+
 def main():
     """Main function to fetch and save GitHub data"""
-    print(f"Fetching GitHub data for user: {GITHUB_USERNAME}")
+    print(f"🚀 Starting GitHub data update for {GITHUB_USERNAME}")
 
     # Fetch repositories
     repos = fetch_github_repos(GITHUB_USERNAME)
 
     if not repos:
-        print("No repositories found or error fetching data")
+        print("❌ No repositories found or error fetching data")
         return False
 
-    print(f"Found {len(repos)} repositories")
+    print(f"📁 Found {len(repos)} repositories")
 
     # Process repositories with language data
     processed_repos = process_repositories(repos)
@@ -229,8 +276,16 @@ def main():
 
         print(f"✅ Successfully saved GitHub data to {OUTPUT_FILE}")
         print(f"📊 Stats: {commit_stats['lastDay']} commits (24h), {commit_stats['lastMonth']} commits (30d), {commit_stats['lastYear']} commits (12m)")
-        print(f"📁 Repositories: {len(processed_repos)}")
-        return True
+        print(f"📁 Processed {len(processed_repos)} repositories")
+
+        # Git operations
+        print("\n" + "="*50)
+        if git_add_commit_push():
+            print("🎉 GitHub data update complete and deployed!")
+            return True
+        else:
+            print("⚠️  Data updated but git operations failed")
+            return False
 
     except Exception as e:
         print(f"❌ Error saving data to {OUTPUT_FILE}: {e}")

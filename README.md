@@ -107,13 +107,39 @@ python3 update-github-data.py
 #### **3. Deploy**
 The `github-data.json` file will be included in your deployment automatically.
 
+#### **4. Optional: Auto-update on Terminal Open**
+To run the script automatically every time you open a terminal:
+
+**Add to your `~/.bashrc` or `~/.zshrc`:**
+```bash
+# GitHub data auto-update for personal website
+if [ -f "update-github-data.py" ] && [ -f "index.html" ]; then
+    echo "🔄 Updating GitHub data for personal website..."
+    python3 update-github-data.py
+    echo "✅ GitHub data update complete!"
+fi
+```
+
+**Or use the provided script:**
+```bash
+# Copy the update script to your home directory
+cp update-github-data.sh ~/
+
+# Add to your ~/.bashrc
+echo "source ~/update-github-data.sh" >> ~/.bashrc
+
+# Reload your bashrc
+source ~/.bashrc
+```
+
 **Features included:**
-- Latest 6 repositories sorted by recent activity
-- Language badges with authentic GitHub colors
-- Commit activity statistics (24h, 30 days, 12 months)
-- Relative timestamps ("Updated 2 days ago")
-- Works perfectly on GitHub Pages (no CORS issues!)
-- Automatic data freshness with daily updates
+- ✅ Latest 6 repositories sorted by recent activity
+- ✅ Language badges with authentic GitHub colors
+- ✅ Commit activity statistics (24h, 30 days, 12 months)
+- ✅ Relative timestamps ("Updated 2 days ago")
+- ✅ Automatic git add/commit/push after updates
+- ✅ Works perfectly on GitHub Pages (no CORS issues!)
+- ✅ Fresh data every terminal session
 
 ### **Timeline Configuration**
 The experience timeline supports categorization. To add new experiences:
