@@ -8,3 +8,7 @@ if [ -f "update-github-data.py" ] && [ -f "index.html" ]; then
     python3 update-github-data.py
     echo "✅ GitHub data update complete!"
 fi
+
+git add . 
+git commit -m "Daily log" 
+git push 
