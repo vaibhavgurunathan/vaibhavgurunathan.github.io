@@ -1,26 +1,26 @@
 {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-22T10:56:17.152709",
+  "lastUpdated": "2025-12-22T11:45:00.771704",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Website for testing",
-      "updated_at": "2025-12-22T18:45:43Z",
+      "updated_at": "2025-12-22T19:43:39Z",
       "language": "HTML",
       "languages": {
         "HTML": 111302,
-        "JavaScript": 25209,
+        "JavaScript": 24106,
         "CSS": 23010,
-        "Python": 3225
+        "Python": 10978
       },
       "topLanguages": [
         "HTML",
         "JavaScript",
         "CSS"
       ],
-      "relativeTime": "10 minutes ago"
+      "relativeTime": "1 minute ago"
     },
     {
       "name": "vaibhavgurunathan",
@@ -109,8 +109,8 @@
   ],
   "commitStats": {
     "lastDay": 10,
-    "lastMonth": 140,
-    "lastYear": 885
+    "lastMonth": 139,
+    "lastYear": 880
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
