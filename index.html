@@ -121,6 +121,20 @@
 
         <div id="projects" class="tab-content">
             <h2>My Projects</h2>
+
+            <!-- GitHub Stats Section -->
+            <section id="github-stats" class="github-section">
+                <h3>GitHub Activity</h3>
+                <div class="github-content">
+                    <div class="github-repos" id="github-repos">
+                        <div class="loading-spinner">Loading GitHub data...</div>
+                    </div>
+                    <div class="github-contribution-graph" id="contribution-graph">
+                        <p class="contribution-placeholder">Contribution graph will load here</p>
+                    </div>
+                </div>
+            </section>
+
             <div class="projects-list">
                 <div class="project">
                     <h3><a href="projects/studystream.html">StudyStream</a></h3>
@@ -162,8 +176,14 @@
 
             <!-- Career Timeline -->
             <h3>My Career Journey</h3>
+            <div class="timeline-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="work">Work</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="research">Research</button>
+            </div>
             <div class="timeline">
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="education">
                     <div class="timeline-marker">
                     </div>
                     <div class="timeline-content">
@@ -172,7 +192,7 @@
                         <p>Completing my dual Bachelor's degrees in Computer Science and Robotics Engineering at the University of Michigan. Four transformative years of learning, research, and hands-on experience in AI, robotics, and software engineering.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="research">
                     <div class="timeline-marker">
                     </div>
                     <div class="timeline-content">
@@ -181,7 +201,7 @@
                         <p>Conducting advanced research in the University of Michigan Field Robotics Group, fusing neural networks with camera data to dramatically improve Simultaneous Localization and Mapping (SLAM) accuracy for underwater robotic systems.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="work">
                     <div class="timeline-marker">
                     </div>
                     <div class="timeline-content">
@@ -190,7 +210,7 @@
                         <p>Stryker MDP Project: Engineered a full-stack navigation system for autonomous hospital stretchers using SLAM, path planning, and sensor fusion. Tuned localization algorithms to maintain accuracy during high-speed movements in dynamic environments.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="education">
                     <div class="timeline-marker">
                     </div>
                     <div class="timeline-content">
@@ -199,7 +219,7 @@
                         <p>Served as teaching assistant for Autonomous Robotics course at UMich. Supported students with motion planning, localization, control systems, and ROS implementation through lab exercises and office hours.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="work">
                     <div class="timeline-marker">
                     </div>
                     <div class="timeline-content">
@@ -208,7 +228,7 @@
                         <p>Edge AI Team at Amazon Lab 126. Engineered an automated Python-to-hardware pipeline for custom neural processors, built instruction set simulators, and deployed tensor decomposition algorithms achieving memory safety and sub-second simulations.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="work">
                     <div class="timeline-marker">
                     </div>
                     <div class="timeline-content">
@@ -217,7 +237,7 @@
                         <p>Kudan Robotics: Integrated proprietary SLAM software with 3D Lidars and quadruped robots (Unitree/Spot). Tuned ROS kinematic parameters to achieve sub-centimeter localization accuracy and standardized deployment protocols for enterprise robotics.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
+                <div class="timeline-item" data-category="education">
                     <div class="timeline-marker">
                     </div>
                     <div class="timeline-content">

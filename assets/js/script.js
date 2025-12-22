@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const typeContactLine = () => {
         // Set the contact line HTML content with proper links
-        contactLine.innerHTML = 'Contact me at gvaibhav@umich.edu or connect with me on <a href="https://www.linkedin.com/in/vaibhavgurunathan/" target="_blank" class="linkedin-link">LinkedIn</a>. See more about my work here: <a href="https://github.com/vaibhavgurunathan" target="_blank" class="github-link">GitHub</a>.';
+        contactLine.innerHTML = 'Contact me at gvaibhav@umich.edu or connect with me on <a href="https://www.linkedin.com/in/vaibhavgurunathan/" target="_blank" class="linkedin-link">LinkedIn</a>.';
         contactLine.style.opacity = '1';
 
         // Show profile image after contact line appears
@@ -171,3 +171,126 @@ function scrollToPost(postHref) {
         }
     }, 100); // Small delay to ensure DOM is updated
 }
+
+// GitHub Integration
+async function fetchGitHubData() {
+    const username = 'vaibhavgurunathan'; // Replace with your GitHub username
+    const reposContainer = document.getElementById('github-repos');
+
+    try {
+        // Fetch user repositories
+        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=6`);
+        const repos = await reposResponse.json();
+
+        if (repos.message) {
+            reposContainer.innerHTML = '<p>Unable to load GitHub data. Please check back later.</p>';
+            return;
+        }
+
+        // Display repositories
+        reposContainer.innerHTML = repos.map(repo => `
+            <div class="github-repo-card">
+                <div class="github-repo-title">
+                    <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                </div>
+                <div class="github-repo-description">
+                    ${repo.description || 'No description available'}
+                </div>
+                <div class="github-repo-stats">
+                    <div class="github-repo-stat">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                        </svg>
+                        ${repo.stargazers_count}
+                    </div>
+                    <div class="github-repo-stat">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0 2.25 2.25 0 001.5 0z"/>
+                            <path fill-rule="evenodd" d="M6.75 0A.75.75 0 016 0a6 6 0 00-6 6c0 1.993.759 3.841 2.009 5.233a.75.75 0 001.14-.746A4.5 4.5 0 011.5 6c0-2.49 2.01-4.5 4.5-4.5A4.5 4.5 0 0110.5 6c0 .886-.257 1.73-.693 2.474a.75.75 0 001.073.918A6.001 6.001 0 0012 6a6 6 0 00-6-6z"/>
+                        </svg>
+                        ${repo.forks_count}
+                    </div>
+                    <div class="github-repo-stat">
+                        ${repo.language || 'N/A'}
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        // Try to load contribution graph (GitHub doesn't provide this via API, so we'll show a placeholder)
+        const contributionGraph = document.getElementById('contribution-graph');
+        contributionGraph.innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+                <p>View my full contribution graph on <a href="https://github.com/${username}" target="_blank">GitHub</a></p>
+                <img src="https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=transparent&hide_border=true" alt="GitHub stats" style="max-width: 100%; border-radius: 8px;">
+            </div>
+        `;
+
+    } catch (error) {
+        console.error('Error fetching GitHub data:', error);
+        reposContainer.innerHTML = '<p>Unable to load GitHub data. Please check your internet connection.</p>';
+    }
+}
+
+// Timeline Filtering and Expansion
+function initializeTimelineFeatures() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineMarkers = document.querySelectorAll('.timeline-marker');
+
+    // Filter functionality
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            // Update active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter timeline items
+            timelineItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                if (filter === 'all' || category === filter) {
+                    item.classList.remove('filtered-out');
+                } else {
+                    item.classList.add('filtered-out');
+                }
+            });
+        });
+    });
+
+    // Timeline marker expansion
+    timelineMarkers.forEach(marker => {
+        marker.addEventListener('click', () => {
+            const timelineItem = marker.closest('.timeline-item');
+            const isExpanded = timelineItem.classList.contains('expanded');
+
+            // Close all expanded items
+            document.querySelectorAll('.timeline-item.expanded').forEach(item => {
+                item.classList.remove('expanded');
+                item.querySelector('.timeline-marker').classList.remove('expanded');
+            });
+
+            // Toggle current item
+            if (!isExpanded) {
+                timelineItem.classList.add('expanded');
+                marker.classList.add('expanded');
+            }
+        });
+    });
+}
+
+// Initialize features when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // ... existing code ...
+
+    // Initialize GitHub data loading
+    if (document.getElementById('github-repos')) {
+        fetchGitHubData();
+    }
+
+    // Initialize timeline features
+    if (document.querySelector('.timeline-filters')) {
+        initializeTimelineFeatures();
+    }
+});
