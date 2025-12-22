@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked button and corresponding content
             this.classList.add('active');
             document.getElementById(tabId).classList.add('active');
+
+            // Load GitHub data when Projects tab is activated
+            if (tabId === 'projects') {
+                // Small delay to ensure DOM is updated
+                setTimeout(() => {
+                    if (document.getElementById('github-repos') && !document.getElementById('github-repos').hasChildNodes()) {
+                        fetchGitHubData();
+                    }
+                }, 100);
+            }
         });
     });
 
@@ -543,11 +553,6 @@ function initializeTimelineFeatures() {
 // Initialize features when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // ... existing code ...
-
-    // Initialize GitHub data loading
-    if (document.getElementById('github-repos')) {
-        fetchGitHubData();
-    }
 
     // Initialize timeline features
     if (document.querySelector('.timeline-filters')) {
