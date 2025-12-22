@@ -81,65 +81,49 @@ A modern, interactive personal portfolio website built with HTML, CSS, and JavaS
 ## 🛠️ Customization Guide
 
 ### **GitHub Integration Setup**
-To display your own GitHub repositories, follow these steps:
+Your website now loads GitHub data **instantly** from your GitHub repository! No more waiting for scripts to run.
 
-#### **1. Update Username in Script**
-Edit `update-github-data.py` and change the username:
+#### **How It Works:**
+- Website loads `github-data.json` directly from your GitHub repo
+- Data loads instantly (no API calls or script delays)
+- Updates when you commit fresh data to your repository
 
-```python
-# Change this line to your GitHub username
-GITHUB_USERNAME = 'your-github-username'
-```
+#### **To Update Your GitHub Data:**
 
-#### **2. Run Data Fetching Script**
-Fetch your GitHub data and save it as static JSON:
-
+**Option 1: Manual Update (Recommended)**
 ```bash
-# Run once to generate initial data
+# Run locally to fetch fresh data
 python3 update-github-data.py
 
-# Or set up a daily cron job (Linux/Mac):
-# 0 2 * * * cd /path/to/website && python3 update-github-data.py
-
-# Or Windows Task Scheduler equivalent
+# This automatically commits and pushes the updated data
+# Your website will show fresh data immediately
 ```
 
-#### **3. Deploy**
-The `github-data.json` file will be included in your deployment automatically.
-
-#### **4. Optional: Auto-update on Terminal Open**
-To run the script automatically every time you open a terminal:
-
-**Add to your `~/.bashrc` or `~/.zshrc`:**
+**Option 2: Automated Updates**
 ```bash
-# GitHub data auto-update for personal website
+# Add to ~/.bashrc or ~/.zshrc for auto-updates:
 if [ -f "update-github-data.py" ] && [ -f "index.html" ]; then
-    echo "🔄 Updating GitHub data for personal website..."
+    echo "🔄 Updating GitHub data..."
     python3 update-github-data.py
-    echo "✅ GitHub data update complete!"
 fi
 ```
 
-**Or use the provided script:**
-```bash
-# Copy the update script to your home directory
-cp update-github-data.sh ~/
+**Option 3: GitHub Actions (Advanced)**
+Set up automated daily updates using GitHub Actions to run the script automatically.
 
-# Add to your ~/.bashrc
-echo "source ~/update-github-data.sh" >> ~/.bashrc
-
-# Reload your bashrc
-source ~/.bashrc
-```
+#### **Customization:**
+To change the GitHub username, update both:
+- `update-github-data.py`: Change `GITHUB_USERNAME` variable
+- `assets/js/script.js`: Change the raw.githubusercontent.com URL
 
 **Features included:**
+- ✅ **Instant loading** - No waiting for API calls
 - ✅ Latest 6 repositories sorted by recent activity
 - ✅ Language badges with authentic GitHub colors
 - ✅ Commit activity statistics (24h, 30 days, 12 months)
 - ✅ Relative timestamps ("Updated 2 days ago")
-- ✅ Automatic git add/commit/push after updates
 - ✅ Works perfectly on GitHub Pages (no CORS issues!)
-- ✅ Fresh data every terminal session
+- ✅ Automatic git operations (add/commit/push)
 
 ### **Timeline Configuration**
 The experience timeline supports categorization. To add new experiences:

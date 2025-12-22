@@ -386,14 +386,17 @@ function generateContributionHeatmap(repos) {
     return heatmapHTML;
 }
 
-// GitHub Integration - Load static data
+// GitHub Integration - Load static data from GitHub
 async function fetchGitHubData() {
     const reposContainer = document.getElementById('github-repos');
     const contributionGraph = document.getElementById('contribution-graph');
 
     try {
-        // Load static GitHub data from JSON file
-        const response = await fetch('github-data.json');
+        // Load static GitHub data from GitHub repository (instant loading)
+        const response = await fetch('https://raw.githubusercontent.com/vaibhavgurunathan/vaibhavgurunathan.github.io/main/github-data.json', {
+            cache: 'no-cache' // Ensure fresh data
+        });
+
         if (!response.ok) {
             throw new Error('Failed to load GitHub data');
         }
@@ -480,11 +483,24 @@ async function fetchGitHubData() {
     } catch (error) {
         console.error('Error loading GitHub data:', error);
 
-        // Show fallback content
+        // Show fallback content - try loading local file as backup
+        try {
+            const localResponse = await fetch('github-data.json');
+            if (localResponse.ok) {
+                const localData = await localResponse.json();
+                // Use local data as fallback
+                displayGitHubData(localData);
+                return;
+            }
+        } catch (localError) {
+            console.error('Local fallback also failed:', localError);
+        }
+
+        // Show fallback links
         reposContainer.innerHTML = `
             <div style="text-align: center; padding: 30px; color: #7f8c8d;">
                 <p>🔗 <a href="https://github.com/vaibhavgurunathan?tab=repositories" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my repositories on GitHub</a></p>
-                <p style="font-size: 0.9em; margin-top: 10px;">Unable to load local data</p>
+                <p style="font-size: 0.9em; margin-top: 10px;">Loading from remote source...</p>
             </div>
         `;
 
@@ -500,6 +516,87 @@ async function fetchGitHubData() {
             </div>
         `;
     }
+}
+
+// Helper function to display GitHub data
+function displayGitHubData(githubData) {
+    const reposContainer = document.getElementById('github-repos');
+    const contributionGraph = document.getElementById('contribution-graph');
+
+    const repos = githubData.repositories;
+    const commitStats = githubData.commitStats;
+    const languageColors = githubData.languageColors;
+
+    reposContainer.innerHTML = repos.map(repo => {
+        const topLanguages = repo.topLanguages || [];
+        return `
+            <div class="github-repo-card">
+                <div class="github-repo-header">
+                    <div class="github-repo-title">
+                        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                    </div>
+                    <div class="github-repo-updated">
+                        Updated ${repo.relativeTime}
+                    </div>
+                </div>
+                <div class="github-repo-description">
+                    ${repo.description}
+                </div>
+                <div class="github-repo-languages">
+                    ${topLanguages.map(lang => `
+                        <span class="language-badge" style="background-color: ${languageColors[lang] || '#586069'}">
+                            ${lang}
+                        </span>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    contributionGraph.innerHTML = `
+        <div class="contribution-section">
+            <h4>Commit Activity</h4>
+            <div class="commit-stats-grid">
+                <div class="commit-stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">${commitStats.lastDay}</div>
+                        <div class="stat-label">Last 24h</div>
+                    </div>
+                </div>
+                <div class="commit-stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">${commitStats.lastMonth}</div>
+                        <div class="stat-label">Last 30 days</div>
+                    </div>
+                </div>
+                <div class="commit-stat-card">
+                    <div class="stat-content">
+                        <div class="stat-number">${commitStats.lastYear}</div>
+                        <div class="stat-label">Last 12 months</div>
+                    </div>
+                </div>
+            </div>
+            <div class="activity-summary">
+                <div class="activity-stat">
+                    <span class="activity-number">${repos.length}</span>
+                    <span class="activity-label">Active Repositories</span>
+                </div>
+                <div class="activity-stat">
+                    <span class="activity-number">${new Set(repos.flatMap(repo => repo.topLanguages || [])).size}</span>
+                    <span class="activity-label">Programming Languages</span>
+                </div>
+                <div class="activity-stat">
+                    <span class="activity-number">${repos.length > 0 ? repos[0].relativeTime : 'Recently'}</span>
+                    <span class="activity-label">Last Updated</span>
+                </div>
+            </div>
+            <div class="data-timestamp">
+                <small style="color: #7f8c8d; font-size: 0.8em;">
+                    Data last updated: ${new Date(githubData.lastUpdated).toLocaleDateString()}
+                </small>
+            </div>
+        </div>
+    `;
 }
 
 // Timeline Filtering and Expansion
