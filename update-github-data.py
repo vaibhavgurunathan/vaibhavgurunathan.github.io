@@ -342,9 +342,40 @@ def git_add_commit_push() -> bool:
     print("✅ Successfully committed and pushed GitHub data updates")
     return True
 
+def check_last_update() -> bool:
+    """Check if the script has already run today. Return True if should skip update."""
+    today = datetime.now().strftime('%Y-%m-%d')
+    last_update_file = '.last_github_update'
+
+    try:
+        with open(last_update_file, 'r') as f:
+            last_update = f.read().strip()
+
+        if last_update == today:
+            print(f"ℹ️  GitHub data was already updated today ({today}). Skipping update.")
+            return True  # Skip update
+
+    except FileNotFoundError:
+        # File doesn't exist, this is the first run
+        pass
+
+    # Update or create the last update file
+    try:
+        with open(last_update_file, 'w') as f:
+            f.write(today)
+        print(f"📅 Recorded update for {today}")
+    except Exception as e:
+        print(f"⚠️  Could not write last update file: {e}")
+
+    return False  # Proceed with update
+
 def main():
     """Main function to fetch and save GitHub data"""
     print(f"🚀 Starting GitHub data update for {GITHUB_USERNAME}")
+
+    # Check if we should skip the update (already ran today)
+    if check_last_update():
+        return True
 
     # Fetch repositories
     repos = fetch_github_repos(GITHUB_USERNAME)
