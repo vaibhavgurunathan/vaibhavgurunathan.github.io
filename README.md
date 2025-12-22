@@ -39,6 +39,8 @@ A modern, interactive personal portfolio website built with HTML, CSS, and JavaS
 ```
 /
 ├── index.html                          # Main portfolio page
+├── github-data.json                    # Static GitHub repository data (auto-generated)
+├── update-github-data.py               # Script to fetch and update GitHub data
 ├── assets/
 │   ├── css/style.css                  # Main stylesheet with animations
 │   └── js/script.js                   # JavaScript functionality
@@ -79,19 +81,39 @@ A modern, interactive personal portfolio website built with HTML, CSS, and JavaS
 ## 🛠️ Customization Guide
 
 ### **GitHub Integration Setup**
-To display your own GitHub repositories, update the username in `assets/js/script.js`:
+To display your own GitHub repositories, follow these steps:
 
-```javascript
-// Change this line to your GitHub username
-const username = 'your-github-username';
+#### **1. Update Username in Script**
+Edit `update-github-data.py` and change the username:
+
+```python
+# Change this line to your GitHub username
+GITHUB_USERNAME = 'your-github-username'
 ```
+
+#### **2. Run Data Fetching Script**
+Fetch your GitHub data and save it as static JSON:
+
+```bash
+# Run once to generate initial data
+python3 update-github-data.py
+
+# Or set up a daily cron job (Linux/Mac):
+# 0 2 * * * cd /path/to/website && python3 update-github-data.py
+
+# Or Windows Task Scheduler equivalent
+```
+
+#### **3. Deploy**
+The `github-data.json` file will be included in your deployment automatically.
 
 **Features included:**
 - Latest 6 repositories sorted by recent activity
 - Language badges with authentic GitHub colors
 - Commit activity statistics (24h, 30 days, 12 months)
 - Relative timestamps ("Updated 2 days ago")
-- GitHub Pages compatible with fallback links
+- Works perfectly on GitHub Pages (no CORS issues!)
+- Automatic data freshness with daily updates
 
 ### **Timeline Configuration**
 The experience timeline supports categorization. To add new experiences:

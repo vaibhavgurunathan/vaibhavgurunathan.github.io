@@ -376,60 +376,26 @@ function generateContributionHeatmap(repos) {
     return heatmapHTML;
 }
 
-// GitHub Integration
+// GitHub Integration - Load static data
 async function fetchGitHubData() {
-    const username = 'vaibhavgurunathan'; // Replace with your GitHub username
     const reposContainer = document.getElementById('github-repos');
     const contributionGraph = document.getElementById('contribution-graph');
 
-    // Set a timeout for the fetch request
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
-
     try {
-        // Fetch user repositories sorted by most recent update
-        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc&per_page=6`, {
-            signal: controller.signal,
-            headers: {
-                'Accept': 'application/vnd.github.v3+json'
-            }
-        });
-
-        if (!reposResponse.ok) {
-            throw new Error(`GitHub API error: ${reposResponse.status}`);
+        // Load static GitHub data from JSON file
+        const response = await fetch('github-data.json');
+        if (!response.ok) {
+            throw new Error('Failed to load GitHub data');
         }
 
-        const repos = await reposResponse.json();
-
-        // Fetch languages for each repository
-        const reposWithLanguages = await Promise.all(
-            repos.map(async (repo) => {
-                try {
-                    const langResponse = await fetch(repo.languages_url, {
-                        signal: controller.signal,
-                        headers: {
-                            'Accept': 'application/vnd.github.v3+json'
-                        }
-                    });
-                    const languages = await langResponse.json();
-
-                    // Get top 3 languages by bytes
-                    const sortedLanguages = Object.entries(languages)
-                        .sort(([,a], [,b]) => b - a)
-                        .slice(0, 3)
-                        .map(([lang]) => lang);
-
-                    return { ...repo, topLanguages: sortedLanguages };
-                } catch (error) {
-                    return { ...repo, topLanguages: [] };
-                }
-            })
-        );
+        const githubData = await response.json();
+        const repos = githubData.repositories;
+        const commitStats = githubData.commitStats;
+        const languageColors = githubData.languageColors;
 
         // Display repositories
-        reposContainer.innerHTML = reposWithLanguages.map(repo => {
-            const topLanguages = repo.topLanguages.slice(0, 3);
-            const lastUpdated = formatRelativeTime(repo.updated_at);
+        reposContainer.innerHTML = repos.map(repo => {
+            const topLanguages = repo.topLanguages || [];
 
             return `
                 <div class="github-repo-card">
@@ -438,11 +404,11 @@ async function fetchGitHubData() {
                             <a href="${repo.html_url}" target="_blank">${repo.name}</a>
                         </div>
                         <div class="github-repo-updated">
-                            Updated ${lastUpdated}
+                            Updated ${repo.relativeTime}
                         </div>
                     </div>
                     <div class="github-repo-description">
-                        ${repo.description || 'No description available'}
+                        ${repo.description}
                     </div>
                     <div class="github-repo-languages">
                         ${topLanguages.map(lang => `
@@ -451,16 +417,11 @@ async function fetchGitHubData() {
                             </span>
                         `).join('')}
                     </div>
-
                 </div>
             `;
         }).join('');
 
-        clearTimeout(timeoutId);
-
-        // Calculate commit statistics based on repository activity
-        const commitStats = calculateCommitStats(reposWithLanguages);
-
+        // Display commit statistics
         contributionGraph.innerHTML = `
             <div class="contribution-section">
                 <h4>Commit Activity</h4>
@@ -468,57 +429,61 @@ async function fetchGitHubData() {
                     <div class="commit-stat-card">
                         <div class="stat-content">
                             <div class="stat-number">${commitStats.lastDay}</div>
-                            <div class="stat-label">Last day</div>
+                            <div class="stat-label">Last 24h</div>
                         </div>
                     </div>
                     <div class="commit-stat-card">
                         <div class="stat-content">
                             <div class="stat-number">${commitStats.lastMonth}</div>
-                            <div class="stat-label">Last month</div>
+                            <div class="stat-label">Last 30 days</div>
                         </div>
                     </div>
                     <div class="commit-stat-card">
                         <div class="stat-content">
                             <div class="stat-number">${commitStats.lastYear}</div>
-                            <div class="stat-label">Last year</div>
+                            <div class="stat-label">Last 12 months</div>
                         </div>
                     </div>
                 </div>
                 <div class="activity-summary">
                     <div class="activity-stat">
-                        <span class="activity-number">${reposWithLanguages.length}</span>
+                        <span class="activity-number">${repos.length}</span>
                         <span class="activity-label">Active Repositories</span>
                     </div>
                     <div class="activity-stat">
-                        <span class="activity-number">${new Set(reposWithLanguages.flatMap(repo => repo.topLanguages)).size}</span>
+                        <span class="activity-number">${new Set(repos.flatMap(repo => repo.topLanguages || [])).size}</span>
                         <span class="activity-label">Programming Languages</span>
                     </div>
                     <div class="activity-stat">
-                        <span class="activity-number">${formatRelativeTime(Math.max(...reposWithLanguages.map(repo => new Date(repo.updated_at))))}</span>
+                        <span class="activity-number">${repos.length > 0 ? repos[0].relativeTime : 'Recently'}</span>
                         <span class="activity-label">Last Updated</span>
                     </div>
+                </div>
+                <div class="data-timestamp">
+                    <small style="color: #7f8c8d; font-size: 0.8em;">
+                        Data last updated: ${new Date(githubData.lastUpdated).toLocaleDateString()}
+                    </small>
                 </div>
             </div>
         `;
 
     } catch (error) {
-        clearTimeout(timeoutId);
-        console.error('Error fetching GitHub data:', error);
+        console.error('Error loading GitHub data:', error);
 
-        // Show fallback content for GitHub Pages
+        // Show fallback content
         reposContainer.innerHTML = `
             <div style="text-align: center; padding: 30px; color: #7f8c8d;">
-                <p>🔗 <a href="https://github.com/${username}?tab=repositories" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my repositories on GitHub</a></p>
-                <p style="font-size: 0.9em; margin-top: 10px;">API access limited on static hosting</p>
+                <p>🔗 <a href="https://github.com/vaibhavgurunathan?tab=repositories" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my repositories on GitHub</a></p>
+                <p style="font-size: 0.9em; margin-top: 10px;">Unable to load local data</p>
             </div>
         `;
 
         contributionGraph.innerHTML = `
             <div class="contribution-section">
-                <h4>Contribution Activity</h4>
+                <h4>Commit Activity</h4>
                 <div class="contribution-heatmap">
                     <div class="heatmap-placeholder">
-                        <p>📊 <a href="https://github.com/${username}" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my GitHub profile</a></p>
+                        <p>📊 <a href="https://github.com/vaibhavgurunathan" target="_blank" style="color: #667eea; text-decoration: none; font-weight: 500;">View my GitHub profile</a></p>
                         <p style="font-size: 0.9em; color: #7f8c8d; margin-top: 8px;">For contribution graphs and stats</p>
                     </div>
                 </div>

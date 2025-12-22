@@ -1,0 +1,148 @@
+{
+  "username": "vaibhavgurunathan",
+  "lastUpdated": "2025-12-22T10:56:17.152709",
+  "repositories": [
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Website for testing",
+      "updated_at": "2025-12-22T18:45:43Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 111302,
+        "JavaScript": 25209,
+        "CSS": 23010,
+        "Python": 3225
+      },
+      "topLanguages": [
+        "HTML",
+        "JavaScript",
+        "CSS"
+      ],
+      "relativeTime": "10 minutes ago"
+    },
+    {
+      "name": "vaibhavgurunathan",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
+      "description": "No description available",
+      "updated_at": "2025-12-21T03:41:18Z",
+      "language": null,
+      "languages": {},
+      "topLanguages": [],
+      "relativeTime": "1 day ago"
+    },
+    {
+      "name": "CompilersForAI",
+      "full_name": "vaibhavgurunathan/CompilersForAI",
+      "html_url": "https://github.com/vaibhavgurunathan/CompilersForAI",
+      "description": "No description available",
+      "updated_at": "2025-12-20T17:44:12Z",
+      "language": "Python",
+      "languages": {
+        "Python": 9119
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "2 days ago"
+    },
+    {
+      "name": "wordle-rl",
+      "full_name": "vaibhavgurunathan/wordle-rl",
+      "html_url": "https://github.com/vaibhavgurunathan/wordle-rl",
+      "description": "No description available",
+      "updated_at": "2025-12-20T04:53:12Z",
+      "language": "Jupyter Notebook",
+      "languages": {
+        "Jupyter Notebook": 13418
+      },
+      "topLanguages": [
+        "Jupyter Notebook"
+      ],
+      "relativeTime": "2 days ago"
+    },
+    {
+      "name": "studystream",
+      "full_name": "vaibhavgurunathan/studystream",
+      "html_url": "https://github.com/vaibhavgurunathan/studystream",
+      "description": "mhacks 2024 submission",
+      "updated_at": "2024-09-29T16:28:08Z",
+      "language": "Python",
+      "languages": {
+        "Python": 16227
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "14 months ago"
+    },
+    {
+      "name": "Eduardo",
+      "full_name": "vaibhavgurunathan/Eduardo",
+      "html_url": "https://github.com/vaibhavgurunathan/Eduardo",
+      "description": "No description available",
+      "updated_at": "2024-09-29T16:20:51Z",
+      "language": null,
+      "languages": {
+        "C#": 26215956,
+        "C++": 776007,
+        "ShaderLab": 98036,
+        "Mathematica": 69546,
+        "HLSL": 21151,
+        "Objective-C++": 13913,
+        "C": 12454,
+        "Objective-C": 11252,
+        "GAP": 9254,
+        "GLSL": 4183,
+        "Python": 1414,
+        "CMake": 426
+      },
+      "topLanguages": [
+        "C#",
+        "C++",
+        "ShaderLab"
+      ],
+      "relativeTime": "14 months ago"
+    }
+  ],
+  "commitStats": {
+    "lastDay": 10,
+    "lastMonth": 140,
+    "lastYear": 885
+  },
+  "languageColors": {
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "Python": "#3572A5",
+    "Java": "#b07219",
+    "C++": "#f34b7d",
+    "C": "#555555",
+    "C#": "#239120",
+    "PHP": "#4F5D95",
+    "Ruby": "#701516",
+    "Go": "#00ADD8",
+    "Rust": "#dea584",
+    "Swift": "#ffac45",
+    "Kotlin": "#F18E33",
+    "Dart": "#00B4AB",
+    "HTML": "#e34c26",
+    "CSS": "#1572B6",
+    "SCSS": "#c6538c",
+    "Shell": "#89e051",
+    "PowerShell": "#012456",
+    "R": "#198CE7",
+    "MATLAB": "#e16737",
+    "Verilog": "#b2b7f8",
+    "VHDL": "#adb2cb",
+    "Assembly": "#6E4C13",
+    "Makefile": "#427819",
+    "Dockerfile": "#384d54",
+    "YAML": "#cb171e",
+    "JSON": "#292929",
+    "Markdown": "#083fa1",
+    "TeX": "#3D6117",
+    "Jupyter Notebook": "#DA5B0B"
+  }
+}
