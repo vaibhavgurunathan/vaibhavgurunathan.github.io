@@ -12,3 +12,4 @@ fi
 git add . 
 git commit -m "Daily log" 
 git push 
+echo "Everything working as intended" 
