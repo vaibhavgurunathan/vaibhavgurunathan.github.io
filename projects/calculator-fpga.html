@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPGA Calculator - Vaibhav Gurunathan</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Vaibhav Gurunathan</h1>
+        <nav>
+            <a href="javascript:history.back()" class="back-link">← Back</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="project-detail">
+            <h2>4-Function Calculator on FPGA</h2>
+            <div class="project-meta">
+                <span class="tech-stack">Verilog • FPGA • Digital Logic • State Machines</span>
+            </div>
+
+            <div class="project-content">
+                <h3>Overview</h3>
+                <p>A complete 4-function calculator implemented on an FPGA board using Verilog. This was the culminating project for my Computer Logic class at the University of Michigan, requiring deep understanding of digital systems and hardware programming.</p>
+
+                <h3>Why This Project Was Challenging</h3>
+                <p>While implementing a calculator in a high-level programming language is straightforward, this project required implementing all operations at the bit level using digital logic gates and registers. No built-in arithmetic operations were allowed - everything had to be built from fundamental logic gates.</p>
+
+                <h3>Technical Implementation</h3>
+                <h4>Addition & Subtraction</h4>
+                <ul>
+                    <li><strong>Bit-level Operations:</strong> Custom addition circuit with carry propagation</li>
+                    <li><strong>Overflow Handling:</strong> Detection and display of overflow conditions</li>
+                    <li><strong>4-digit Support:</strong> Handling arithmetic across multiple digits</li>
+                </ul>
+
+                <h4>Multiplication</h4>
+                <ul>
+                    <li><strong>Booth's Algorithm:</strong> Implementation of Booth's multiplication algorithm</li>
+                    <li><strong>Bit Manipulation:</strong> Complex bit shifting and addition operations</li>
+                    <li><strong>Efficiency Optimization:</strong> Minimizing gate usage and propagation delay</li>
+                </ul>
+
+                <h4>Division</h4>
+                <ul>
+                    <li><strong>Custom Division Logic:</strong> Bit-by-bit division implementation</li>
+                    <li><strong>Remainder Calculation:</strong> Proper handling of division remainders</li>
+                </ul>
+
+                <h3>State Machine Design</h3>
+                <p>The calculator used a sophisticated state machine that:</p>
+                <ul>
+                    <li><strong>Clock Synchronization:</strong> All operations triggered by clock edges</li>
+                    <li><strong>Input Processing:</strong> Handling button presses and number entry</li>
+                    <li><strong>Operation Sequencing:</strong> Proper sequencing of arithmetic operations</li>
+                    <li><strong>Display Management:</strong> Updating LED displays with results</li>
+                </ul>
+
+                <h3>Hardware Constraints</h3>
+                <ul>
+                    <li><strong>FPGA Limitations:</strong> Working within the constraints of the development board</li>
+                    <li><strong>Resource Optimization:</strong> Efficient use of logic gates and registers</li>
+                    <li><strong>Timing Considerations:</strong> Ensuring proper signal propagation delays</li>
+                    <li><strong>Debug Challenges:</strong> Limited debugging tools compared to software development</li>
+                </ul>
+
+                <h3>Key Achievements</h3>
+                <p>This project demonstrated mastery of:</p>
+                <ul>
+                    <li>Digital logic design principles</li>
+                    <li>Hardware description languages (Verilog)</li>
+                    <li>State machine implementation</li>
+                    <li>Low-level computer architecture</li>
+                    <li>Problem-solving in constrained environments</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

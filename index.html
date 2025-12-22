@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaibhav Gurunathan - Personal Website</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='24' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23667eea'%3EVG%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="switchToHome()" style="cursor: pointer; transition: opacity 0.3s;">Vaibhav Gurunathan</h1>
+        <nav>
+            <button class="tab-button active" data-tab="home">Home</button>
+            <button class="tab-button" data-tab="experience">Experience</button>
+            <button class="tab-button" data-tab="projects">Projects</button>
+            <button class="tab-button" data-tab="blog">Blog Posts</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="home" class="tab-content active">
+            <h2>About me</h2>
+            <div class="about-content">
+                <div class="profile-section">
+                    <img src="images/profile.jpg" alt="Vaibhav Gurunathan" class="profile-image">
+                    <p class="image-caption">This photo is from my first visit to Michigan in mid April. Despite the two jackets, I was freezing because it was about 28 degrees outside.</p>
+                </div>
+                <div class="about-text">
+                    <p class="type-text" data-delay="100">Hi everyone! Welcome to my website. My name is Vaibhav and I'm a senior at the University of Michigan. I am extremely interested in artificial intelligence, especially as it relates to robotics. That's why I am double majoring in both computer science and robotics. This summer I interned on the Edge AI team at Amazon. I also work with Stryker to create a stretcher capable of navigating a hospital autonomously. Some of my interests outside of work involve playing basketball, practicing guitar, and reading books.</p>
+                    <p class="contact-line"></p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div id="blog" class="tab-content">
+            <h2>Blog Posts</h2>
+            <div class="blog-posts">
+                <article class="blog-post">
+                    <h3><a href="blog/expected-graduation.html">Expected Graduation - May 2026</a></h3>
+                    <p>As I approach the final months of my undergraduate journey at the University of Michigan, I reflect on four transformative years of learning, research, and hands-on experience in AI, robotics, and computer science.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/underwater-slam-research.html">Underwater SLAM Research</a></h3>
+                    <p>Conducting advanced research in the University of Michigan Field Robotics Group, fusing neural networks with camera data to dramatically improve Simultaneous Localization and Mapping (SLAM) accuracy for underwater robotic systems.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/instructor-assistant.html">Instructor Assistant - SLAM and Autonomous Robotics</a></h3>
+                    <p>Serving as a teaching assistant for SLAM and Autonomous Robotics courses at UMich, developing comprehensive lab exercises, debugging complex hardware/software issues, and mentoring students through challenging robotics concepts.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/stryker-autonomous-stretcher.html">Stryker – Building an Autonomous Stretcher</a></h3>
+                    <p>Engineered a full-stack navigation system for autonomous hospital stretchers using SLAM, path planning, and sensor fusion. Tuned localization algorithms to maintain accuracy during high-speed movements in dynamic environments.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/winter-2024.html">Winter 2024</a></h3>
+                    <p>Winter 2024 was a challenging but rewarding semester with significant progress in my computer science and robotics education, including completion of my Kudan internship.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/kudan-internship.html">Kudan Internship</a></h3>
+                    <p>Kudan Robotics: Integrated proprietary SLAM software with 3D Lidars and quadruped robots (Unitree/Spot). Tuned ROS kinematic parameters to achieve sub-centimeter localization accuracy and standardized deployment protocols for enterprise robotics.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/fall-2024.html">Fall 2024</a></h3>
+                    <p>I took four classes this semester: Operating Systems, Parallel Programming with GPUs, Simultaneous Localization and Mapping, and Technology Inspired Entrepreneurship. This was an extremely intense semester with three project-based classes.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/amazon-internship.html">Amazon Internship</a></h3>
+                    <p>Edge AI Team at Amazon Lab 126. Engineered an automated Python-to-hardware pipeline for custom neural processors, built instruction set simulators, and deployed tensor decomposition algorithms achieving memory safety and sub-second simulations.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/winter-2025.html">Winter 2025</a></h3>
+                    <p>This semester I am taking 3 technical classes: Natural Language Processing, Quantum Computing, and Robot Dynamics and Simulation. My favourite was NLP where we built a model to predict Python docstrings.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/instructor-assistant-winter-2025.html">Instructor Assistant - Autonomous Robotics (Winter 2025)</a></h3>
+                    <p>Served as teaching assistant for Autonomous Robotics course at UMich. Supported students with motion planning, localization, control systems, and ROS implementation through lab exercises and office hours.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/fall-2023.html">Fall 2023</a></h3>
+                    <p>This was the first semester of sophomore year where I finally started to feel like I was understanding computer science. I took three classes: Data Structures and Algorithms, Principles of Machine Learning, and Human-Robotic Systems.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/summer-2023.html">Summer 2023</a></h3>
+                    <p>This summer I focused on classes at community college to get transfer credit at Umich. I took Differential Equations, Discrete Math, Multivariable Calculus, Physics – Electricity and Magnetism, and Statistics.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/winter-2023.html">Winter 2023</a></h3>
+                    <p>Winter 2023 was my second semester of freshman year where I finally felt like I was figuring out college. I took four classes: Introduction to Data Structures and Algorithms, Introduction to Computer Logic, Introduction to Engineering, and Introduction to Data Science.</p>
+                </article>
+
+                <article class="blog-post">
+                    <h3><a href="blog/fall-2022.html">Fall 2022</a></h3>
+                    <p>Fall 2022 was my first semester at the University and I had a lot of fun getting to know campus and trying out new things. I took four classes: Computational Linear Algebra, Introduction to Algorithms and Programming, Introductory Physics – Mechanics, and Emperors of Rome.</p>
+                </article>
+            </div>
+        </div>
+
+        <div id="projects" class="tab-content">
+            <h2>My Projects</h2>
+            <div class="projects-list">
+                <div class="project">
+                    <h3><a href="projects/studystream.html">StudyStream</a></h3>
+                    <p>MHacks 2024 winner. AI-powered educational tool that converts text into engaging video lectures with synchronized visuals and audio narration.</p>
+                </div>
+                <div class="project">
+                    <h3><a href="projects/music-classifier.html">Music Genre Classifier</a></h3>
+                    <p>Machine learning project classifying music into subgenres using audio feature extraction and neural networks.</p>
+                </div>
+                <div class="project">
+                    <h3><a href="projects/eduardo.html">Eduardo - MHacks 16 x Google</a></h3>
+                    <p>AR educational guide teaching users complex actions through interactive, step-by-step visual instructions.</p>
+                </div>
+                <div class="project">
+                    <h3><a href="projects/wordle-solver.html">Wordle Solver Bot</a></h3>
+                    <p>Statistics-based algorithm that guarantees Wordle success through probability analysis and optimal word selection.</p>
+                </div>
+                <div class="project">
+                    <h3><a href="projects/primegpt.html">PrimeGPT - MHacks 16</a></h3>
+                    <p>Intelligent chatbot answering Amazon product queries using NLP and real-time web scraping.</p>
+                </div>
+                <div class="project">
+                    <h3><a href="projects/calculator-fpga.html">FPGA Calculator</a></h3>
+                    <p>4-function calculator implemented on FPGA using Verilog, featuring bit-level arithmetic and state machine design.</p>
+                </div>
+                <div class="project">
+                    <h3><a href="projects/euchre.html">Coding Euchre</a></h3>
+                    <p>Complete Euchre card game implementation in C++ with AI opponents and full game logic.</p>
+                </div>
+                <div class="project">
+                    <h3><a href="projects/robot-maze.html">Robot Maze Navigation</a></h3>
+                    <p>Autonomous robot navigating real-world mazes using computer vision, SLAM, and path planning algorithms.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="experience" class="tab-content">
+            <h2>Experience</h2>
+
+            <!-- Career Timeline -->
+            <h3>My Career Journey</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                    </div>
+                    <div class="timeline-content">
+                        <h3><a href="blog/expected-graduation.html" class="timeline-link">Expected Graduation</a></h3>
+                        <span class="timeline-year">May 2026</span>
+                        <p>Completing my dual Bachelor's degrees in Computer Science and Robotics Engineering at the University of Michigan. Four transformative years of learning, research, and hands-on experience in AI, robotics, and software engineering.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                    </div>
+                    <div class="timeline-content">
+                        <h3><a href="blog/underwater-slam-research.html" class="timeline-link">Underwater SLAM Research</a></h3>
+                        <span class="timeline-year">Nov 2025 - Present</span>
+                        <p>Conducting advanced research in the University of Michigan Field Robotics Group, fusing neural networks with camera data to dramatically improve Simultaneous Localization and Mapping (SLAM) accuracy for underwater robotic systems.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                    </div>
+                    <div class="timeline-content">
+                        <h3><a href="blog/stryker-autonomous-stretcher.html" class="timeline-link">Artificial Intelligence Intern</a></h3>
+                        <span class="timeline-year">Jan 2025 - Dec 2025</span>
+                        <p>Stryker MDP Project: Engineered a full-stack navigation system for autonomous hospital stretchers using SLAM, path planning, and sensor fusion. Tuned localization algorithms to maintain accuracy during high-speed movements in dynamic environments.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                    </div>
+                    <div class="timeline-content">
+                        <h3><a href="blog/instructor-assistant-winter-2025.html" class="timeline-link">Instructor Assistant - Autonomous Robotics</a></h3>
+                        <span class="timeline-year">Jan 2025 - May 2025</span>
+                        <p>Served as teaching assistant for Autonomous Robotics course at UMich. Supported students with motion planning, localization, control systems, and ROS implementation through lab exercises and office hours.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                    </div>
+                    <div class="timeline-content">
+                        <h3><a href="blog/amazon-internship.html" class="timeline-link">Machine Learning Intern</a></h3>
+                        <span class="timeline-year">May 2025 - Aug 2025</span>
+                        <p>Edge AI Team at Amazon Lab 126. Engineered an automated Python-to-hardware pipeline for custom neural processors, built instruction set simulators, and deployed tensor decomposition algorithms achieving memory safety and sub-second simulations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                    </div>
+                    <div class="timeline-content">
+                        <h3><a href="blog/kudan-internship.html" class="timeline-link">Software Engineering Intern</a></h3>
+                        <span class="timeline-year">May 2024 - Aug 2024</span>
+                        <p>Kudan Robotics: Integrated proprietary SLAM software with 3D Lidars and quadruped robots (Unitree/Spot). Tuned ROS kinematic parameters to achieve sub-centimeter localization accuracy and standardized deployment protocols for enterprise robotics.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                    </div>
+                    <div class="timeline-content">
+                        <h3><a href="blog/fall-2022.html" class="timeline-link">Started University of Michigan</a></h3>
+                        <span class="timeline-year">Fall 2022</span>
+                        <p>Began my academic journey at the University of Michigan pursuing dual degrees in Computer Science and Robotics Engineering. Immersed myself in machine learning, computer vision, autonomous systems, and cutting-edge AI research.</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

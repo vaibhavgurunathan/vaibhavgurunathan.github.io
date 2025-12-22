@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyStream - Vaibhav Gurunathan</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Vaibhav Gurunathan</h1>
+        <nav>
+            <a href="javascript:history.back()" class="back-link">← Back</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="project-detail">
+            <h2>StudyStream - MHacks 2024</h2>
+            <div class="project-meta">
+                <span class="tech-stack">React • Node.js • Computer Vision • Vector Database • Text-to-Speech</span>
+            </div>
+
+            <div class="project-content">
+                <h3>Overview</h3>
+                <p>StudyStream was my hackathon submission for MHacks 2024. It's an AI-powered educational tool that converts text content into engaging, synchronized video lectures with visuals and audio narration.</p>
+
+                <h3>How It Works</h3>
+                <p>The frontend takes input either as a file or copy/pasted text along with desired video length. It sends this to the backend which performs several sophisticated AI operations:</p>
+
+                <ol>
+                    <li><strong>Text Segmentation:</strong> Splits the text into logical sections based on the requested video length</li>
+                    <li><strong>Image Selection:</strong> Scrapes Google Images and uses computer vision to find the most relevant image for each concept</li>
+                    <li><strong>Vector Search:</strong> Converts image descriptions to vectors and queries a vector database to find the best matches</li>
+                    <li><strong>Audio Generation:</strong> Uses text-to-speech conversion to create narration for each section</li>
+                    <li><strong>Video Assembly:</strong> Combines images, bullet points, and audio into a cohesive video</li>
+                </ol>
+
+                <h3>Technical Implementation</h3>
+                <p>The system leverages multiple AI technologies:</p>
+                <ul>
+                    <li><strong>Computer Vision:</strong> For image-to-text conversion and analysis</li>
+                    <li><strong>Natural Language Processing:</strong> For text segmentation and bullet point generation</li>
+                    <li><strong>Vector Databases:</strong> For efficient similarity search of image descriptions</li>
+                    <li><strong>Text-to-Speech:</strong> For high-quality audio narration</li>
+                    <li><strong>Video Processing:</strong> For combining multimedia elements</li>
+                </ul>
+
+                <h3>Demo Video</h3>
+                <div class="video-placeholder">
+                    <p><em>Demo video coming soon - StudyStream MHacks 2024 presentation</em></p>
+                    <p>The video will showcase the complete workflow from text input to finished educational video with AI-generated visuals and narration.</p>
+                </div>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
