@@ -2,19 +2,19 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-22T14:48:02.521134",
+  "lastUpdated": "2025-12-22T14:49:13.400541",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Website for testing",
-      "updated_at": "2025-12-22T22:47:15Z",
+      "updated_at": "2025-12-22T22:48:07Z",
       "language": "HTML",
       "languages": {
         "HTML": 111302,
         "CSS": 23010,
-        "JavaScript": 20040,
+        "JavaScript": 20036,
         "Python": 14518,
         "Shell": 424
       },
@@ -23,7 +23,7 @@ const githubData = {
         "CSS",
         "JavaScript"
       ],
-      "relativeTime": "Just now"
+      "relativeTime": "1 minute ago"
     },
     {
       "name": "vaibhavgurunathan",
@@ -88,32 +88,15 @@ const githubData = {
       "description": "No description available",
       "updated_at": "2024-09-29T16:20:51Z",
       "language": null,
-      "languages": {
-        "C#": 26215956,
-        "C++": 776007,
-        "ShaderLab": 98036,
-        "Mathematica": 69546,
-        "HLSL": 21151,
-        "Objective-C++": 13913,
-        "C": 12454,
-        "Objective-C": 11252,
-        "GAP": 9254,
-        "GLSL": 4183,
-        "Python": 1414,
-        "CMake": 426
-      },
-      "topLanguages": [
-        "C#",
-        "C++",
-        "ShaderLab"
-      ],
+      "languages": {},
+      "topLanguages": [],
       "relativeTime": "14 months ago"
     }
   ],
   "commitStats": {
-    "lastDay": 22,
-    "lastMonth": 28,
-    "lastYear": 72
+    "lastDay": 30,
+    "lastMonth": 152,
+    "lastYear": 950
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
