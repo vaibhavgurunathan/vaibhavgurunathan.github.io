@@ -129,36 +129,97 @@ def fetch_languages_for_repo(username: str, repo_name: str) -> Dict[str, int]:
         print(f"Error fetching languages for {repo_name}: {e}")
         return {}
 
-def calculate_commit_stats(repos: List[Dict[str, Any]]) -> Dict[str, int]:
-    """Calculate commit statistics based on repository activity"""
+def fetch_commit_stats(username: str, repo_name: str) -> Dict[str, int]:
+    """Fetch actual commit statistics for a repository"""
+    base_url = f"https://api.github.com/repos/{username}/{repo_name}/commits"
+    headers = {
+        'Accept': 'application/vnd.github.v3+json',
+        'User-Agent': 'GitHub-Data-Fetcher/1.0'
+    }
+
     now = datetime.now()
     last_day = 0
     last_month = 0
     last_year = 0
 
+    try:
+        # Get commits from the last year (GitHub API limits to 100 per page)
+        since_date = (now - timedelta(days=365)).isoformat()
+        params = {
+            'since': since_date,
+            'per_page': 100  # Max per page
+        }
+
+        response = requests.get(base_url, params=params, headers=headers, timeout=30)
+        response.raise_for_status()
+        commits = response.json()
+
+        if not isinstance(commits, list):
+            commits = []
+
+        # Count commits in different time periods
+        for commit in commits:
+            try:
+                commit_date = datetime.fromisoformat(commit['commit']['committer']['date'].replace('Z', '+00:00'))
+                diff_days = (now - commit_date.replace(tzinfo=None)).days
+
+                if diff_days <= 1:
+                    last_day += 1
+                if diff_days <= 30:
+                    last_month += 1
+                if diff_days <= 365:
+                    last_year += 1
+            except:
+                continue
+
+    except requests.RequestException as e:
+        print(f"Error fetching commits for {repo_name}: {e}")
+        # Fallback to estimation if API fails
+        return None
+
+    return {
+        'lastDay': last_day,
+        'lastMonth': last_month,
+        'lastYear': last_year
+    }
+
+def calculate_commit_stats(repos: List[Dict[str, Any]]) -> Dict[str, int]:
+    """Calculate commit statistics based on actual GitHub data"""
+    total_last_day = 0
+    total_last_month = 0
+    total_last_year = 0
+
+    print("📊 Fetching real commit statistics...")
+
     for repo in repos:
         try:
-            updated_date = datetime.fromisoformat(repo['updated_at'].replace('Z', '+00:00'))
-            diff_ms = (now - updated_date.replace(tzinfo=None)).total_seconds() * 1000
-            diff_days = diff_ms / (1000 * 60 * 60 * 24)
+            commit_stats = fetch_commit_stats(GITHUB_USERNAME, repo['name'])
+            if commit_stats:
+                total_last_day += commit_stats['lastDay']
+                total_last_month += commit_stats['lastMonth']
+                total_last_year += commit_stats['lastYear']
+                print(f"  📈 {repo['name']}: {commit_stats['lastDay']} (24h), {commit_stats['lastMonth']} (30d), {commit_stats['lastYear']} (12m)")
+            else:
+                # Fallback to estimation if API fails for this repo
+                print(f"  ⚠️  Using estimation for {repo['name']}")
+                updated_date = datetime.fromisoformat(repo['updated_at'].replace('Z', '+00:00'))
+                diff_days = (datetime.now() - updated_date.replace(tzinfo=None)).days
+                activity_level = max(0, min(5, 6 - diff_days))
 
-            # Estimate commits based on repository activity
-            activity_level = max(0, min(5, 6 - diff_days))
-
-            if diff_days <= 1:
-                last_day += int(activity_level * 2)
-            if diff_days <= 30:
-                last_month += int(activity_level * 8)
-            if diff_days <= 365:
-                last_year += int(activity_level * 50)
-        except:
+                if diff_days <= 1:
+                    total_last_day += int(activity_level * 2)
+                if diff_days <= 30:
+                    total_last_month += int(activity_level * 8)
+                if diff_days <= 365:
+                    total_last_year += int(activity_level * 50)
+        except Exception as e:
+            print(f"Error processing commit stats for {repo.get('name', 'unknown')}: {e}")
             continue
 
-    # Ensure minimum realistic values
     return {
-        'lastDay': max(last_day, 0),
-        'lastMonth': max(last_month, 12),
-        'lastYear': max(last_year, 120)
+        'lastDay': max(total_last_day, 0),
+        'lastMonth': max(total_last_month, 0),
+        'lastYear': max(total_last_year, 0)
     }
 
 def process_repositories(repos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
