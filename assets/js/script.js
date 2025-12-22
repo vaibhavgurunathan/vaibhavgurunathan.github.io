@@ -1,3 +1,13 @@
+// Scroll Progress Bar functionality
+function updateScrollProgress() {
+    const scrollProgressBar = document.getElementById('scroll-progress-bar');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+    scrollProgressBar.style.width = scrollPercent + '%';
+}
+
 // Tab switching functionality
 document.addEventListener('DOMContentLoaded', function() {
     const tabButtons = document.querySelectorAll('.tab-button');
@@ -92,7 +102,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Start the typing sequence
     typeNextElement();
+
+    // Initialize scroll progress bar
+    updateScrollProgress();
 });
+
+// Add scroll event listener for progress bar
+window.addEventListener('scroll', updateScrollProgress);
 
 // Function to switch to home tab
 function switchToHome() {

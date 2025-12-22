@@ -19,6 +19,21 @@ body {
     padding: 0 20px;
 }
 
+/* Scroll Progress Bar */
+#scroll-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    transition: width 0.25s ease-out;
+    box-shadow: 0 0 10px rgba(102, 126, 234, 0.3);
+}
+
 /* Header */
 header {
     text-align: center;
