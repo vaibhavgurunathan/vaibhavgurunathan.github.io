@@ -22,7 +22,10 @@ from typing import Dict, List, Any
 
 # Configuration
 GITHUB_USERNAME = 'vaibhavgurunathan'
-OUTPUT_FILE = 'github-data.json'
+JS_FILE = 'assets/js/script.js'
+START_MARKER = '// GitHub Data - Updated by update-github-data.py script'
+END_MARKER = '// END AUTO-GENERATED SECTION'
+OUTPUT_FILE = 'github-data.json'  # Keep for backward compatibility
 
 # Language color mapping (subset of popular languages)
 LANGUAGE_COLORS = {
@@ -208,13 +211,50 @@ def run_git_command(command: List[str]) -> bool:
         print("Git command not found. Make sure git is installed.")
         return False
 
+def update_javascript_file(github_data: Dict[str, Any]) -> bool:
+    """Update the JavaScript file with new GitHub data"""
+    try:
+        # Read the current JavaScript file
+        with open(JS_FILE, 'r', encoding='utf-8') as f:
+            js_content = f.read()
+
+        # Find the markers
+        start_idx = js_content.find(START_MARKER)
+        end_idx = js_content.find(END_MARKER)
+
+        if start_idx == -1 or end_idx == -1:
+            print(f"❌ Could not find markers in {JS_FILE}")
+            return False
+
+        # Format the data as JavaScript object
+        js_data = json.dumps(github_data, indent=2, ensure_ascii=False)
+
+        # Create the replacement content
+        replacement = f'{START_MARKER}\n// DO NOT EDIT MANUALLY - This section is auto-generated\nconst githubData = {js_data};\n// {END_MARKER}'
+
+        # Replace the section
+        before_marker = js_content[:start_idx]
+        after_marker = js_content[end_idx + len(END_MARKER):]
+        new_content = before_marker + replacement + after_marker
+
+        # Write back to file
+        with open(JS_FILE, 'w', encoding='utf-8') as f:
+            f.write(new_content)
+
+        print(f"✅ Successfully updated {JS_FILE}")
+        return True
+
+    except Exception as e:
+        print(f"❌ Error updating JavaScript file: {e}")
+        return False
+
 def git_add_commit_push() -> bool:
-    """Add, commit, and push the updated GitHub data"""
+    """Add, commit, and push the updated JavaScript file"""
     print("📝 Updating git repository...")
 
     # Check if there are changes to commit
     try:
-        result = subprocess.run(['git', 'status', '--porcelain', OUTPUT_FILE],
+        result = subprocess.run(['git', 'status', '--porcelain', JS_FILE],
                               capture_output=True, text=True)
         if not result.stdout.strip():
             print("ℹ️  No changes to commit")
@@ -223,7 +263,7 @@ def git_add_commit_push() -> bool:
         pass
 
     # Add the file
-    if not run_git_command(['add', OUTPUT_FILE]):
+    if not run_git_command(['add', JS_FILE]):
         return False
 
     # Create commit message with timestamp
@@ -269,26 +309,31 @@ def main():
         'languageColors': LANGUAGE_COLORS
     }
 
-    # Save to JSON file
+    # Update JavaScript file with hardcoded data
+    print("📝 Updating JavaScript file with hardcoded data...")
+    if not update_javascript_file(github_data):
+        print("❌ Failed to update JavaScript file")
+        return False
+
+    print(f"✅ Successfully updated {JS_FILE}")
+    print(f"📊 Stats: {commit_stats['lastDay']} commits (24h), {commit_stats['lastMonth']} commits (30d), {commit_stats['lastYear']} commits (12m)")
+    print(f"📁 Processed {len(processed_repos)} repositories")
+
+    # Also save to JSON for backup/debugging
     try:
         with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
             json.dump(github_data, f, indent=2, ensure_ascii=False)
-
-        print(f"✅ Successfully saved GitHub data to {OUTPUT_FILE}")
-        print(f"📊 Stats: {commit_stats['lastDay']} commits (24h), {commit_stats['lastMonth']} commits (30d), {commit_stats['lastYear']} commits (12m)")
-        print(f"📁 Processed {len(processed_repos)} repositories")
-
-        # Git operations
-        print("\n" + "="*50)
-        if git_add_commit_push():
-            print("🎉 GitHub data update complete and deployed!")
-            return True
-        else:
-            print("⚠️  Data updated but git operations failed")
-            return False
-
+        print(f"💾 Backup saved to {OUTPUT_FILE}")
     except Exception as e:
-        print(f"❌ Error saving data to {OUTPUT_FILE}: {e}")
+        print(f"⚠️  Could not save backup JSON: {e}")
+
+    # Git operations
+    print("\n" + "="*50)
+    if git_add_commit_push():
+        print("🎉 GitHub data update complete and deployed!")
+        return True
+    else:
+        print("⚠️  Data updated but git operations failed")
         return False
 
 if __name__ == '__main__':

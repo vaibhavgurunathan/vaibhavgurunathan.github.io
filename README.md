@@ -81,25 +81,28 @@ A modern, interactive personal portfolio website built with HTML, CSS, and JavaS
 ## 🛠️ Customization Guide
 
 ### **GitHub Integration Setup**
-Your website now loads GitHub data **instantly** from your GitHub repository! No more waiting for scripts to run.
+Your website now uses **hardcoded GitHub data** with **zero API calls**! The data is embedded directly in your JavaScript file.
 
 #### **How It Works:**
-- Website loads `github-data.json` directly from your GitHub repo
-- Data loads instantly (no API calls or script delays)
-- Updates when you commit fresh data to your repository
+- **No API calls** - Data is hardcoded in `assets/js/script.js`
+- **Instant loading** - Loads immediately with page
+- **Perfect for GitHub Pages** - No CORS issues ever
+- **Updates via script** - Run locally to update hardcoded values
 
 #### **To Update Your GitHub Data:**
 
-**Option 1: Manual Update (Recommended)**
+**Manual Update:**
 ```bash
-# Run locally to fetch fresh data
+# Fetch fresh data and update hardcoded values
 python3 update-github-data.py
 
-# This automatically commits and pushes the updated data
-# Your website will show fresh data immediately
+# This automatically:
+# 1. Fetches latest GitHub data
+# 2. Updates hardcoded values in assets/js/script.js
+# 3. Commits and pushes changes
 ```
 
-**Option 2: Automated Updates**
+**Automated Updates:**
 ```bash
 # Add to ~/.bashrc or ~/.zshrc for auto-updates:
 if [ -f "update-github-data.py" ] && [ -f "index.html" ]; then
@@ -108,21 +111,19 @@ if [ -f "update-github-data.py" ] && [ -f "index.html" ]; then
 fi
 ```
 
-**Option 3: GitHub Actions (Advanced)**
-Set up automated daily updates using GitHub Actions to run the script automatically.
-
 #### **Customization:**
-To change the GitHub username, update both:
-- `update-github-data.py`: Change `GITHUB_USERNAME` variable
-- `assets/js/script.js`: Change the raw.githubusercontent.com URL
+To change the GitHub username:
+- Edit `update-github-data.py`: Change `GITHUB_USERNAME = 'your-username'`
+- Run the script to update with new username's data
 
 **Features included:**
-- ✅ **Instant loading** - No waiting for API calls
+- ✅ **Zero API calls** - Hardcoded data only
+- ✅ **Instant loading** - No network requests
+- ✅ **GitHub Pages perfect** - No CORS restrictions
 - ✅ Latest 6 repositories sorted by recent activity
 - ✅ Language badges with authentic GitHub colors
 - ✅ Commit activity statistics (24h, 30 days, 12 months)
 - ✅ Relative timestamps ("Updated 2 days ago")
-- ✅ Works perfectly on GitHub Pages (no CORS issues!)
 - ✅ Automatic git operations (add/commit/push)
 
 ### **Timeline Configuration**
