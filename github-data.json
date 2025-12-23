@@ -1,27 +1,42 @@
 {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-22T14:49:13.400541",
+  "lastUpdated": "2025-12-23T09:09:27.599408",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Website for testing",
-      "updated_at": "2025-12-22T22:48:07Z",
+      "updated_at": "2025-12-23T03:16:21Z",
       "language": "HTML",
       "languages": {
         "HTML": 111302,
         "CSS": 23010,
-        "JavaScript": 20036,
-        "Python": 14518,
-        "Shell": 424
+        "JavaScript": 19359,
+        "Python": 17947,
+        "Shell": 533
       },
       "topLanguages": [
         "HTML",
         "CSS",
         "JavaScript"
       ],
-      "relativeTime": "1 minute ago"
+      "relativeTime": "13 hours ago"
+    },
+    {
+      "name": "leetcode-submissions",
+      "full_name": "vaibhavgurunathan/leetcode-submissions",
+      "html_url": "https://github.com/vaibhavgurunathan/leetcode-submissions",
+      "description": "No description available",
+      "updated_at": "2025-12-22T22:56:41Z",
+      "language": "Python",
+      "languages": {
+        "Python": 274
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "18 hours ago"
     },
     {
       "name": "vaibhavgurunathan",
@@ -32,7 +47,7 @@
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "1 day ago"
+      "relativeTime": "2 days ago"
     },
     {
       "name": "CompilersForAI",
@@ -62,7 +77,7 @@
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago"
     },
     {
       "name": "studystream",
@@ -77,24 +92,13 @@
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "14 months ago"
-    },
-    {
-      "name": "Eduardo",
-      "full_name": "vaibhavgurunathan/Eduardo",
-      "html_url": "https://github.com/vaibhavgurunathan/Eduardo",
-      "description": "No description available",
-      "updated_at": "2024-09-29T16:20:51Z",
-      "language": null,
-      "languages": {},
-      "topLanguages": [],
-      "relativeTime": "14 months ago"
+      "relativeTime": "15 months ago"
     }
   ],
   "commitStats": {
-    "lastDay": 30,
-    "lastMonth": 152,
-    "lastYear": 950
+    "lastDay": 32,
+    "lastMonth": 40,
+    "lastYear": 84
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
