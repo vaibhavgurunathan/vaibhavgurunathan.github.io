@@ -404,10 +404,6 @@ function displayGitHubData() {
                     <span class="activity-number">${new Set(repos.flatMap(repo => repo.topLanguages || [])).size}</span>
                     <span class="activity-label">Programming Languages</span>
                 </div>
-                <div class="activity-stat">
-                    <span class="activity-number">${repos.length > 0 ? repos[0].relativeTime : 'Recently'}</span>
-                    <span class="activity-label">Last Updated</span>
-                </div>
             </div>
             <div class="data-timestamp">
                 <small style="color: #7f8c8d; font-size: 0.8em;">
