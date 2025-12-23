@@ -5,7 +5,7 @@
 # Check if we're in the website directory
 if [ -f "update-github-data.py" ] && [ -f "index.html" ]; then
     echo "🔄 Updating GitHub data for personal website..."
-    python3 update-github-data.py
+    python3  "/Users/vaibhavgurunathan/Desktop/Personal_Projects/Personal Website/update-github-data.py"
     echo "✅ GitHub data update complete!"
 fi
 
