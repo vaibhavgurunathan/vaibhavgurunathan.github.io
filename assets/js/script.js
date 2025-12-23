@@ -229,15 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contactLine.innerHTML = 'Contact me at gvaibhav@umich.edu or connect with me on <a href="https://www.linkedin.com/in/vaibhavgurunathan/" target="_blank" class="linkedin-link">LinkedIn</a>.';
         contactLine.style.opacity = '1';
 
-        // Show profile image after contact line appears
-        const profileImage = document.querySelector('.profile-image');
-        if (profileImage) {
-            setTimeout(() => {
-                profileImage.style.display = 'block';
-                profileImage.style.opacity = '0';
-                profileImage.style.animation = 'fadeIn 1s ease-in-out forwards';
-            }, 500);
-        }
+        // Profile image is already visible from the start - no animation needed
     };
 
     // Load GitHub data immediately (no loading messages)
