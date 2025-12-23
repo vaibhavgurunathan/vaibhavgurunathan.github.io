@@ -22,10 +22,10 @@ from typing import Dict, List, Any
 
 # Configuration
 GITHUB_USERNAME = 'vaibhavgurunathan'
-JS_FILE = 'assets/js/script.js'
+JS_FILE = os.path.abspath('assets/js/script.js')
 START_MARKER = '// GitHub Data - Updated by update-github-data.py script'
 END_MARKER = '// END AUTO-GENERATED SECTION'
-OUTPUT_FILE = 'github-data.json'  # Keep for backward compatibility
+OUTPUT_FILE = os.path.abspath('github-data.json')  # Keep for backward compatibility
 
 # Language color mapping (subset of popular languages)
 LANGUAGE_COLORS = {
@@ -345,7 +345,7 @@ def git_add_commit_push() -> bool:
 def check_last_update() -> bool:
     """Check if the script has already run today. Return True if should skip update."""
     today = datetime.now().strftime('%Y-%m-%d')
-    last_update_file = '.last_github_update'
+    last_update_file = os.path.abspath('.last_github_update')
 
     try:
         with open(last_update_file, 'r') as f:
