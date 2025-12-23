@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FPGA Calculator - Vaibhav Gurunathan</title>
+    <title>State Machine - 4 Function Calculator on FPGA Board - Vaibhav Gurunathan</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -16,65 +16,22 @@
 
     <main>
         <article class="project-detail">
-            <h2>4-Function Calculator on FPGA</h2>
-            <div class="project-meta">
-                <span class="tech-stack">Verilog • FPGA • Digital Logic • State Machines</span>
-            </div>
+            <h2>State Machine - 4 Function Calculator on FPGA Board</h2>
 
             <div class="project-content">
-                <h3>Overview</h3>
-                <p>A complete 4-function calculator implemented on an FPGA board using Verilog. This was the culminating project for my Computer Logic class at the University of Michigan, requiring deep understanding of digital systems and hardware programming.</p>
+<p>Last year, for a computer logic class, I was tasked with developing a four function calculator capable of handling 4 digits operations that would be demonstrated to instructors on a FPGA (Field-Programmable Gate Array) board. This was the final encapsulating project in the class and required the use of knowledge from all aspects of the class. </p>
 
-                <h3>Why This Project Was Challenging</h3>
-                <p>While implementing a calculator in a high-level programming language is straightforward, this project required implementing all operations at the bit level using digital logic gates and registers. No built-in arithmetic operations were allowed - everything had to be built from fundamental logic gates.</p>
+<p><strong>Why this Project Was So Hard? </strong></p>
 
-                <h3>Technical Implementation</h3>
-                <h4>Addition & Subtraction</h4>
-                <ul>
-                    <li><strong>Bit-level Operations:</strong> Custom addition circuit with carry propagation</li>
-                    <li><strong>Overflow Handling:</strong> Detection and display of overflow conditions</li>
-                    <li><strong>4-digit Support:</strong> Handling arithmetic across multiple digits</li>
-                </ul>
+<p>This project in a high level programming language is extremely simple. You can easily use the standard, built in operations for the code. Our code was not allowed to use these. Instead, we had to perform bit manipulations for all parts of the project. For example, for addition we needed to use two helper functions. The first was the add two numbers and add any remainder to overflow. The next was for combining this part for 4 digit operations and check if there was any total overflow. If there was overflow over 4 digits, the program should print and error on the led displays. For multiplication, we had to implement Booth's multiplication algorithm which was tough. </p>
 
-                <h4>Multiplication</h4>
-                <ul>
-                    <li><strong>Booth's Algorithm:</strong> Implementation of Booth's multiplication algorithm</li>
-                    <li><strong>Bit Manipulation:</strong> Complex bit shifting and addition operations</li>
-                    <li><strong>Efficiency Optimization:</strong> Minimizing gate usage and propagation delay</li>
-                </ul>
+<p><strong>Functionality of the Calculator</strong> </p>
 
-                <h4>Division</h4>
-                <ul>
-                    <li><strong>Custom Division Logic:</strong> Bit-by-bit division implementation</li>
-                    <li><strong>Remainder Calculation:</strong> Proper handling of division remainders</li>
-                </ul>
+<p>This project required the calculator to be able to add, subtract, multiply, and divide numbers together. It also had the capability to load and clear numbers, enhancing the calculator's usability and versatility. </p>
 
-                <h3>State Machine Design</h3>
-                <p>The calculator used a sophisticated state machine that:</p>
-                <ul>
-                    <li><strong>Clock Synchronization:</strong> All operations triggered by clock edges</li>
-                    <li><strong>Input Processing:</strong> Handling button presses and number entry</li>
-                    <li><strong>Operation Sequencing:</strong> Proper sequencing of arithmetic operations</li>
-                    <li><strong>Display Management:</strong> Updating LED displays with results</li>
-                </ul>
+<p><strong>State Machine Design</strong></p>
 
-                <h3>Hardware Constraints</h3>
-                <ul>
-                    <li><strong>FPGA Limitations:</strong> Working within the constraints of the development board</li>
-                    <li><strong>Resource Optimization:</strong> Efficient use of logic gates and registers</li>
-                    <li><strong>Timing Considerations:</strong> Ensuring proper signal propagation delays</li>
-                    <li><strong>Debug Challenges:</strong> Limited debugging tools compared to software development</li>
-                </ul>
-
-                <h3>Key Achievements</h3>
-                <p>This project demonstrated mastery of:</p>
-                <ul>
-                    <li>Digital logic design principles</li>
-                    <li>Hardware description languages (Verilog)</li>
-                    <li>State machine implementation</li>
-                    <li>Low-level computer architecture</li>
-                    <li>Problem-solving in constrained environments</li>
-                </ul>
+<p>This calculator was developed using a state machine design. This would check any changes at every clock edge. This would allow the algorithm to accurately check for any changes. </p>
             </div>
         </article>
     </main>

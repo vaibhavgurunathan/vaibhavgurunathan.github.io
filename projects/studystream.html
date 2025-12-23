@@ -16,47 +16,20 @@
 
     <main>
         <article class="project-detail">
-            <h2>StudyStream - MHacks 2024</h2>
-            <div class="project-meta">
-                <span class="tech-stack">Python • Streamlit • ChromaDB • Gemini • MoviePy</span>
-            </div>
+            <h2>StudyStream</h2>
 
             <div class="project-content">
-                <h3>Inspiration</h3>
-                <p>A couple days ago, I really needed to study for my class but I didn't understand lecture at all and I didn't have the energy or focus to read the textbook. I thought that there has to be a better system than just trying to spend more time understanding the textbook. I reread each section about three times before I gave up and moved on to my next class.</p>
+<p>StudyStream was my hackathon submission for MHacks 2024. </p>
 
-                <h3>What it does</h3>
-                <p>Studystream works by studying your notes for you, finding the most relevant pieces for your learning. It then scours the internet to find the best images and graphics to help explain the concepts to you. This creates tailored videos however long you need them.</p>
+<p>The frontend takes in an input either as a file or as copy/pasted<br>text and a length for the video. It then sends the text and type of input to the backend which does all the heavy lifting. First it splits up the text to dedicate <br>a section to each concept based on the length of the video requested. Then it finds the best image for each concept. It scrapes google images and can compare as many images as you want. Then it finds which image is most relevant to the text. To do this, it converts the image to text with a computer vision model. Then it puts all these descriptions in a vector db and then queries the vector db to find the closest match to the request. After it has the correct image and description, it uses all this input to generate the audio with a text to speech conversion. It also creates bullet points to concisely communicate the material. It combines the images and text and stitches this<br>with the audio to create a video. It does this for each chunk and finally combines everything together for you final video. </p>
 
-                <h3>How we built it</h3>
-                <p>The frontend takes in an input either as a file or as copy/pasted text and a length for the video. It then sends the text and type of input to the backend which does all the heavy lifting. First it splits up the text to dedicate a section to each concept based on the length of the video requested. Then it finds the best image for each concept. It scrapes google images and can compare as many images as you want. Then it finds which image is most relevant to the text. To do this, it converts the image to text with a computer vision model. Then it puts all these descriptions in a vector db and then queries the vector db to find the closest match to the request. After it has the correct image and description, it uses all this input to generate the audio with a text to speech conversion. It also creates bullet points to concisely communicate the material. It combines the images and text and stitches this with the audio to create a video. It does this for each chunk and finally combines everything together for your final video.</p>
+<p>Here is a small demo video for the product: </p>
 
-                <h3>Challenges we ran into</h3>
-                <p>Moviepy library was the only way to merge images/videos and it was super difficult to work with. Chromadb is extremely confusing to use with streamlit and I had a hard time getting them to be compatible even though there is documentation for this.</p>
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=7_QqKZyKKbo
+</div></figure>
 
-                <h3>Accomplishments that we're proud of</h3>
-                <p>I got a working product done within 24 hours. I am super proud of the fact that this product works and that I was able to get this done relatively quickly. I am probably going to keep tuning it and then use it for my class.</p>
-
-                <h3>What we learned</h3>
-                <p>I learned a lot about how to interact the frontend with the backend, how to use vector dbs, different techniques to compare images to text, etc.</p>
-
-                <h3>What's next for StudyStream</h3>
-                <p>Tune the model. Make the voice sound like a real person. Make the images higher quality. Give the frontend LLM vector db context.</p>
-
-                <h3>Built With</h3>
-                <ul>
-                    <li>Beautiful-Soup</li>
-                    <li>ChromaDB</li>
-                    <li>Gemini</li>
-                    <li>gTTS</li>
-                    <li>MoviePy</li>
-                    <li>Pillow</li>
-                    <li>Pygame</li>
-                    <li>pyt2s</li>
-                    <li>Python</li>
-                    <li>Streamlit</li>
-                    <li>Transformers</li>
-                </ul>
+<p>I will edit this to make it look much better when I get the chance. </p>
             </div>
         </article>
     </main>
