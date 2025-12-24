@@ -86,12 +86,13 @@ def format_relative_time(date_string: str) -> str:
         return "Recently"
 
 def fetch_github_repos(username: str) -> List[Dict[str, Any]]:
-    """Fetch repositories from GitHub API"""
+    """Fetch owned repositories from GitHub API"""
     url = f"https://api.github.com/users/{username}/repos"
     params = {
         'sort': 'updated',
         'direction': 'desc',
-        'per_page': 10  # Get more repos for better data
+        'per_page': 20,  # Get more repos to include pinned/forked ones
+        'type': 'owner'  # Include owned repos and forks
     }
 
     headers = {
@@ -107,10 +108,67 @@ def fetch_github_repos(username: str) -> List[Dict[str, Any]]:
         # Sort by updated date (most recent first)
         repos.sort(key=lambda x: x.get('updated_at', ''), reverse=True)
 
-        return repos[:6]  # Return top 6 most recently updated
+        # Return top 10 to include pinned repos
+        return repos[:10]
     except requests.RequestException as e:
         print(f"Error fetching repositories: {e}")
         return []
+
+# Removed fetch_starred_repos function - user doesn't want starred repos
+
+def fetch_contributed_repos(username: str) -> List[Dict[str, Any]]:
+    """Fetch repositories the user has contributed to (but doesn't own)"""
+    # This is a bit tricky - we'll try to get repos from user's events
+    # GitHub API doesn't have a direct "contributed repos" endpoint
+    # We'll try to infer from recent activity and commits
+
+    contributed_repos = []
+
+    try:
+        # Get user's recent events to find repos they've contributed to
+        events_url = f"https://api.github.com/users/{username}/events"
+        params = {
+            'per_page': 50  # Get more events to find contributions
+        }
+
+        headers = {
+            'Accept': 'application/vnd.github.v3+json',
+            'User-Agent': 'GitHub-Data-Fetcher/1.0'
+        }
+
+        response = requests.get(events_url, params=params, headers=headers, timeout=30)
+        response.raise_for_status()
+        events = response.json()
+
+        # Extract unique repos from push events and pull request events
+        repo_urls = set()
+        for event in events:
+            if event['type'] in ['PushEvent', 'PullRequestEvent', 'IssuesEvent']:
+                repo_full_name = event['repo']['name']
+                # Only include repos the user doesn't own
+                if not repo_full_name.startswith(f"{username}/"):
+                    repo_urls.add(repo_full_name)
+
+        # Fetch details for these repos (limit to avoid too many API calls)
+        for repo_full_name in list(repo_urls)[:3]:  # Limit to 3 contributed repos
+            try:
+                repo_url = f"https://api.github.com/repos/{repo_full_name}"
+                repo_response = requests.get(repo_url, headers=headers, timeout=30)
+                repo_response.raise_for_status()
+                repo_data = repo_response.json()
+
+                # Mark as contributed
+                repo_data['_is_contributed'] = True
+                contributed_repos.append(repo_data)
+
+            except requests.RequestException as e:
+                print(f"Error fetching contributed repo {repo_full_name}: {e}")
+                continue
+
+    except requests.RequestException as e:
+        print(f"Error fetching user events: {e}")
+
+    return contributed_repos
 
 def fetch_languages_for_repo(username: str, repo_name: str) -> Dict[str, int]:
     """Fetch language data for a specific repository"""
@@ -228,8 +286,15 @@ def process_repositories(repos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
     for repo in repos:
         try:
+            # For starred repos, use the actual owner from full_name
+            if repo.get('_is_starred'):
+                owner, repo_name = repo['full_name'].split('/', 1)
+            else:
+                owner = GITHUB_USERNAME
+                repo_name = repo['name']
+
             # Fetch language data
-            languages = fetch_languages_for_repo(GITHUB_USERNAME, repo['name'])
+            languages = fetch_languages_for_repo(owner, repo_name)
 
             # Get top 3 languages by bytes
             if languages:
@@ -237,6 +302,10 @@ def process_repositories(repos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 top_languages = [lang for lang, _ in sorted_languages[:3]]
             else:
                 top_languages = []
+
+            # Check if this is a pinned repository based on user's README
+            pinned_repos = ['AmazonPrimeGPT', 'CompilersForAI', 'Eduardo', 'studystream', 'wordle-rl']
+            is_pinned = repo['name'] in pinned_repos
 
             # Format repository data for website
             processed_repo = {
@@ -248,7 +317,10 @@ def process_repositories(repos: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
                 'language': repo.get('language'),
                 'languages': languages,
                 'topLanguages': top_languages,
-                'relativeTime': format_relative_time(repo['updated_at'])
+                'relativeTime': format_relative_time(repo['updated_at']),
+                'isStarred': repo.get('_is_starred', False),
+                'isContributed': repo.get('_is_contributed', False),
+                'isPinned': is_pinned
             }
 
             processed_repos.append(processed_repo)
@@ -377,20 +449,28 @@ def main():
     if check_last_update():
         return True
 
-    # Fetch repositories
-    repos = fetch_github_repos(GITHUB_USERNAME)
+    # Fetch owned repositories
+    owned_repos = fetch_github_repos(GITHUB_USERNAME)
 
-    if not repos:
-        print("❌ No repositories found or error fetching data")
+    if not owned_repos:
+        print("❌ No owned repositories found or error fetching data")
         return False
 
-    print(f"📁 Found {len(repos)} repositories")
+    print(f"📁 Found {len(owned_repos)} owned repositories")
+
+    # Fetch contributed repositories
+    contributed_repos = fetch_contributed_repos(GITHUB_USERNAME)
+    print(f"🤝 Found {len(contributed_repos)} contributed repositories")
+
+    # Combine owned and contributed repos (owned first, then contributed)
+    all_repos = owned_repos + contributed_repos
+    print(f"🔄 Processing {len(all_repos)} total repositories (owned + contributed)")
 
     # Process repositories with language data
-    processed_repos = process_repositories(repos)
+    processed_repos = process_repositories(all_repos)
 
-    # Calculate commit statistics
-    commit_stats = calculate_commit_stats(processed_repos)
+    # Calculate commit statistics (only for owned repos)
+    commit_stats = calculate_commit_stats(owned_repos)
 
     # Prepare data for website
     github_data = {
