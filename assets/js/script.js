@@ -2,43 +2,45 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-23T09:09:27.599408",
+  "lastUpdated": "2025-12-23T23:53:00.136159",
   "repositories": [
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Website for testing",
-      "updated_at": "2025-12-23T03:16:21Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 111302,
-        "CSS": 23010,
-        "JavaScript": 19359,
-        "Python": 17947,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ],
-      "relativeTime": "13 hours ago"
-    },
     {
       "name": "leetcode-submissions",
       "full_name": "vaibhavgurunathan/leetcode-submissions",
       "html_url": "https://github.com/vaibhavgurunathan/leetcode-submissions",
       "description": "No description available",
-      "updated_at": "2025-12-22T22:56:41Z",
+      "updated_at": "2025-12-23T22:30:37Z",
       "language": "Python",
       "languages": {
-        "Python": 274
+        "Python": 1700
       },
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "18 hours ago"
+      "relativeTime": "9 hours ago",
+      "isStarred": false
+    },
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Website for testing",
+      "updated_at": "2025-12-23T18:05:30Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 101136,
+        "CSS": 23010,
+        "Python": 22609,
+        "JavaScript": 19203,
+        "Shell": 533
+      },
+      "topLanguages": [
+        "HTML",
+        "CSS",
+        "Python"
+      ],
+      "relativeTime": "13 hours ago",
+      "isStarred": false
     },
     {
       "name": "vaibhavgurunathan",
@@ -49,7 +51,8 @@ const githubData = {
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago",
+      "isStarred": false
     },
     {
       "name": "CompilersForAI",
@@ -64,7 +67,8 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "2 days ago"
+      "relativeTime": "3 days ago",
+      "isStarred": false
     },
     {
       "name": "wordle-rl",
@@ -79,7 +83,8 @@ const githubData = {
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "3 days ago"
+      "relativeTime": "4 days ago",
+      "isStarred": false
     },
     {
       "name": "studystream",
@@ -94,13 +99,68 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "15 months ago"
+      "relativeTime": "15 months ago",
+      "isStarred": false
+    },
+    {
+      "name": "awesome-deep-learning-papers",
+      "full_name": "terryum/awesome-deep-learning-papers",
+      "html_url": "https://github.com/terryum/awesome-deep-learning-papers",
+      "description": "The most cited deep learning papers",
+      "updated_at": "2025-12-24T07:50:09Z",
+      "language": "TeX",
+      "languages": {
+        "TeX": 30348,
+        "Python": 5084
+      },
+      "topLanguages": [
+        "TeX",
+        "Python"
+      ],
+      "relativeTime": "2 minutes ago",
+      "isStarred": true
+    },
+    {
+      "name": "annotated_deep_learning_paper_implementations",
+      "full_name": "labmlai/annotated_deep_learning_paper_implementations",
+      "html_url": "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
+      "description": "🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, sophia, ...), gans(cyclegan, stylegan2, ...), 🎮 reinforcement learning (ppo, dqn), capsnet, distillation, ... 🧠",
+      "updated_at": "2025-12-24T07:49:40Z",
+      "language": "Python",
+      "languages": {
+        "Python": 1388112,
+        "Jupyter Notebook": 158659,
+        "Makefile": 1984
+      },
+      "topLanguages": [
+        "Python",
+        "Jupyter Notebook",
+        "Makefile"
+      ],
+      "relativeTime": "3 minutes ago",
+      "isStarred": true
+    },
+    {
+      "name": "Deep-Learning-Papers-Reading-Roadmap",
+      "full_name": "floodsung/Deep-Learning-Papers-Reading-Roadmap",
+      "html_url": "https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap",
+      "description": "Deep Learning papers reading roadmap for anyone who are eager to learn this amazing tech!",
+      "updated_at": "2025-12-24T07:20:25Z",
+      "language": "Python",
+      "languages": {
+        "Python": 4593
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "32 minutes ago",
+      "isStarred": true
     }
   ],
   "commitStats": {
-    "lastDay": 32,
-    "lastMonth": 40,
-    "lastYear": 84
+    "lastDay": 40,
+    "lastMonth": 49,
+    "lastYear": 93
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
@@ -348,11 +408,16 @@ function displayGitHubData() {
 
     reposContainer.innerHTML = repos.map(repo => {
         const topLanguages = repo.topLanguages || [];
+        const isStarred = repo.isStarred || false;
+        const starIcon = isStarred ? '⭐ ' : '';
+        const starredClass = isStarred ? 'starred-repo' : '';
+
         return `
-            <div class="github-repo-card">
+            <div class="github-repo-card ${starredClass}">
                 <div class="github-repo-header">
                     <div class="github-repo-title">
-                        <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                        <a href="${repo.html_url}" target="_blank">${starIcon}${repo.name}</a>
+                        ${isStarred ? '<span class="starred-badge">Starred</span>' : ''}
                     </div>
                     <div class="github-repo-updated">
                         Updated ${repo.relativeTime}
