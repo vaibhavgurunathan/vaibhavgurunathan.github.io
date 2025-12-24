@@ -2,118 +2,14 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-23T23:58:20.378132",
+  "lastUpdated": "2025-12-24T11:44:11.883421",
   "repositories": [
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Website for testing",
-      "updated_at": "2025-12-24T07:56:45Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 101136,
-        "CSS": 23010,
-        "Python": 22609,
-        "JavaScript": 19872,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "CSS",
-        "Python"
-      ],
-      "relativeTime": "1 minute ago",
-      "isStarred": false,
-      "isContributed": false
-    },
-    {
-      "name": "leetcode-submissions",
-      "full_name": "vaibhavgurunathan/leetcode-submissions",
-      "html_url": "https://github.com/vaibhavgurunathan/leetcode-submissions",
-      "description": "No description available",
-      "updated_at": "2025-12-23T22:30:37Z",
-      "language": "Python",
-      "languages": {
-        "Python": 1700
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "9 hours ago",
-      "isStarred": false,
-      "isContributed": false
-    },
-    {
-      "name": "vaibhavgurunathan",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
-      "description": "No description available",
-      "updated_at": "2025-12-21T03:41:18Z",
-      "language": null,
-      "languages": {},
-      "topLanguages": [],
-      "relativeTime": "3 days ago",
-      "isStarred": false,
-      "isContributed": false
-    },
-    {
-      "name": "CompilersForAI",
-      "full_name": "vaibhavgurunathan/CompilersForAI",
-      "html_url": "https://github.com/vaibhavgurunathan/CompilersForAI",
-      "description": "No description available",
-      "updated_at": "2025-12-20T17:44:12Z",
-      "language": "Python",
-      "languages": {
-        "Python": 9119
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "3 days ago",
-      "isStarred": false,
-      "isContributed": false
-    },
-    {
-      "name": "wordle-rl",
-      "full_name": "vaibhavgurunathan/wordle-rl",
-      "html_url": "https://github.com/vaibhavgurunathan/wordle-rl",
-      "description": "No description available",
-      "updated_at": "2025-12-20T04:53:12Z",
-      "language": "Jupyter Notebook",
-      "languages": {
-        "Jupyter Notebook": 13418
-      },
-      "topLanguages": [
-        "Jupyter Notebook"
-      ],
-      "relativeTime": "4 days ago",
-      "isStarred": false,
-      "isContributed": false
-    },
-    {
-      "name": "studystream",
-      "full_name": "vaibhavgurunathan/studystream",
-      "html_url": "https://github.com/vaibhavgurunathan/studystream",
-      "description": "mhacks 2024 submission",
-      "updated_at": "2024-09-29T16:28:08Z",
-      "language": "Python",
-      "languages": {
-        "Python": 16227
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "15 months ago",
-      "isStarred": false,
-      "isContributed": false
-    },
     {
       "name": "Eduardo",
       "full_name": "vaibhavgurunathan/Eduardo",
       "html_url": "https://github.com/vaibhavgurunathan/Eduardo",
-      "description": "No description available",
-      "updated_at": "2024-09-29T16:20:51Z",
+      "description": "AR Learning Project (Google Hackathon)",
+      "updated_at": "2025-12-24T08:04:35Z",
       "language": null,
       "languages": {
         "C#": 26215956,
@@ -134,9 +30,120 @@ const githubData = {
         "C++",
         "ShaderLab"
       ],
+      "relativeTime": "11 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": true
+    },
+    {
+      "name": "wordle-rl",
+      "full_name": "vaibhavgurunathan/wordle-rl",
+      "html_url": "https://github.com/vaibhavgurunathan/wordle-rl",
+      "description": "Fun Project to Practice Building RL from Scratch",
+      "updated_at": "2025-12-24T08:04:13Z",
+      "language": "Jupyter Notebook",
+      "languages": {
+        "Jupyter Notebook": 13418
+      },
+      "topLanguages": [
+        "Jupyter Notebook"
+      ],
+      "relativeTime": "11 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": true
+    },
+    {
+      "name": "CompilersForAI",
+      "full_name": "vaibhavgurunathan/CompilersForAI",
+      "html_url": "https://github.com/vaibhavgurunathan/CompilersForAI",
+      "description": "AI Compilers Class (CSE 598)",
+      "updated_at": "2025-12-24T08:03:58Z",
+      "language": "Python",
+      "languages": {
+        "Python": 9119
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "11 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": true
+    },
+    {
+      "name": "vaibhavgurunathan",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
+      "description": "Just the README file. ",
+      "updated_at": "2025-12-24T08:03:41Z",
+      "language": null,
+      "languages": {},
+      "topLanguages": [],
+      "relativeTime": "11 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
+    {
+      "name": "leetcode-submissions",
+      "full_name": "vaibhavgurunathan/leetcode-submissions",
+      "html_url": "https://github.com/vaibhavgurunathan/leetcode-submissions",
+      "description": "Some of the solutions for leetcode to keep better track of my progress. ",
+      "updated_at": "2025-12-24T08:03:11Z",
+      "language": "Python",
+      "languages": {
+        "Python": 1700
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "11 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Personal Website ",
+      "updated_at": "2025-12-24T08:02:41Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 101136,
+        "CSS": 23010,
+        "Python": 22609,
+        "JavaScript": 21365,
+        "Shell": 533
+      },
+      "topLanguages": [
+        "HTML",
+        "CSS",
+        "Python"
+      ],
+      "relativeTime": "11 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
+    {
+      "name": "studystream",
+      "full_name": "vaibhavgurunathan/studystream",
+      "html_url": "https://github.com/vaibhavgurunathan/studystream",
+      "description": "mhacks 2024 submission",
+      "updated_at": "2024-09-29T16:28:08Z",
+      "language": "Python",
+      "languages": {
+        "Python": 16227
+      },
+      "topLanguages": [
+        "Python"
+      ],
       "relativeTime": "15 months ago",
       "isStarred": false,
-      "isContributed": false
+      "isContributed": false,
+      "isPinned": true
     },
     {
       "name": "AmazonPrimeGPT",
@@ -157,13 +164,14 @@ const githubData = {
       ],
       "relativeTime": "15 months ago",
       "isStarred": false,
-      "isContributed": false
+      "isContributed": false,
+      "isPinned": true
     }
   ],
   "commitStats": {
-    "lastDay": 46,
-    "lastMonth": 157,
-    "lastYear": 787
+    "lastDay": 43,
+    "lastMonth": 53,
+    "lastYear": 97
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
@@ -461,16 +469,6 @@ function displayGitHubData() {
                         <div class="stat-number">${commitStats.lastYear}</div>
                         <div class="stat-label">Last 12 months</div>
                     </div>
-                </div>
-            </div>
-            <div class="activity-summary">
-                <div class="activity-stat">
-                    <span class="activity-number">${repos.length}</span>
-                    <span class="activity-label">Active Repositories</span>
-                </div>
-                <div class="activity-stat">
-                    <span class="activity-number">${new Set(repos.flatMap(repo => repo.topLanguages || [])).size}</span>
-                    <span class="activity-label">Programming Languages</span>
                 </div>
             </div>
             <div class="data-timestamp">
