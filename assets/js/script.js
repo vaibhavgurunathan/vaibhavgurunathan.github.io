@@ -2,20 +2,20 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-23T23:54:41.819299",
+  "lastUpdated": "2025-12-23T23:56:40.048045",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Website for testing",
-      "updated_at": "2025-12-24T07:53:05Z",
+      "updated_at": "2025-12-24T07:54:46Z",
       "language": "HTML",
       "languages": {
         "HTML": 101136,
         "CSS": 23010,
         "Python": 22609,
-        "JavaScript": 21669,
+        "JavaScript": 22275,
         "Shell": 533
       },
       "topLanguages": [
@@ -107,69 +107,12 @@ const githubData = {
       "relativeTime": "15 months ago",
       "isStarred": false,
       "isContributed": false
-    },
-    {
-      "name": "awesome-deep-learning-papers",
-      "full_name": "terryum/awesome-deep-learning-papers",
-      "html_url": "https://github.com/terryum/awesome-deep-learning-papers",
-      "description": "The most cited deep learning papers",
-      "updated_at": "2025-12-24T07:50:09Z",
-      "language": "TeX",
-      "languages": {
-        "TeX": 30348,
-        "Python": 5084
-      },
-      "topLanguages": [
-        "TeX",
-        "Python"
-      ],
-      "relativeTime": "4 minutes ago",
-      "isStarred": true,
-      "isContributed": false
-    },
-    {
-      "name": "annotated_deep_learning_paper_implementations",
-      "full_name": "labmlai/annotated_deep_learning_paper_implementations",
-      "html_url": "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
-      "description": "🧑‍🏫 60+ Implementations/tutorials of deep learning papers with side-by-side notes 📝; including transformers (original, xl, switch, feedback, vit, ...), optimizers (adam, adabelief, sophia, ...), gans(cyclegan, stylegan2, ...), 🎮 reinforcement learning (ppo, dqn), capsnet, distillation, ... 🧠",
-      "updated_at": "2025-12-24T07:49:40Z",
-      "language": "Python",
-      "languages": {
-        "Python": 1388112,
-        "Jupyter Notebook": 158659,
-        "Makefile": 1984
-      },
-      "topLanguages": [
-        "Python",
-        "Jupyter Notebook",
-        "Makefile"
-      ],
-      "relativeTime": "4 minutes ago",
-      "isStarred": true,
-      "isContributed": false
-    },
-    {
-      "name": "Deep-Learning-Papers-Reading-Roadmap",
-      "full_name": "floodsung/Deep-Learning-Papers-Reading-Roadmap",
-      "html_url": "https://github.com/floodsung/Deep-Learning-Papers-Reading-Roadmap",
-      "description": "Deep Learning papers reading roadmap for anyone who are eager to learn this amazing tech!",
-      "updated_at": "2025-12-24T07:20:25Z",
-      "language": "Python",
-      "languages": {
-        "Python": 4593
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "34 minutes ago",
-      "isStarred": true,
-      "isContributed": false
     }
   ],
   "commitStats": {
-    "lastDay": 41,
-    "lastMonth": 50,
-    "lastYear": 94
+    "lastDay": 42,
+    "lastMonth": 51,
+    "lastYear": 95
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
@@ -417,19 +360,15 @@ function displayGitHubData() {
 
     reposContainer.innerHTML = repos.map(repo => {
         const topLanguages = repo.topLanguages || [];
-        const isStarred = repo.isStarred || false;
         const isContributed = repo.isContributed || false;
-        const starIcon = isStarred ? '⭐ ' : '';
         const contributionIcon = isContributed ? '🤝 ' : '';
-        const starredClass = isStarred ? 'starred-repo' : '';
         const contributedClass = isContributed ? 'contributed-repo' : '';
 
         return `
-            <div class="github-repo-card ${starredClass} ${contributedClass}">
+            <div class="github-repo-card ${contributedClass}">
                 <div class="github-repo-header">
                     <div class="github-repo-title">
-                        <a href="${repo.html_url}" target="_blank">${starIcon}${contributionIcon}${repo.name}</a>
-                        ${isStarred ? '<span class="starred-badge">Starred</span>' : ''}
+                        <a href="${repo.html_url}" target="_blank">${contributionIcon}${repo.name}</a>
                         ${isContributed ? '<span class="contributed-badge">Contributed</span>' : ''}
                     </div>
                     <div class="github-repo-updated">
