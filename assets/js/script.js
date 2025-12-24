@@ -2,20 +2,20 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-23T23:56:40.048045",
+  "lastUpdated": "2025-12-23T23:58:20.378132",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Website for testing",
-      "updated_at": "2025-12-24T07:54:46Z",
+      "updated_at": "2025-12-24T07:56:45Z",
       "language": "HTML",
       "languages": {
         "HTML": 101136,
         "CSS": 23010,
         "Python": 22609,
-        "JavaScript": 22275,
+        "JavaScript": 19872,
         "Shell": 533
       },
       "topLanguages": [
@@ -107,12 +107,63 @@ const githubData = {
       "relativeTime": "15 months ago",
       "isStarred": false,
       "isContributed": false
+    },
+    {
+      "name": "Eduardo",
+      "full_name": "vaibhavgurunathan/Eduardo",
+      "html_url": "https://github.com/vaibhavgurunathan/Eduardo",
+      "description": "No description available",
+      "updated_at": "2024-09-29T16:20:51Z",
+      "language": null,
+      "languages": {
+        "C#": 26215956,
+        "C++": 776007,
+        "ShaderLab": 98036,
+        "Mathematica": 69546,
+        "HLSL": 21151,
+        "Objective-C++": 13913,
+        "C": 12454,
+        "Objective-C": 11252,
+        "GAP": 9254,
+        "GLSL": 4183,
+        "Python": 1414,
+        "CMake": 426
+      },
+      "topLanguages": [
+        "C#",
+        "C++",
+        "ShaderLab"
+      ],
+      "relativeTime": "15 months ago",
+      "isStarred": false,
+      "isContributed": false
+    },
+    {
+      "name": "AmazonPrimeGPT",
+      "full_name": "vaibhavgurunathan/AmazonPrimeGPT",
+      "html_url": "https://github.com/vaibhavgurunathan/AmazonPrimeGPT",
+      "description": "This is an Amazon Prime chatbot & chrome extension capable of scouring through thousands of customer reviews/FAQs and answering any questions about an online product.",
+      "updated_at": "2024-09-29T16:20:00Z",
+      "language": null,
+      "languages": {
+        "Python": 19037,
+        "JavaScript": 5385,
+        "HTML": 2552
+      },
+      "topLanguages": [
+        "Python",
+        "JavaScript",
+        "HTML"
+      ],
+      "relativeTime": "15 months ago",
+      "isStarred": false,
+      "isContributed": false
     }
   ],
   "commitStats": {
-    "lastDay": 42,
-    "lastMonth": 51,
-    "lastYear": 95
+    "lastDay": 46,
+    "lastMonth": 157,
+    "lastYear": 787
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
