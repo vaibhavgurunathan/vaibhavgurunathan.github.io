@@ -2,14 +2,14 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-24T15:18:10.143528",
+  "lastUpdated": "2025-12-24T15:20:24.090584",
   "repositories": [
     {
       "name": "nba_embeddings",
       "full_name": "vaibhavgurunathan/nba_embeddings",
       "html_url": "https://github.com/vaibhavgurunathan/nba_embeddings",
-      "description": "No description available",
-      "updated_at": "2025-12-24T23:16:44Z",
+      "description": "Playing around with generating embeddings for NBA players. Will use this code for future projects. ",
+      "updated_at": "2025-12-24T23:19:54Z",
       "language": "Python",
       "languages": {
         "Python": 68701
@@ -17,7 +17,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "1 minute ago",
+      "relativeTime": "Just now",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -26,8 +26,8 @@ const githubData = {
       "name": "gmail-agent",
       "full_name": "vaibhavgurunathan/gmail-agent",
       "html_url": "https://github.com/vaibhavgurunathan/gmail-agent",
-      "description": "No description available",
-      "updated_at": "2025-12-24T23:14:34Z",
+      "description": "AI Agent That Handles Everything In Your Inbox",
+      "updated_at": "2025-12-24T23:19:22Z",
       "language": "Python",
       "languages": {
         "Python": 20144,
@@ -37,7 +37,7 @@ const githubData = {
         "Python",
         "Jupyter Notebook"
       ],
-      "relativeTime": "3 minutes ago",
+      "relativeTime": "Just now",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -47,13 +47,13 @@ const githubData = {
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2025-12-24T22:13:57Z",
+      "updated_at": "2025-12-24T23:18:15Z",
       "language": "HTML",
       "languages": {
         "HTML": 101137,
         "Python": 26097,
         "CSS": 24397,
-        "JavaScript": 21106,
+        "JavaScript": 21609,
         "Shell": 533
       },
       "topLanguages": [
@@ -61,7 +61,7 @@ const githubData = {
         "Python",
         "CSS"
       ],
-      "relativeTime": "1 hour ago",
+      "relativeTime": "2 minutes ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -189,9 +189,9 @@ const githubData = {
     }
   ],
   "commitStats": {
-    "lastDay": 45,
-    "lastMonth": 55,
-    "lastYear": 99
+    "lastDay": 46,
+    "lastMonth": 56,
+    "lastYear": 100
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
