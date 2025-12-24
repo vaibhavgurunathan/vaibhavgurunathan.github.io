@@ -2,8 +2,31 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-23T23:53:00.136159",
+  "lastUpdated": "2025-12-23T23:54:41.819299",
   "repositories": [
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Website for testing",
+      "updated_at": "2025-12-24T07:53:05Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 101136,
+        "CSS": 23010,
+        "Python": 22609,
+        "JavaScript": 21669,
+        "Shell": 533
+      },
+      "topLanguages": [
+        "HTML",
+        "CSS",
+        "Python"
+      ],
+      "relativeTime": "1 minute ago",
+      "isStarred": false,
+      "isContributed": false
+    },
     {
       "name": "leetcode-submissions",
       "full_name": "vaibhavgurunathan/leetcode-submissions",
@@ -18,29 +41,8 @@ const githubData = {
         "Python"
       ],
       "relativeTime": "9 hours ago",
-      "isStarred": false
-    },
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Website for testing",
-      "updated_at": "2025-12-23T18:05:30Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 101136,
-        "CSS": 23010,
-        "Python": 22609,
-        "JavaScript": 19203,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "CSS",
-        "Python"
-      ],
-      "relativeTime": "13 hours ago",
-      "isStarred": false
+      "isStarred": false,
+      "isContributed": false
     },
     {
       "name": "vaibhavgurunathan",
@@ -52,7 +54,8 @@ const githubData = {
       "languages": {},
       "topLanguages": [],
       "relativeTime": "3 days ago",
-      "isStarred": false
+      "isStarred": false,
+      "isContributed": false
     },
     {
       "name": "CompilersForAI",
@@ -68,7 +71,8 @@ const githubData = {
         "Python"
       ],
       "relativeTime": "3 days ago",
-      "isStarred": false
+      "isStarred": false,
+      "isContributed": false
     },
     {
       "name": "wordle-rl",
@@ -84,7 +88,8 @@ const githubData = {
         "Jupyter Notebook"
       ],
       "relativeTime": "4 days ago",
-      "isStarred": false
+      "isStarred": false,
+      "isContributed": false
     },
     {
       "name": "studystream",
@@ -100,7 +105,8 @@ const githubData = {
         "Python"
       ],
       "relativeTime": "15 months ago",
-      "isStarred": false
+      "isStarred": false,
+      "isContributed": false
     },
     {
       "name": "awesome-deep-learning-papers",
@@ -117,8 +123,9 @@ const githubData = {
         "TeX",
         "Python"
       ],
-      "relativeTime": "2 minutes ago",
-      "isStarred": true
+      "relativeTime": "4 minutes ago",
+      "isStarred": true,
+      "isContributed": false
     },
     {
       "name": "annotated_deep_learning_paper_implementations",
@@ -137,8 +144,9 @@ const githubData = {
         "Jupyter Notebook",
         "Makefile"
       ],
-      "relativeTime": "3 minutes ago",
-      "isStarred": true
+      "relativeTime": "4 minutes ago",
+      "isStarred": true,
+      "isContributed": false
     },
     {
       "name": "Deep-Learning-Papers-Reading-Roadmap",
@@ -153,14 +161,15 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "32 minutes ago",
-      "isStarred": true
+      "relativeTime": "34 minutes ago",
+      "isStarred": true,
+      "isContributed": false
     }
   ],
   "commitStats": {
-    "lastDay": 40,
-    "lastMonth": 49,
-    "lastYear": 93
+    "lastDay": 41,
+    "lastMonth": 50,
+    "lastYear": 94
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
@@ -409,15 +418,19 @@ function displayGitHubData() {
     reposContainer.innerHTML = repos.map(repo => {
         const topLanguages = repo.topLanguages || [];
         const isStarred = repo.isStarred || false;
+        const isContributed = repo.isContributed || false;
         const starIcon = isStarred ? '⭐ ' : '';
+        const contributionIcon = isContributed ? '🤝 ' : '';
         const starredClass = isStarred ? 'starred-repo' : '';
+        const contributedClass = isContributed ? 'contributed-repo' : '';
 
         return `
-            <div class="github-repo-card ${starredClass}">
+            <div class="github-repo-card ${starredClass} ${contributedClass}">
                 <div class="github-repo-header">
                     <div class="github-repo-title">
-                        <a href="${repo.html_url}" target="_blank">${starIcon}${repo.name}</a>
+                        <a href="${repo.html_url}" target="_blank">${starIcon}${contributionIcon}${repo.name}</a>
                         ${isStarred ? '<span class="starred-badge">Starred</span>' : ''}
+                        ${isContributed ? '<span class="contributed-badge">Contributed</span>' : ''}
                     </div>
                     <div class="github-repo-updated">
                         Updated ${repo.relativeTime}
