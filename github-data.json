@@ -1,7 +1,69 @@
 {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-24T11:44:11.883421",
+  "lastUpdated": "2025-12-25T10:03:20.261123",
   "repositories": [
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Personal Website ",
+      "updated_at": "2025-12-24T23:20:29Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 101137,
+        "Python": 26097,
+        "CSS": 24397,
+        "JavaScript": 21701,
+        "Shell": 533
+      },
+      "topLanguages": [
+        "HTML",
+        "Python",
+        "CSS"
+      ],
+      "relativeTime": "18 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
+    {
+      "name": "nba_embeddings",
+      "full_name": "vaibhavgurunathan/nba_embeddings",
+      "html_url": "https://github.com/vaibhavgurunathan/nba_embeddings",
+      "description": "Playing around with generating embeddings for NBA players. Will use this code for future projects. ",
+      "updated_at": "2025-12-24T23:19:54Z",
+      "language": "Python",
+      "languages": {
+        "Python": 68701
+      },
+      "topLanguages": [
+        "Python"
+      ],
+      "relativeTime": "18 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
+    {
+      "name": "gmail-agent",
+      "full_name": "vaibhavgurunathan/gmail-agent",
+      "html_url": "https://github.com/vaibhavgurunathan/gmail-agent",
+      "description": "AI Agent That Handles Everything In Your Inbox",
+      "updated_at": "2025-12-24T23:19:22Z",
+      "language": "Python",
+      "languages": {
+        "Python": 20144,
+        "Jupyter Notebook": 9862
+      },
+      "topLanguages": [
+        "Python",
+        "Jupyter Notebook"
+      ],
+      "relativeTime": "18 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
     {
       "name": "Eduardo",
       "full_name": "vaibhavgurunathan/Eduardo",
@@ -28,7 +90,7 @@
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "11 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -46,7 +108,7 @@
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "11 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -64,7 +126,7 @@
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "11 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -78,49 +140,7 @@
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "11 hours ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "leetcode-submissions",
-      "full_name": "vaibhavgurunathan/leetcode-submissions",
-      "html_url": "https://github.com/vaibhavgurunathan/leetcode-submissions",
-      "description": "Some of the solutions for leetcode to keep better track of my progress. ",
-      "updated_at": "2025-12-24T08:03:11Z",
-      "language": "Python",
-      "languages": {
-        "Python": 1700
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "11 hours ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Personal Website ",
-      "updated_at": "2025-12-24T08:02:41Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 101136,
-        "CSS": 23010,
-        "Python": 22609,
-        "JavaScript": 21365,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "CSS",
-        "Python"
-      ],
-      "relativeTime": "11 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -167,9 +187,9 @@
     }
   ],
   "commitStats": {
-    "lastDay": 43,
-    "lastMonth": 53,
-    "lastYear": 97
+    "lastDay": 20,
+    "lastMonth": 57,
+    "lastYear": 101
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
