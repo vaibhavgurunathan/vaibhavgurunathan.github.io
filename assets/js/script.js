@@ -2,8 +2,32 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-24T15:20:24.090584",
+  "lastUpdated": "2025-12-25T10:03:20.261123",
   "repositories": [
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Personal Website ",
+      "updated_at": "2025-12-24T23:20:29Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 101137,
+        "Python": 26097,
+        "CSS": 24397,
+        "JavaScript": 21701,
+        "Shell": 533
+      },
+      "topLanguages": [
+        "HTML",
+        "Python",
+        "CSS"
+      ],
+      "relativeTime": "18 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
     {
       "name": "nba_embeddings",
       "full_name": "vaibhavgurunathan/nba_embeddings",
@@ -17,7 +41,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "Just now",
+      "relativeTime": "18 hours ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -37,31 +61,7 @@ const githubData = {
         "Python",
         "Jupyter Notebook"
       ],
-      "relativeTime": "Just now",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Personal Website ",
-      "updated_at": "2025-12-24T23:18:15Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 101137,
-        "Python": 26097,
-        "CSS": 24397,
-        "JavaScript": 21609,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "Python",
-        "CSS"
-      ],
-      "relativeTime": "2 minutes ago",
+      "relativeTime": "18 hours ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -92,7 +92,7 @@ const githubData = {
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "15 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -110,7 +110,7 @@ const githubData = {
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "15 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -128,7 +128,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "15 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -142,7 +142,7 @@ const githubData = {
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "15 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -189,9 +189,9 @@ const githubData = {
     }
   ],
   "commitStats": {
-    "lastDay": 46,
-    "lastMonth": 56,
-    "lastYear": 100
+    "lastDay": 20,
+    "lastMonth": 57,
+    "lastYear": 101
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
