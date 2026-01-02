@@ -2,20 +2,40 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2025-12-27T15:01:23.679235",
+  "lastUpdated": "2026-01-01T19:54:17.653226",
   "repositories": [
+    {
+      "name": "gmail-agent",
+      "full_name": "vaibhavgurunathan/gmail-agent",
+      "html_url": "https://github.com/vaibhavgurunathan/gmail-agent",
+      "description": "AI Agent That Handles Everything In Your Inbox",
+      "updated_at": "2025-12-28T17:33:13Z",
+      "language": "Python",
+      "languages": {
+        "Python": 20144,
+        "Jupyter Notebook": 9862
+      },
+      "topLanguages": [
+        "Python",
+        "Jupyter Notebook"
+      ],
+      "relativeTime": "4 days ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2025-12-27T00:13:45Z",
+      "updated_at": "2025-12-27T23:01:29Z",
       "language": "HTML",
       "languages": {
         "HTML": 101137,
         "Python": 26097,
         "CSS": 24397,
-        "JavaScript": 21693,
+        "JavaScript": 21695,
         "Shell": 533
       },
       "topLanguages": [
@@ -23,7 +43,7 @@ const githubData = {
         "Python",
         "CSS"
       ],
-      "relativeTime": "22 hours ago",
+      "relativeTime": "5 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -41,27 +61,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "2 days ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "gmail-agent",
-      "full_name": "vaibhavgurunathan/gmail-agent",
-      "html_url": "https://github.com/vaibhavgurunathan/gmail-agent",
-      "description": "AI Agent That Handles Everything In Your Inbox",
-      "updated_at": "2025-12-24T23:19:22Z",
-      "language": "Python",
-      "languages": {
-        "Python": 20144,
-        "Jupyter Notebook": 9862
-      },
-      "topLanguages": [
-        "Python",
-        "Jupyter Notebook"
-      ],
-      "relativeTime": "2 days ago",
+      "relativeTime": "8 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -92,7 +92,7 @@ const githubData = {
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "3 days ago",
+      "relativeTime": "8 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -110,7 +110,7 @@ const githubData = {
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "3 days ago",
+      "relativeTime": "8 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -128,7 +128,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "3 days ago",
+      "relativeTime": "8 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -142,7 +142,7 @@ const githubData = {
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "3 days ago",
+      "relativeTime": "8 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -189,9 +189,9 @@ const githubData = {
     }
   ],
   "commitStats": {
-    "lastDay": 4,
-    "lastMonth": 61,
-    "lastYear": 105
+    "lastDay": 0,
+    "lastMonth": 63,
+    "lastYear": 107
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
