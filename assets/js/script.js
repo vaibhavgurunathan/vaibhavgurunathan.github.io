@@ -2,8 +2,32 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-01-01T19:54:17.653226",
+  "lastUpdated": "2026-01-03T13:26:58.875423",
   "repositories": [
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Personal Website ",
+      "updated_at": "2026-01-02T23:32:53Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 101139,
+        "Python": 26097,
+        "CSS": 24397,
+        "JavaScript": 21693,
+        "Shell": 533
+      },
+      "topLanguages": [
+        "HTML",
+        "Python",
+        "CSS"
+      ],
+      "relativeTime": "21 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
     {
       "name": "gmail-agent",
       "full_name": "vaibhavgurunathan/gmail-agent",
@@ -19,31 +43,7 @@ const githubData = {
         "Python",
         "Jupyter Notebook"
       ],
-      "relativeTime": "4 days ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Personal Website ",
-      "updated_at": "2025-12-27T23:01:29Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 101137,
-        "Python": 26097,
-        "CSS": 24397,
-        "JavaScript": 21695,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "Python",
-        "CSS"
-      ],
-      "relativeTime": "5 days ago",
+      "relativeTime": "6 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -61,7 +61,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "8 days ago",
+      "relativeTime": "9 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -92,7 +92,7 @@ const githubData = {
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "8 days ago",
+      "relativeTime": "10 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -110,7 +110,7 @@ const githubData = {
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "8 days ago",
+      "relativeTime": "10 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -128,7 +128,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "8 days ago",
+      "relativeTime": "10 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -142,7 +142,7 @@ const githubData = {
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "8 days ago",
+      "relativeTime": "10 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -189,9 +189,9 @@ const githubData = {
     }
   ],
   "commitStats": {
-    "lastDay": 0,
-    "lastMonth": 63,
-    "lastYear": 107
+    "lastDay": 3,
+    "lastMonth": 66,
+    "lastYear": 110
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
