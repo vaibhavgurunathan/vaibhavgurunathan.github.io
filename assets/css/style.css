@@ -258,6 +258,11 @@ main {
     display: block;
 }
 
+.tab-content h2 {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
 /* Blog styles */
 .blog-posts {
     max-width: 800px;
