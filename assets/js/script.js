@@ -2,20 +2,20 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-01-25T14:58:24.338198",
+  "lastUpdated": "2026-01-27T11:02:44.750313",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-01-24T18:35:16Z",
+      "updated_at": "2026-01-25T19:58:28Z",
       "language": "HTML",
       "languages": {
         "HTML": 101139,
         "Python": 26097,
         "CSS": 24466,
-        "JavaScript": 21701,
+        "JavaScript": 21698,
         "Shell": 533
       },
       "topLanguages": [
@@ -43,7 +43,7 @@ const githubData = {
         "Python",
         "Jupyter Notebook"
       ],
-      "relativeTime": "28 days ago",
+      "relativeTime": "29 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -189,9 +189,9 @@ const githubData = {
     }
   ],
   "commitStats": {
-    "lastDay": 4,
-    "lastMonth": 26,
-    "lastYear": 127
+    "lastDay": 2,
+    "lastMonth": 24,
+    "lastYear": 129
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
