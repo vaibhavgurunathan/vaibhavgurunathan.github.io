@@ -1,19 +1,19 @@
 {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-02-18T08:51:46.552698",
+  "lastUpdated": "2026-02-21T12:55:40.295575",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-02-17T23:02:16Z",
+      "updated_at": "2026-02-18T13:51:51Z",
       "language": "HTML",
       "languages": {
         "HTML": 101126,
         "Python": 26097,
         "CSS": 24466,
-        "JavaScript": 21698,
+        "JavaScript": 21701,
         "Shell": 533
       },
       "topLanguages": [
@@ -21,7 +21,7 @@
         "Python",
         "CSS"
       ],
-      "relativeTime": "14 hours ago",
+      "relativeTime": "3 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -158,7 +158,7 @@
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "16 months ago",
+      "relativeTime": "17 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -180,16 +180,16 @@
         "JavaScript",
         "HTML"
       ],
-      "relativeTime": "16 months ago",
+      "relativeTime": "17 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
     }
   ],
   "commitStats": {
-    "lastDay": 2,
-    "lastMonth": 26,
-    "lastYear": 145
+    "lastDay": 0,
+    "lastMonth": 24,
+    "lastYear": 147
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
