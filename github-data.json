@@ -1,19 +1,19 @@
 {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-03-03T12:10:34.334945",
+  "lastUpdated": "2026-03-04T20:12:05.208967",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-03-02T19:32:28Z",
+      "updated_at": "2026-03-03T20:10:42Z",
       "language": "HTML",
       "languages": {
         "HTML": 101126,
         "Python": 26097,
         "CSS": 24466,
-        "JavaScript": 21705,
+        "JavaScript": 21704,
         "Shell": 533
       },
       "topLanguages": [
