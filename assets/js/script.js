@@ -241,6 +241,16 @@ function updateScrollProgress() {
 
 // Tab switching functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Hide draft (agent-edited) pages when in publish mode
+    if (window.INCLUDE_DRAFT_PAGES === false && window.DRAFT_PAGE_HREFS && Array.isArray(window.DRAFT_PAGE_HREFS)) {
+        document.querySelectorAll('[data-draft-href]').forEach(function(el) {
+            var href = el.getAttribute('data-draft-href');
+            if (href && window.DRAFT_PAGE_HREFS.indexOf(href) !== -1) {
+                el.style.display = 'none';
+            }
+        });
+    }
+
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -433,9 +443,15 @@ function displayGitHubData() {
         return; // Elements not found, skip
     }
 
-    const repos = githubData.repositories;
-    const commitStats = githubData.commitStats;
-    const languageColors = githubData.languageColors;
+    if (typeof githubData === 'undefined') {
+        reposContainer.innerHTML = '<p class="github-error">GitHub data not available. Run <code>npm run update-github</code> or run the update script.</p>';
+        contributionGraph.innerHTML = '';
+        return;
+    }
+
+    const repos = githubData.repositories || [];
+    const commitStats = githubData.commitStats || { lastDay: 0, lastMonth: 0, lastYear: 0 };
+    const languageColors = githubData.languageColors || {};
 
     reposContainer.innerHTML = repos.map(repo => {
         const topLanguages = repo.topLanguages || [];
@@ -493,7 +509,7 @@ function displayGitHubData() {
             </div>
             <div class="data-timestamp">
                 <small style="color: #7f8c8d; font-size: 0.8em;">
-                    Data last updated: ${new Date(githubData.lastUpdated).toLocaleDateString()}
+                    Data last updated: ${githubData.lastUpdated ? new Date(githubData.lastUpdated).toLocaleDateString() : 'N/A'}
                 </small>
             </div>
         </div>
