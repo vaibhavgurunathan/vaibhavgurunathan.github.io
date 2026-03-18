@@ -2,38 +2,14 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-03-12T12:23:07.444073",
+  "lastUpdated": "2026-03-18T08:48:52.808194",
   "repositories": [
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Personal Website ",
-      "updated_at": "2026-03-08T05:14:50Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 101126,
-        "Python": 26097,
-        "CSS": 24466,
-        "JavaScript": 21704,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "Python",
-        "CSS"
-      ],
-      "relativeTime": "4 days ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
     {
       "name": "gmail-agent",
       "full_name": "vaibhavgurunathan/gmail-agent",
       "html_url": "https://github.com/vaibhavgurunathan/gmail-agent",
       "description": "AI Agent That Handles Everything In Your Inbox",
-      "updated_at": "2025-12-28T17:33:13Z",
+      "updated_at": "2026-03-17T16:34:26Z",
       "language": "Python",
       "languages": {
         "Python": 20144,
@@ -43,7 +19,45 @@ const githubData = {
         "Python",
         "Jupyter Notebook"
       ],
-      "relativeTime": "2 months ago",
+      "relativeTime": "20 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
+    {
+      "name": "vaibhavgurunathan",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
+      "description": "Just the README file. ",
+      "updated_at": "2026-03-17T16:33:15Z",
+      "language": null,
+      "languages": {},
+      "topLanguages": [],
+      "relativeTime": "20 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Personal Website ",
+      "updated_at": "2026-03-12T16:44:48Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 104903,
+        "Python": 26097,
+        "CSS": 24466,
+        "JavaScript": 21705,
+        "Shell": 533
+      },
+      "topLanguages": [
+        "HTML",
+        "Python",
+        "CSS"
+      ],
+      "relativeTime": "5 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -134,20 +148,6 @@ const githubData = {
       "isPinned": true
     },
     {
-      "name": "vaibhavgurunathan",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
-      "description": "Just the README file. ",
-      "updated_at": "2025-12-24T08:03:41Z",
-      "language": null,
-      "languages": {},
-      "topLanguages": [],
-      "relativeTime": "2 months ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
       "name": "studystream",
       "full_name": "vaibhavgurunathan/studystream",
       "html_url": "https://github.com/vaibhavgurunathan/studystream",
@@ -189,9 +189,9 @@ const githubData = {
     }
   ],
   "commitStats": {
-    "lastDay": 0,
-    "lastMonth": 22,
-    "lastYear": 155
+    "lastDay": 2,
+    "lastMonth": 29,
+    "lastYear": 157
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
