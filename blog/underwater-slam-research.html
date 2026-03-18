@@ -19,83 +19,11 @@
             <h2>Underwater SLAM Research</h2>
 
             <div class="blog-content">
-                <p>Currently, I'm conducting advanced research in the University of Michigan Field Robotics Group, focusing on underwater Simultaneous Localization and Mapping (SLAM) systems. This work represents the cutting edge of marine robotics and has significant implications for ocean exploration and underwater infrastructure monitoring.</p>
+                <p>This semester I started doing research with the Field Robotics Group on underwater SLAM. The basic problem is that SLAM is already hard — you are trying to build a map and figure out where you are in that map at the same time — but underwater it gets a lot harder because you lose GPS and visibility gets unpredictable. My work is focused on whether neural networks can improve the feature matching step, specifically using camera data in conditions where the image quality degrades.</p>
 
-                <h3>The Challenge of Underwater SLAM</h3>
-                <p>SLAM in underwater environments presents unique challenges that don't exist in terrestrial or aerial robotics:</p>
-                <ul>
-                    <li><strong>Limited Visibility:</strong> Water turbidity and light absorption reduce sensor effectiveness</li>
-                    <li><strong>Current Interference:</strong> Water movement affects sensor readings and robot positioning</li>
-                    <li><strong>Communication Constraints:</strong> Radio signals don't penetrate water well</li>
-                    <li><strong>Pressure and Corrosion:</strong> Harsh underwater conditions degrade equipment</li>
-                    <li><strong>GPS Denial:</strong> No GPS signals available underwater</li>
-                </ul>
+                <p>We are still in early stages. Most of what I have done so far is in simulation; we have not tested in real water yet. The idea is that traditional feature detectors (things like ORB or SIFT) struggle when the images are blurry or the lighting is bad, which is pretty much the norm underwater. So we are trying to see if learned features from a neural network can do better in those conditions. It connects to a lot of what I got to learn in the SLAM class (Fall 2024) and the ROS work from last semester — same kind of pipeline, just a different and messier environment.</p>
 
-                <h3>Neural Network Integration Approach</h3>
-                <p>Our research focuses on fusing neural networks with traditional SLAM algorithms to dramatically improve accuracy and robustness in underwater conditions. The key innovation is using machine learning to:</p>
-                <ul>
-                    <li><strong>Enhance Feature Detection:</strong> Neural networks identify reliable visual features in low-visibility conditions</li>
-                    <li><strong>Model Water Dynamics:</strong> Learn patterns in water current interference for better motion estimation</li>
-                    <li><strong>Adaptive Filtering:</strong> Dynamically adjust sensor fusion based on water conditions</li>
-                    <li><strong>Error Correction:</strong> Predict and compensate for systematic errors in underwater measurements</li>
-                </ul>
-
-                <h3>Technical Implementation</h3>
-                <h4>Multi-Modal Sensor Fusion</h4>
-                <p>We integrate multiple sensing modalities:</p>
-                <ul>
-                    <li><strong>Stereo Vision:</strong> Depth perception from camera pairs</li>
-                    <li><strong>Sonar Systems:</strong> Acoustic ranging and imaging</li>
-                    <li><strong>Inertial Measurement Units:</strong> Motion tracking and orientation</li>
-                    <li><strong>Pressure Sensors:</strong> Depth and altitude measurements</li>
-                    <li><strong>Doppler Velocity Logs:</strong> Water-relative velocity estimation</li>
-                </ul>
-
-                <h4>Machine Learning Components</h4>
-                <ul>
-                    <li><strong>Convolutional Neural Networks:</strong> For feature extraction from underwater imagery</li>
-                    <li><strong>Recurrent Neural Networks:</strong> For temporal modeling of water currents</li>
-                    <li><strong>Reinforcement Learning:</strong> For adaptive exploration strategies</li>
-                    <li><strong>Generative Models:</strong> For simulating underwater conditions</li>
-                </ul>
-
-                <h3>Research Methodology</h3>
-                <p>Our approach combines theoretical development with extensive field testing:</p>
-                <ul>
-                    <li><strong>Simulation Environment:</strong> Gazebo-based underwater simulation for algorithm development</li>
-                    <li><strong>Controlled Tank Testing:</strong> Small-scale experiments in controlled underwater environments</li>
-                    <li><strong>Field Trials:</strong> Real-world testing in lakes and coastal waters</li>
-                    <li><strong>Performance Metrics:</strong> Accuracy, robustness, and computational efficiency evaluation</li>
-                </ul>
-
-                <h3>Applications and Impact</h3>
-                <p>This research has broad applications in marine technology:</p>
-                <ul>
-                    <li><strong>Ocean Exploration:</strong> Autonomous underwater vehicles for scientific research</li>
-                    <li><strong>Infrastructure Inspection:</strong> Monitoring underwater pipelines, bridges, and docks</li>
-                    <li><strong>Environmental Monitoring:</strong> Tracking marine ecosystems and pollution</li>
-                    <li><strong>Search and Rescue:</strong> Locating objects in underwater environments</li>
-                    <li><strong>Mining Operations:</strong> Exploration and monitoring of underwater mineral deposits</li>
-                </ul>
-
-                <h3>Current Progress and Future Directions</h3>
-                <p>We've achieved significant improvements in underwater mapping accuracy and are currently working on:</p>
-                <ul>
-                    <li><strong>Real-time Processing:</strong> Optimizing algorithms for onboard computation</li>
-                    <li><strong>Multi-Robot Coordination:</strong> Teams of underwater vehicles working together</li>
-                    <li><strong>Adaptive Algorithms:</strong> Systems that learn and adapt to specific underwater conditions</li>
-                    <li><strong>Energy Efficiency:</strong> Reducing power consumption for longer missions</li>
-                </ul>
-
-                <h3>Collaborations and Partnerships</h3>
-                <p>This research involves collaboration with:</p>
-                <ul>
-                    <li><strong>UMich Naval Architecture:</strong> For hydrodynamic modeling</li>
-                    <li><strong>Great Lakes Research:</strong> For field testing locations</li>
-                    <li><strong>Industry Partners:</strong> For practical applications and technology transfer</li>
-                </ul>
-
-                <p>This work represents an exciting intersection of robotics, machine learning, and marine engineering, pushing the boundaries of what's possible in underwater autonomous systems.</p>
+                <p>I am not sure yet how far this will go. The simulation results look promising but that is always different from putting something on real hardware. I will update this when we have more to report.</p>
             </div>
         </article>
     </main>
