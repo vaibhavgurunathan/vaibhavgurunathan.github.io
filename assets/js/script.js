@@ -2,8 +2,32 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-03-18T08:48:52.808194",
+  "lastUpdated": "2026-03-19T14:41:48.818714",
   "repositories": [
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Personal Website ",
+      "updated_at": "2026-03-18T22:20:02Z",
+      "language": "HTML",
+      "languages": {
+        "HTML": 83237,
+        "Python": 26097,
+        "CSS": 24466,
+        "JavaScript": 22525,
+        "Shell": 533
+      },
+      "topLanguages": [
+        "HTML",
+        "Python",
+        "CSS"
+      ],
+      "relativeTime": "20 hours ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
     {
       "name": "gmail-agent",
       "full_name": "vaibhavgurunathan/gmail-agent",
@@ -19,7 +43,7 @@ const githubData = {
         "Python",
         "Jupyter Notebook"
       ],
-      "relativeTime": "20 hours ago",
+      "relativeTime": "2 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -33,31 +57,7 @@ const githubData = {
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "20 hours ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Personal Website ",
-      "updated_at": "2026-03-12T16:44:48Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 104903,
-        "Python": 26097,
-        "CSS": 24466,
-        "JavaScript": 21705,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "Python",
-        "CSS"
-      ],
-      "relativeTime": "5 days ago",
+      "relativeTime": "2 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -189,8 +189,8 @@ const githubData = {
     }
   ],
   "commitStats": {
-    "lastDay": 2,
-    "lastMonth": 29,
+    "lastDay": 6,
+    "lastMonth": 31,
     "lastYear": 157
   },
   "languageColors": {
