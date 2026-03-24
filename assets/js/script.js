@@ -2,20 +2,20 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-03-23T14:58:19.518704",
+  "lastUpdated": "2026-03-24T11:32:20.941017",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-03-22T19:10:37Z",
+      "updated_at": "2026-03-23T18:58:23Z",
       "language": "HTML",
       "languages": {
         "HTML": 83237,
         "Python": 26097,
         "CSS": 24466,
-        "JavaScript": 22519,
+        "JavaScript": 22522,
         "Shell": 533
       },
       "topLanguages": [
@@ -23,7 +23,7 @@ const githubData = {
         "Python",
         "CSS"
       ],
-      "relativeTime": "23 hours ago",
+      "relativeTime": "20 hours ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -106,7 +106,7 @@ const githubData = {
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "2 months ago",
+      "relativeTime": "3 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -124,7 +124,7 @@ const githubData = {
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "2 months ago",
+      "relativeTime": "3 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -142,7 +142,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "2 months ago",
+      "relativeTime": "3 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -190,8 +190,8 @@ const githubData = {
   ],
   "commitStats": {
     "lastDay": 2,
-    "lastMonth": 44,
-    "lastYear": 200
+    "lastMonth": 31,
+    "lastYear": 157
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
