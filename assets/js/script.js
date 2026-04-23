@@ -2,20 +2,20 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-04-22T00:47:31.640797",
+  "lastUpdated": "2026-04-23T14:37:34.648666",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-04-21T14:04:43Z",
+      "updated_at": "2026-04-22T04:47:36Z",
       "language": "HTML",
       "languages": {
         "HTML": 83237,
         "Python": 26097,
         "CSS": 24466,
-        "JavaScript": 22521,
+        "JavaScript": 22524,
         "Shell": 533
       },
       "topLanguages": [
@@ -23,7 +23,7 @@ const githubData = {
         "Python",
         "CSS"
       ],
-      "relativeTime": "14 hours ago",
+      "relativeTime": "1 day ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -106,7 +106,7 @@ const githubData = {
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "3 months ago",
+      "relativeTime": "4 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -124,7 +124,7 @@ const githubData = {
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "3 months ago",
+      "relativeTime": "4 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -142,7 +142,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "3 months ago",
+      "relativeTime": "4 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -160,7 +160,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "18 months ago",
+      "relativeTime": "19 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -182,7 +182,7 @@ const githubData = {
         "JavaScript",
         "HTML"
       ],
-      "relativeTime": "18 months ago",
+      "relativeTime": "19 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
