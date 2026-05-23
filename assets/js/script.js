@@ -2,14 +2,14 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-05-01T00:46:49.969683",
+  "lastUpdated": "2026-05-23T08:36:24.314510",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-04-28T19:30:54Z",
+      "updated_at": "2026-05-01T04:46:54Z",
       "language": "HTML",
       "languages": {
         "HTML": 83237,
@@ -23,7 +23,7 @@ const githubData = {
         "Python",
         "CSS"
       ],
-      "relativeTime": "2 days ago",
+      "relativeTime": "22 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -43,7 +43,7 @@ const githubData = {
         "Python",
         "Jupyter Notebook"
       ],
-      "relativeTime": "1 month ago",
+      "relativeTime": "2 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -57,7 +57,7 @@ const githubData = {
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "1 month ago",
+      "relativeTime": "2 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -106,7 +106,7 @@ const githubData = {
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "4 months ago",
+      "relativeTime": "5 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -124,7 +124,7 @@ const githubData = {
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "4 months ago",
+      "relativeTime": "5 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -142,7 +142,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "4 months ago",
+      "relativeTime": "5 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -160,7 +160,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "19 months ago",
+      "relativeTime": "20 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -182,7 +182,7 @@ const githubData = {
         "JavaScript",
         "HTML"
       ],
-      "relativeTime": "19 months ago",
+      "relativeTime": "20 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -190,7 +190,7 @@ const githubData = {
   ],
   "commitStats": {
     "lastDay": 0,
-    "lastMonth": 24,
+    "lastMonth": 6,
     "lastYear": 157
   },
   "languageColors": {
