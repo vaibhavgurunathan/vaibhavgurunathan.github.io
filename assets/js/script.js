@@ -2,20 +2,20 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-05-23T08:36:24.314510",
+  "lastUpdated": "2026-06-04T18:57:43.136629",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-05-01T04:46:54Z",
+      "updated_at": "2026-05-23T15:36:32Z",
       "language": "HTML",
       "languages": {
         "HTML": 83237,
         "Python": 26097,
         "CSS": 24466,
-        "JavaScript": 22522,
+        "JavaScript": 22524,
         "Shell": 533
       },
       "topLanguages": [
@@ -23,7 +23,7 @@ const githubData = {
         "Python",
         "CSS"
       ],
-      "relativeTime": "22 days ago",
+      "relativeTime": "12 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -69,13 +69,9 @@ const githubData = {
       "description": "Playing around with generating embeddings for NBA players. Will use this code for future projects. ",
       "updated_at": "2025-12-24T23:19:54Z",
       "language": "Python",
-      "languages": {
-        "Python": 68701
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "4 months ago",
+      "languages": {},
+      "topLanguages": [],
+      "relativeTime": "5 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -87,25 +83,8 @@ const githubData = {
       "description": "AR Learning Project (Google Hackathon)",
       "updated_at": "2025-12-24T08:04:35Z",
       "language": null,
-      "languages": {
-        "C#": 26215956,
-        "C++": 776007,
-        "ShaderLab": 98036,
-        "Mathematica": 69546,
-        "HLSL": 21151,
-        "Objective-C++": 13913,
-        "C": 12454,
-        "Objective-C": 11252,
-        "GAP": 9254,
-        "GLSL": 4183,
-        "Python": 1414,
-        "CMake": 426
-      },
-      "topLanguages": [
-        "C#",
-        "C++",
-        "ShaderLab"
-      ],
+      "languages": {},
+      "topLanguages": [],
       "relativeTime": "5 months ago",
       "isStarred": false,
       "isContributed": false,
@@ -118,12 +97,8 @@ const githubData = {
       "description": "Fun Project to Practice Building RL from Scratch",
       "updated_at": "2025-12-24T08:04:13Z",
       "language": "Jupyter Notebook",
-      "languages": {
-        "Jupyter Notebook": 13418
-      },
-      "topLanguages": [
-        "Jupyter Notebook"
-      ],
+      "languages": {},
+      "topLanguages": [],
       "relativeTime": "5 months ago",
       "isStarred": false,
       "isContributed": false,
@@ -136,12 +111,8 @@ const githubData = {
       "description": "AI Compilers Class (CSE 598)",
       "updated_at": "2025-12-24T08:03:58Z",
       "language": "Python",
-      "languages": {
-        "Python": 9119
-      },
-      "topLanguages": [
-        "Python"
-      ],
+      "languages": {},
+      "topLanguages": [],
       "relativeTime": "5 months ago",
       "isStarred": false,
       "isContributed": false,
@@ -154,12 +125,8 @@ const githubData = {
       "description": "mhacks 2024 submission",
       "updated_at": "2024-09-29T16:28:08Z",
       "language": "Python",
-      "languages": {
-        "Python": 16227
-      },
-      "topLanguages": [
-        "Python"
-      ],
+      "languages": {},
+      "topLanguages": [],
       "relativeTime": "20 months ago",
       "isStarred": false,
       "isContributed": false,
@@ -172,16 +139,8 @@ const githubData = {
       "description": "This is an Amazon Prime chatbot & chrome extension capable of scouring through thousands of customer reviews/FAQs and answering any questions about an online product.",
       "updated_at": "2024-09-29T16:20:00Z",
       "language": null,
-      "languages": {
-        "Python": 19037,
-        "JavaScript": 5385,
-        "HTML": 2552
-      },
-      "topLanguages": [
-        "Python",
-        "JavaScript",
-        "HTML"
-      ],
+      "languages": {},
+      "topLanguages": [],
       "relativeTime": "20 months ago",
       "isStarred": false,
       "isContributed": false,
@@ -190,8 +149,8 @@ const githubData = {
   ],
   "commitStats": {
     "lastDay": 0,
-    "lastMonth": 6,
-    "lastYear": 157
+    "lastMonth": 0,
+    "lastYear": 0
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
