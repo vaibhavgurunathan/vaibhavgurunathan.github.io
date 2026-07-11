@@ -2,14 +2,14 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-06-21T16:37:47.403523",
+  "lastUpdated": "2026-07-10T23:21:46.704408",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-05-23T15:36:32Z",
+      "updated_at": "2026-06-21T23:37:55Z",
       "language": "HTML",
       "languages": {
         "HTML": 83237,
@@ -23,7 +23,7 @@ const githubData = {
         "Python",
         "CSS"
       ],
-      "relativeTime": "29 days ago",
+      "relativeTime": "19 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -75,7 +75,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -106,7 +106,7 @@ const githubData = {
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -124,7 +124,7 @@ const githubData = {
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -142,7 +142,7 @@ const githubData = {
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
