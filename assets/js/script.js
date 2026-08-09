@@ -1,3 +1,5 @@
+const LINKEDIN_URL = 'https://www.linkedin.com/in/vaibhavgurunathan/';
+
 // Scroll Progress Bar functionality
 function updateScrollProgress() {
     const scrollProgressBar = document.getElementById('scroll-progress-bar');
@@ -8,57 +10,102 @@ function updateScrollProgress() {
     scrollProgressBar.style.width = scrollPercent + '%';
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Add typing effect to home page text elements in sequence
-    const typeTextElements = document.querySelectorAll('.type-text');
+function unwrapParagraph(text) {
+    return text.replace(/\s*\n\s*/g, ' ').trim();
+}
+
+function parseAboutText(raw) {
+    const parts = raw
+        .trim()
+        .split(/\n\s*\n/)
+        .map(unwrapParagraph)
+        .filter(Boolean);
+
+    if (parts.length === 0) {
+        return { body: '', contact: '' };
+    }
+
+    if (parts.length === 1) {
+        return { body: parts[0], contact: '' };
+    }
+
+    return {
+        body: parts.slice(0, -1).join(' '),
+        contact: parts[parts.length - 1]
+    };
+}
+
+function renderMarkdownLinks(text) {
+    return text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, href) => {
+        const isMailto = href.startsWith('mailto:');
+        const attrs = isMailto
+            ? `href="${href}"`
+            : `href="${href}" target="_blank" rel="noopener noreferrer"`;
+        return `<a ${attrs}>${label}</a>`;
+    });
+}
+
+function formatContactHtml(contactText) {
+    let html = renderMarkdownLinks(contactText);
+    html = html.replace(
+        /(?<!["'>])LinkedIn(?!<\/a>)/g,
+        `<a href="${LINKEDIN_URL}" target="_blank" rel="noopener noreferrer" class="linkedin-link">LinkedIn</a>`
+    );
+    return html;
+}
+
+function typeText(element, text, delay) {
+    return new Promise((resolve) => {
+        element.textContent = '';
+        element.style.opacity = '0';
+
+        setTimeout(() => {
+            element.style.opacity = '1';
+            let i = 0;
+            const typeWriter = () => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 2);
+                } else {
+                    resolve();
+                }
+            };
+            typeWriter();
+        }, delay);
+    });
+}
+
+async function loadAboutAndAnimate() {
+    const typeTextEl = document.querySelector('.type-text');
     const contactLine = document.querySelector('.contact-line');
+    if (!typeTextEl || !contactLine) return;
 
-    let currentIndex = 0;
+    let body = '';
+    let contact = '';
 
-    const typeNextElement = () => {
-        if (currentIndex < typeTextElements.length) {
-            const element = typeTextElements[currentIndex];
-            const text = element.textContent;
-            const delay = parseInt(element.getAttribute('data-delay')) || 500;
+    try {
+        const response = await fetch('about.md');
+        if (!response.ok) throw new Error('Failed to load about.md');
+        ({ body, contact } = parseAboutText(await response.text()));
+    } catch (err) {
+        console.error(err);
+        body = 'Unable to load about text.';
+    }
 
-            element.textContent = '';
-            element.style.opacity = '0';
+    const delay = parseInt(typeTextEl.getAttribute('data-delay'), 10) || 500;
+    await typeText(typeTextEl, body, delay);
 
-            setTimeout(() => {
-                element.style.opacity = '1';
-                let i = 0;
-                const typeWriter = () => {
-                    if (i < text.length) {
-                        element.textContent += text.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, 2); // 5x faster typing speed (~300 WPM)
-                    } else {
-                        currentIndex++;
-                        // Start typing the contact line after the main text is done
-                        if (currentIndex === typeTextElements.length && contactLine) {
-                            setTimeout(() => {
-                                typeContactLine();
-                            }, 500); // Small delay before starting contact line
-                        }
-                    }
-                };
-                typeWriter();
-            }, delay);
-        }
-    };
-
-    const typeContactLine = () => {
-        // Set the contact line HTML content with proper links
-        contactLine.innerHTML = 'Contact me at gvaibhav@umich.edu or connect with me on <a href="https://www.linkedin.com/in/vaibhavgurunathan/" target="_blank" class="linkedin-link">LinkedIn</a>.';
+    if (contact) {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        contactLine.innerHTML = formatContactHtml(contact);
         contactLine.style.opacity = '1';
-    };
+    }
+}
 
-    // Start the typing sequence
-    typeNextElement();
-
-    // Initialize scroll progress bar
+document.addEventListener('DOMContentLoaded', function() {
+    loadAboutAndAnimate();
     updateScrollProgress();
 });
 
-// Add scroll event listener for progress bar
 window.addEventListener('scroll', updateScrollProgress);
