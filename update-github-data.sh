@@ -1,15 +1,10 @@
 #!/bin/bash
-# GitHub Data Update Script for .bashrc
-# Add this to your ~/.bashrc file to run GitHub data updates automatically
+# Site commit script for .bashrc
+# Add this to your ~/.bashrc file to commit and push website updates automatically
 
-# Check if we're in the website directory
-if [ -f "update-github-data.py" ] && [ -f "index.html" ]; then
-    echo "🔄 Updating GitHub data for personal website..."
-    python3  "/Users/vaibhavgurunathan/Desktop/Personal_Projects/Personal Website/update-github-data.py"
-    echo "✅ GitHub data update complete!"
+if [ -f "index.html" ]; then
+    git add .
+    git commit -m "Daily log"
+    git push
+    echo "Everything working as intended"
 fi
-
-git add . 
-git commit -m "Daily log" 
-git push 
-echo "Everything working as intended" 
