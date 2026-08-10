@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyStream - Vaibhav Gurunathan</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="window.location.href='../index.html'" style="cursor: pointer; transition: opacity 0.3s;">Vaibhav Gurunathan</h1>
+        <nav>
+            <a href="javascript:history.back()" class="back-link">← Back</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="project-detail">
+            <h2>StudyStream</h2>
+
+            <div class="project-content">
+<p>StudyStream was my hackathon submission for MHacks 2024. </p>
+
+<p>The frontend takes in an input either as a file or as copy/pasted<br>text and a length for the video. It then sends the text and type of input to the backend which does all the heavy lifting. First it splits up the text to dedicate <br>a section to each concept based on the length of the video requested. Then it finds the best image for each concept. It scrapes google images and can compare as many images as you want. Then it finds which image is most relevant to the text. To do this, it converts the image to text with a computer vision model. Then it puts all these descriptions in a vector db and then queries the vector db to find the closest match to the request. After it has the correct image and description, it uses all this input to generate the audio with a text to speech conversion. It also creates bullet points to concisely communicate the material. It combines the images and text and stitches this<br>with the audio to create a video. It does this for each chunk and finally combines everything together for you final video. </p>
+
+<p>Here is a small demo video for the product: </p>
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://www.youtube.com/watch?v=7_QqKZyKKbo
+</div></figure>
+
+            </div>
+        </article>
+    </main>
+    <script src="../assets/js/site-config.js"></script>
+    <script src="../assets/js/analytics.js"></script>
+</body>
+</html>

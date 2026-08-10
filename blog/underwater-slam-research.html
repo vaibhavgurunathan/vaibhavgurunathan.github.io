@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underwater SLAM Research - Vaibhav Gurunathan</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="window.location.href='../index.html'" style="cursor: pointer; transition: opacity 0.3s;">Vaibhav Gurunathan</h1>
+        <nav>
+            <a href="javascript:history.back()" class="back-link">← Back</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="blog-detail">
+            <h2>Underwater SLAM Research</h2>
+
+            <div class="blog-content">
+                <p>This semester I started doing research with the Field Robotics Group on underwater SLAM. The basic problem is that SLAM is already hard — you are trying to build a map and figure out where you are in that map at the same time — but underwater it gets a lot harder because you lose GPS and visibility gets unpredictable. My work is focused on whether neural networks can improve the feature matching step, specifically using camera data in conditions where the image quality degrades.</p>
+
+                <p>We are still in early stages. Most of what I have done so far is in simulation; we have not tested in real water yet. The idea is that traditional feature detectors (things like ORB or SIFT) struggle when the images are blurry or the lighting is bad, which is pretty much the norm underwater. So we are trying to see if learned features from a neural network can do better in those conditions. It connects to a lot of what I got to learn in the SLAM class (Fall 2024) and the ROS work from last semester — same kind of pipeline, just a different and messier environment.</p>
+
+                <p>I am not sure yet how far this will go. The simulation results look promising but that is always different from putting something on real hardware. I will update this when we have more to report.</p>
+            </div>
+        </article>
+    </main>
+    <script src="../assets/js/site-config.js"></script>
+    <script src="../assets/js/analytics.js"></script>
+</body>
+</html>

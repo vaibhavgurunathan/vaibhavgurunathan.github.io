@@ -4,7 +4,8 @@
   "description": "A modern, responsive personal portfolio website built with HTML, CSS, and JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "markdown": "node markdown-to-html.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io/issues"
   },
-  "homepage": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io#readme"
+  "homepage": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io#readme",
+  "dependencies": {
+    "marked": "^17.0.1"
+  }
 }

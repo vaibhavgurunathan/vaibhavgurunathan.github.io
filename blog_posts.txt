@@ -1,0 +1,121 @@
+Fall 2022
+Published by
+
+Vaibhav Gurunathan
+
+on
+
+January 6, 2023
+Fall 2022 was my first semester at the University and I had a lot of fun getting to know campus and trying out new things. I took four classes this semester: 
+
+Computational Linear Algebra:  In this class, we dove in depth into linear algebra with a focus on how to code different applications. Specifically we used Julia to code different linear algebra algorithms.
+
+Introduction to Algorithms and Programming: In this class, we learned C++ and coded different applications on robots. We got to use the M-bot Omni for our projects which is a wheeled robot capable of driving in any direction at any moment. Our final project for this class was to have the robot drive following a path in a maze. 
+
+Introductory Physics – Mechanics: This was just your standard introduction to physics class. I enjoyed this class a lot, even though lecture was mandatory and at 8 in the morning twice a week. 
+
+Emperors of Rome: Having taken Latin for 5 years, I was excited to dive deeper into the history of Rome. This also fulfilled my humanities requirement (my final humanities requirement) so it was a perfect fit for me. I learned a lot about the different dynasties of Rome. 
+
+
+
+Winter 2023
+Published by
+
+Vaibhav Gurunathan
+
+on
+
+May 3, 2023
+Winter 2023 was my second semester of freshman year where I finally felt like I was figuring out college. This semester was a lot of fun even with the temperature staying below freezing every day, something I was definitely not used to. I took four classes this semester too. 
+
+Introduction to Data Structures and Algorithms: This was the first of two required data structures and algorithms classes for the computer science degree at University of Michigan. This class was very important to learn most of the important data structures, but the most useful thing I believe from this class was how to debug efficiently. 
+
+Introduction to Computer Logic: This class focused on the much lower level of computer science programming. We coded on FPGA boards using verilog so we interacted with everything at the bit level. This was hard because it made me think a lot deeper about each specific line of code at a much deeper level (and there was no easy debugger). 
+
+Introduction to Engineering: The University of Michigan has a class required for all engineering students to try out a field of engineering in a project style class. Each class timing you sign up for focused on a different field. I signed up for climate space engineering because it was the only one that fit into my schedule. In this class, I got to build a wind turbine and test its efficiency in powering up a lightbulb. 
+
+Introduction to Data Science: This class was a probability and stats class that also had a lot of programming elements to it. I got to learn how to use all the major python libraries for data science like numpy, pandas, seaborn, matplotlib, etc. 
+
+Summer 2023
+Published by
+
+Vaibhav Gurunathan
+
+on
+
+October 1, 2023
+This summer I focused on classes at community college to be able to take more advanced classes at Umich and research to learn more about computer science and related fields.
+
+This summer I did a lot of classes to get transfer credit at Michigan. Specifically, I took Differential Equations, Discrete Math, Multivariable Calculus, Physics – Electricity and Magnetism, and Statistics. One of the main goals for the summer was to finish up the engineering core. The three remaining classes for that were multivariable calculus, differential equations, and physics. Because I finished up these three classes, I now only have major requirements left for graduation. The discrete math and statistics classes were for the computer science core classes. The discrete math class was also a prerequisite for my Data Structures and Algorithms class and the stats class was a prerequisite to my Intro to Machine Learning class.
+
+I also worked on my research project in the research internship I was continuing. I made significant progress on the work and am moving closer to completing the project. You can read more about that project here.
+
+Fall 2023
+Published by
+
+Vaibhav Gurunathan
+
+on
+
+January 5, 2024
+This was the first semester of sophomore year where I finally started to feel like I was understanding computer science. I only took three classes because each class had an extremely high workload. 
+
+Data Structures and Algorithms: This is the main data structures and algorithms class that every computer science student needs to take at the University of Michigan. This was the real class that made me feel like I was understanding computer science. This class made us focus on time and memory complexity and how to write better code because of it. This made me actually think about the tradeoffs each line of code would create. 
+
+Principles of Machine Learning: This was a very heavy math and coding class that was very interesting but also very difficult. I learned a lot of different machine learning algorithms and how to apply them. We were then asked to code them up for different projects/homework assignments. Our final project was very open ended and here I coded up a music classifier that can tell the difference between different subgenres within metal music. 
+
+Human-Robotic Systems: This is the core class that is considered the gateway to the upper level robotics classes. In this class, we focused on how robots and humans work together to solve problems and different challenges along the way. Lots of the class lectures were presenting different technologies and asking us to discuss them. Our final project was to design a robot that would assist nurses at their jobs. We talked to many nurses at the University of Michigan hospital and came up with different designs. After designing the idea, we then ran usability tests with the nurses again.
+
+
+Winter 2024
+Published by
+
+Vaibhav Gurunathan
+
+on
+
+May 1, 2024
+Winter 2023 was my second semester of freshman year where I finally felt like I was figuring out college. This semester was a lot of fun even with the temperature staying below freezing every day, something I was definitely not used to. I took four classes this semester too. 
+
+Introduction to Data Structures and Algorithms: This was the first of two required data structures and algorithms classes for the computer science degree at University of Michigan. This class was very important to learn most of the important data structures, but the most useful thing I believe from this class was how to debug efficiently. 
+
+Introduction to Computer Logic: This class focused on the much lower level of computer science programming. We coded on FPGA boards using verilog so we interacted with everything at the bit level. This was hard because it made me think a lot deeper about each specific line of code at a much deeper level (and there was no easy debugger). 
+
+Introduction to Engineering: The University of Michigan has a class required for all engineering students to try out a field of engineering in a project style class. Each class timing you sign up for focused on a different field. I signed up for climate space engineering because it was the only one that fit into my schedule. In this class, I got to build a wind turbine and test its efficiency in powering up a lightbulb. 
+
+Introduction to Data Science: This class was a probability and stats class that also had a lot of programming elements to it. I got to learn how to use all the major python libraries for data science like numpy, pandas, seaborn, matplotlib, etc. 
+
+Fall 2024
+Published by
+
+Vaibhav Gurunathan
+
+on
+
+August 30, 2024
+I took four classes this semester:
+
+Operating Systems 
+Parallel Programming with GPUs
+Simultaneous Localization and Mapping
+Technology Inspired Entrepreneurship
+This was an extremely intense semester with Operating Systems, GPU Programming, and SLAM all being project based classes.
+
+Winter 2025
+Published by
+
+Vaibhav Gurunathan
+
+on
+
+February 15, 2025
+This semester I am taking 3 technical classes:
+
+Natural Language Processing
+Quantum Computing
+Robot Dynamics and Simulation
+My favourite of the classes was NLP. I got to learn a lot about the history of NLP from n-gram models all the way to new models on the edge of research. I learned about the foundations of these models like attention mechanisms, vector embeddings, etc. The final project in this class was an open ended problem asking us to build something related to NLP. My group decided on building a model with the goal of writing a docstring for a python function. We gathered a lot of data, processed this data, and generated a model to predict the final docstring. This approach was limited given we only had one GPU with very limited RAM to process the data. If we had more time, it would have been better to train the model in batches to be able to effectively train the model on all the data.
+
+In Quantum Computing, I learned about the foundations of QC and the main algorithms associated with it. I came into the class with very little knowledge of the field and ended feeling comfortable explaining how different algorithms worked and how different gates could be applied to these qubits to work the way it is intended.
+
+In Robot Dynamics, the class was much more pure math and physics. The class started by building our foundations with how reference frames and rotation matrices work. Then we covered Lagrange and Kane’s method to derive equations of motion. I liked how this class went over a lot of example problems such as robotic arms to describe degrees of freedom. We also got to learn the sympy library to be able to build robot simulations for our examples.

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Solver - Vaibhav Gurunathan</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="window.location.href='../index.html'" style="cursor: pointer; transition: opacity 0.3s;">Vaibhav Gurunathan</h1>
+        <nav>
+            <a href="javascript:history.back()" class="back-link">← Back</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="project-detail">
+            <h2>Wordle Solver</h2>
+
+            <div class="project-content">
+<p>Yesterday, I failed my first wordle ever. The answer was "ardor", a word I have never even heard of before. Without telling my friends the answer, I told them all to play the wordle for today and tell me if they got it. None of them got it - I don't think any of them even knew what "ardor" meant (I now know it means enthusiasm or passion). Still, kind of annoyed I failed, I decided to ensure that I would never lose again. That night, while watching a little basketball and a very weird and controversial Steph Curry game winner, we decided to make a wordle bot. </p>
+
+<p>It did take a couple hours because it has been about a month since I worked with python, but we got it done pretty quick. We used a stats based approach to check the probability that a word would have a letter at a certain position. Then we would change or update probabilities as the game kept going and there was more input about the color of the letters (whether they were green, yellow, or grey). </p>
+
+<p>The wordle solver solved ardor in 5 guesses: </p>
+
+<figure class="wp-block-image size-large"><img src="https://vaibhavgurunathan.com/wp-content/uploads/2023/11/screenshot-2023-11-04-at-2.36.37e280afpm.png?w=322" alt="" class="wp-image-108" /></figure>
+
+<p>Next Steps (Not in Order): </p>
+
+<ol>
+<li>Critique the user and let them know the skill level of every move they make </li>
+
+<li>Create an interactive front end to make the solver much easier to use </li>
+
+<li>Redo this all but with reinforcement learning - See if the reinforcement solver is better than the stats based approach</li>
+
+<li>Clean up the code and push to Github</li>
+
+<li>Publish this on my website - If you see this, hopefully I finished the previous action items </li>
+</ol>
+            </div>
+        </article>
+    </main>
+    <script src="../assets/js/site-config.js"></script>
+    <script src="../assets/js/analytics.js"></script>
+</body>
+</html>
