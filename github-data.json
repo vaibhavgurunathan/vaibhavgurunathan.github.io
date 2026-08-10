@@ -1,7 +1,45 @@
 {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-03-18T08:48:52.808194",
+  "lastUpdated": "2026-08-10T05:25:41.391995",
   "repositories": [
+    {
+      "name": "vaibhavgurunathan.github.io",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
+      "description": "Personal Website ",
+      "updated_at": "2026-08-10T12:22:33Z",
+      "language": "Python",
+      "languages": {
+        "Python": 9631,
+        "CSS": 8880,
+        "JavaScript": 4925,
+        "HTML": 3866,
+        "Shell": 286
+      },
+      "topLanguages": [
+        "Python",
+        "CSS",
+        "JavaScript"
+      ],
+      "relativeTime": "3 minutes ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
+    {
+      "name": "vaibhavgurunathan",
+      "full_name": "vaibhavgurunathan/vaibhavgurunathan",
+      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
+      "description": "Just the README file. ",
+      "updated_at": "2026-07-11T18:48:19Z",
+      "language": null,
+      "languages": {},
+      "topLanguages": [],
+      "relativeTime": "29 days ago",
+      "isStarred": false,
+      "isContributed": false,
+      "isPinned": false
+    },
     {
       "name": "gmail-agent",
       "full_name": "vaibhavgurunathan/gmail-agent",
@@ -17,45 +55,7 @@
         "Python",
         "Jupyter Notebook"
       ],
-      "relativeTime": "20 hours ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "vaibhavgurunathan",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
-      "description": "Just the README file. ",
-      "updated_at": "2026-03-17T16:33:15Z",
-      "language": null,
-      "languages": {},
-      "topLanguages": [],
-      "relativeTime": "20 hours ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "vaibhavgurunathan.github.io",
-      "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
-      "description": "Personal Website ",
-      "updated_at": "2026-03-12T16:44:48Z",
-      "language": "HTML",
-      "languages": {
-        "HTML": 104903,
-        "Python": 26097,
-        "CSS": 24466,
-        "JavaScript": 21705,
-        "Shell": 533
-      },
-      "topLanguages": [
-        "HTML",
-        "Python",
-        "CSS"
-      ],
-      "relativeTime": "5 days ago",
+      "relativeTime": "4 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -73,7 +73,7 @@
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "2 months ago",
+      "relativeTime": "7 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -104,7 +104,7 @@
         "C++",
         "ShaderLab"
       ],
-      "relativeTime": "2 months ago",
+      "relativeTime": "7 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -122,7 +122,7 @@
       "topLanguages": [
         "Jupyter Notebook"
       ],
-      "relativeTime": "2 months ago",
+      "relativeTime": "7 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -140,7 +140,7 @@
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "2 months ago",
+      "relativeTime": "7 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -158,7 +158,7 @@
       "topLanguages": [
         "Python"
       ],
-      "relativeTime": "17 months ago",
+      "relativeTime": "22 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
@@ -180,16 +180,16 @@
         "JavaScript",
         "HTML"
       ],
-      "relativeTime": "17 months ago",
+      "relativeTime": "22 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": true
     }
   ],
   "commitStats": {
-    "lastDay": 2,
-    "lastMonth": 29,
-    "lastYear": 157
+    "lastDay": 5,
+    "lastMonth": 15,
+    "lastYear": 158
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
