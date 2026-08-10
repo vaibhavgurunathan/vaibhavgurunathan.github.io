@@ -3,34 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vaibhav Gurunathan - Personal Website</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='24' font-family='Arial, sans-serif' font-size='20' font-weight='bold' text-anchor='middle' fill='%23667eea'%3EVG%3C/text%3E%3C/svg%3E">
+    <title>Vaibhav Gurunathan</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='22' font-family='Georgia, serif' font-size='18' font-weight='700' text-anchor='middle' fill='%230f5c56'%3EVG%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Scroll Progress Bar -->
-    <div id="scroll-progress-bar"></div>
+    <div class="atmosphere" aria-hidden="true"></div>
 
-    <header>
-        <h1>Vaibhav Gurunathan</h1>
+    <header class="site-header">
+        <a class="brand-mark" href="#home" onclick="switchToHome(); return false;">VG</a>
+        <nav id="main-nav">
+            <button class="tab-button active" data-tab="home">Home</button>
+<!-- BLOG_NAV_START -->
+            <button class="tab-button" data-tab="blog">Blog Posts</button>
+<!-- BLOG_NAV_END -->
+        </nav>
     </header>
 
     <main>
-        <div id="home" class="tab-content active">
-            <h2>About me</h2>
-            <div class="about-content">
-                <div class="profile-section">
-                    <img src="images/profile.jpg" alt="Vaibhav Gurunathan" class="profile-image">
-                    <p class="image-caption">This photo is from my first visit to Michigan in mid April. Despite the two jackets, I was freezing because it was about 28 degrees outside.</p>
-                </div>
-                <div class="about-text">
-                    <div id="about-body" data-delay="100"></div>
-                    <p class="contact-line"></p>
-                </div>
+        <section id="home" class="tab-content active hero">
+            <div class="hero-visual reveal">
+                <img src="images/profile.jpg" alt="Vaibhav Gurunathan" class="profile-image">
+            </div>
+            <div class="hero-copy">
+                <div id="about-body" class="about-body"></div>
+                <p class="contact-line"></p>
+            </div>
+        </section>
+<!-- BLOG_SECTION_START -->
+        <div id="blog" class="tab-content">
+            <h2>Blog Posts</h2>
+            <div class="blog-posts">
+                <article class="blog-post">
+                    <h3><a href="blog/temporary-sample-post.html">Temporary Sample Post</a></h3>
+                    <p class="post-date">2026-08-09</p>
+                    <p>A short placeholder so you can see the Blog tab and listing.</p>
+                </article>
             </div>
         </div>
+<!-- BLOG_SECTION_END -->
     </main>
 
+    <script src="assets/js/site-config.js"></script>
+    <script src="assets/js/analytics.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
