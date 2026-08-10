@@ -22,15 +22,15 @@ function parseAboutText(raw) {
         .filter(Boolean);
 
     if (parts.length === 0) {
-        return { body: '', contact: '' };
+        return { paragraphs: [], contact: '' };
     }
 
     if (parts.length === 1) {
-        return { body: parts[0], contact: '' };
+        return { paragraphs: parts, contact: '' };
     }
 
     return {
-        body: parts.slice(0, -1).join(' '),
+        paragraphs: parts.slice(0, -1),
         contact: parts[parts.length - 1]
     };
 }
@@ -57,6 +57,7 @@ function formatContactHtml(contactText) {
 function typeText(element, text, delay) {
     return new Promise((resolve) => {
         element.textContent = '';
+        element.classList.add('type-text');
         element.style.opacity = '0';
 
         setTimeout(() => {
@@ -68,6 +69,7 @@ function typeText(element, text, delay) {
                     i++;
                     setTimeout(typeWriter, 2);
                 } else {
+                    element.classList.remove('type-text');
                     resolve();
                 }
             };
@@ -77,24 +79,30 @@ function typeText(element, text, delay) {
 }
 
 async function loadAboutAndAnimate() {
-    const typeTextEl = document.querySelector('.type-text');
+    const aboutBody = document.getElementById('about-body');
     const contactLine = document.querySelector('.contact-line');
-    if (!typeTextEl || !contactLine) return;
+    if (!aboutBody || !contactLine) return;
 
-    let body = '';
+    let paragraphs = [];
     let contact = '';
 
     try {
         const response = await fetch('about.md');
         if (!response.ok) throw new Error('Failed to load about.md');
-        ({ body, contact } = parseAboutText(await response.text()));
+        ({ paragraphs, contact } = parseAboutText(await response.text()));
     } catch (err) {
         console.error(err);
-        body = 'Unable to load about text.';
+        paragraphs = ['Unable to load about text.'];
     }
 
-    const delay = parseInt(typeTextEl.getAttribute('data-delay'), 10) || 500;
-    await typeText(typeTextEl, body, delay);
+    const delay = parseInt(aboutBody.getAttribute('data-delay'), 10) || 500;
+    aboutBody.innerHTML = '';
+
+    for (let i = 0; i < paragraphs.length; i++) {
+        const p = document.createElement('p');
+        aboutBody.appendChild(p);
+        await typeText(p, paragraphs[i], i === 0 ? delay : 200);
+    }
 
     if (contact) {
         await new Promise((resolve) => setTimeout(resolve, 500));
