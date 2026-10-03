@@ -1,0 +1,172 @@
+# Page catalog. `on` shows a page on listings. `date` is sort-only (never shown).
+# Add a page with: python3 new_page.py
+# Apply changes with: python3 pages.py  (also runs from ./update-github-data.sh)
+
+blog:
+  expected-graduation:
+    on: false
+    date: 2026-05-01
+    title: Expected Graduation - May 2026
+    summary: "Completing my dual Bachelor's degrees in Computer Science and Robotics Engineering at the University of Michigan."
+  instructor-assistant-winter-2026:
+    on: false
+    date: 2026-02-01
+    title: Instructor Assistant - Autonomous Robotics
+    summary: Served as teaching assistant for Autonomous Robotics course at UMich. Supported students with motion planning, localization, control systems, and ROS implementation through lab exercises and office hours.
+  winter-2026:
+    on: false
+    date: 2026-01-15
+    title: Winter 2026
+    summary: This semester I am taking Theory of Computation and Building Robots. These classes are pushing the boundaries of theoretical computer science and practical robotics implementation.
+  fall-2025:
+    on: false
+    date: 2026-01-05
+    title: Fall 2025
+    summary: "This semester I took four classes: Robot Operating Systems, Reinforcement Learning, AI Compilers, and Technical Communications. It was an extremely intense semester with three project-based classes and one focused on communication skills."
+  teaching-my-first-class:
+    on: false
+    date: 2026-01-01
+    title: Teaching My First Class
+    summary: My experience teaching my first class
+  stryker-building-an-autonomous-stretcher:
+    on: false
+    date: 2025-12-14
+    title: Stryker - Building an Autonomous Stretcher
+    summary: Autonomous hospital stretcher navigation.
+  stryker-autonomous-stretcher:
+    on: false
+    date: 2025-12-13
+    title: Stryker – Building an Autonomous Stretcher
+    summary: Autonomous hospital stretcher navigation.
+  underwater-slam-research:
+    on: false
+    date: 2025-10-01
+    title: Underwater SLAM Research
+    summary: Conducting advanced research in the University of Michigan Field Robotics Group, fusing neural networks with camera data to dramatically improve Simultaneous Localization and Mapping (SLAM) accuracy for underwater robotic systems.
+  amazon-internship:
+    on: false
+    date: 2025-08-14
+    title: Amazon Internship
+    summary: Edge AI Team at Amazon Lab 126.
+  winter-2025:
+    on: false
+    date: 2025-05-03
+    title: Winter 2025
+    summary: "This semester I am taking 3 technical classes: Natural Language Processing, Quantum Computing, and Robot Dynamics and Simulation. My favourite was NLP where we built a model to predict Python docstrings."
+  fall-2024:
+    on: false
+    date: 2025-01-05
+    title: Fall 2024
+    summary: "I took four classes this semester: Operating Systems, Parallel Programming with GPUs, Simultaneous Localization and Mapping, and Technology Inspired Entrepreneurship. This was an extremely intense semester with three project-based classes."
+  kudan-internship:
+    on: false
+    date: 2024-08-14
+    title: Kudan Internship
+    summary: Kudan Robotics SLAM internship.
+  winter-2024:
+    on: false
+    date: 2024-05-01
+    title: Winter 2024
+    summary: Winter 2024 was a challenging but rewarding semester with significant progress in my computer science and robotics education, including completion of my Kudan internship.
+  example-video-blog:
+    on: false
+    date: 2024-01-15
+    title: Example Video Blog Post
+    summary: Example video post.
+  fall-2023:
+    on: false
+    date: 2024-01-05
+    title: Fall 2023
+    summary: "This was the first semester of sophomore year where I finally started to feel like I was understanding computer science. I took three classes: Data Structures and Algorithms, Principles of Machine Learning, and Human-Robotic Systems."
+  summer-2023:
+    on: false
+    date: 2023-10-01
+    title: Summer 2023
+    summary: This summer I focused on classes at community college to get transfer credit at Umich. I took Differential Equations, Discrete Math, Multivariable Calculus, Physics - Electricity and Magnetism, and Statistics.
+  winter-2023:
+    on: false
+    date: 2023-05-03
+    title: Winter 2023
+    summary: "Winter 2023 was my second semester of freshman year where I finally felt like I was figuring out college. I took four classes: Introduction to Data Structures and Algorithms, Introduction to Computer Logic, Introduction to Engineering, and Introduction to Data Science."
+  fall-2022:
+    on: false
+    date: 2023-01-06
+    title: Fall 2022
+    summary: "Fall 2022 was my first semester at the University and I had a lot of fun getting to know campus and trying out new things. I took four classes: Computational Linear Algebra, Introduction to Algorithms and Programming, Introductory Physics - Mechanics, and Emperors of Rome."
+  welcome:
+    on: false
+    date: 2022-09-01
+    title: Welcome to My Blog
+    summary: Intro post.
+  high-school-recap:
+    on: false
+    date: 2022-06-15
+    title: High School Recap
+    summary: In high school, I took 19 AP Classes including Math, Science, History, English, and more. Clubs included Speech and Debate and DECA.
+  analyzing-t-cell-ion-channels-to-understand-immune-cell-variations:
+    on: false
+    date: 2022-05-14
+    title: Analyzing T-Cell Ion Channels to Understand Immune Cell Variations
+    summary: T-cell ion channel research.
+  published-paper-amyloid-beta-research:
+    on: false
+    date: 2021-10-14
+    title: Published Paper - Amyloid-Beta Research
+    summary: Amyloid-beta research paper.
+
+projects:
+  tiny-nerf-model:
+    on: false
+    date: 2025-04-15
+    title: Tiny NeRF Model
+    summary: Implemented Neural Radiance Fields (NeRF) for 3D scene reconstruction from 2D images, using neural networks to generate novel views and depth maps.
+  gpu-programming-cnn:
+    on: false
+    date: 2024-12-10
+    title: GPU Programming - CNN
+    summary: Implemented convolutional neural networks using CUDA for parallel processing, optimizing performance through GPU acceleration and memory management techniques.
+  robot-maze:
+    on: false
+    date: 2024-12-01
+    title: Robot Maze Navigation
+    summary: Autonomous robot navigating real-world mazes using computer vision, SLAM, and path planning algorithms.
+  studystream:
+    on: false
+    date: 2024-09-29
+    title: StudyStream
+    summary: MHacks 2024 winner. AI-powered educational tool that converts text into engaging video lectures with synchronized visuals and audio narration.
+  wordle-solver:
+    on: false
+    date: 2024-02-15
+    title: Wordle Solver Bot
+    summary: Statistics-based algorithm that guarantees Wordle success through probability analysis and optimal word selection.
+  music-classifier:
+    on: false
+    date: 2023-12-15
+    title: Music Genre Classifier
+    summary: Machine learning project classifying music into subgenres using audio feature extraction and neural networks.
+  euchre:
+    on: false
+    date: 2023-12-01
+    title: Coding Euchre
+    summary: Complete Euchre card game implementation in C++ with AI opponents and full game logic.
+  primegpt:
+    on: false
+    date: 2023-11-19
+    title: PrimeGPT - MHacks 16
+    summary: Intelligent chatbot answering Amazon product queries using NLP and real-time web scraping.
+  eduardo:
+    on: false
+    date: 2023-11-18
+    title: Eduardo - MHacks 16 x Google
+    summary: AR educational guide teaching users complex actions through interactive, step-by-step visual instructions.
+  mlclassifier:
+    on: false
+    date: 2023-11-01
+    title: ML Image Classifier
+    summary: Machine learning image classifier.
+  calculator-fpga:
+    on: false
+    date: 2023-04-15
+    title: FPGA Calculator
+    summary: 4-function calculator implemented on FPGA using Verilog, featuring bit-level arithmetic and state machine design.

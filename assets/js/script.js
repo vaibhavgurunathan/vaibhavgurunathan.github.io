@@ -2,28 +2,28 @@
 // DO NOT EDIT MANUALLY - This section is auto-generated
 const githubData = {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-08-10T05:25:41.391995",
+  "lastUpdated": "2026-10-03T16:47:20.211908",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-08-10T12:22:33Z",
-      "language": "Python",
+      "updated_at": "2026-08-10T12:27:43Z",
+      "language": "HTML",
       "languages": {
-        "Python": 9631,
-        "CSS": 8880,
-        "JavaScript": 4925,
-        "HTML": 3866,
-        "Shell": 286
+        "HTML": 87407,
+        "Python": 26097,
+        "CSS": 24466,
+        "JavaScript": 23036,
+        "Shell": 533
       },
       "topLanguages": [
+        "HTML",
         "Python",
-        "CSS",
-        "JavaScript"
+        "CSS"
       ],
-      "relativeTime": "3 minutes ago",
+      "relativeTime": "1 month ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -37,161 +37,16 @@ const githubData = {
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "29 days ago",
+      "relativeTime": "2 months ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
-    },
-    {
-      "name": "gmail-agent",
-      "full_name": "vaibhavgurunathan/gmail-agent",
-      "html_url": "https://github.com/vaibhavgurunathan/gmail-agent",
-      "description": "AI Agent That Handles Everything In Your Inbox",
-      "updated_at": "2026-03-17T16:34:26Z",
-      "language": "Python",
-      "languages": {
-        "Python": 20144,
-        "Jupyter Notebook": 9862
-      },
-      "topLanguages": [
-        "Python",
-        "Jupyter Notebook"
-      ],
-      "relativeTime": "4 months ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "nba_embeddings",
-      "full_name": "vaibhavgurunathan/nba_embeddings",
-      "html_url": "https://github.com/vaibhavgurunathan/nba_embeddings",
-      "description": "Playing around with generating embeddings for NBA players. Will use this code for future projects. ",
-      "updated_at": "2025-12-24T23:19:54Z",
-      "language": "Python",
-      "languages": {
-        "Python": 68701
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "7 months ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": false
-    },
-    {
-      "name": "Eduardo",
-      "full_name": "vaibhavgurunathan/Eduardo",
-      "html_url": "https://github.com/vaibhavgurunathan/Eduardo",
-      "description": "AR Learning Project (Google Hackathon)",
-      "updated_at": "2025-12-24T08:04:35Z",
-      "language": null,
-      "languages": {
-        "C#": 26215956,
-        "C++": 776007,
-        "ShaderLab": 98036,
-        "Mathematica": 69546,
-        "HLSL": 21151,
-        "Objective-C++": 13913,
-        "C": 12454,
-        "Objective-C": 11252,
-        "GAP": 9254,
-        "GLSL": 4183,
-        "Python": 1414,
-        "CMake": 426
-      },
-      "topLanguages": [
-        "C#",
-        "C++",
-        "ShaderLab"
-      ],
-      "relativeTime": "7 months ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": true
-    },
-    {
-      "name": "wordle-rl",
-      "full_name": "vaibhavgurunathan/wordle-rl",
-      "html_url": "https://github.com/vaibhavgurunathan/wordle-rl",
-      "description": "Fun Project to Practice Building RL from Scratch",
-      "updated_at": "2025-12-24T08:04:13Z",
-      "language": "Jupyter Notebook",
-      "languages": {
-        "Jupyter Notebook": 13418
-      },
-      "topLanguages": [
-        "Jupyter Notebook"
-      ],
-      "relativeTime": "7 months ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": true
-    },
-    {
-      "name": "CompilersForAI",
-      "full_name": "vaibhavgurunathan/CompilersForAI",
-      "html_url": "https://github.com/vaibhavgurunathan/CompilersForAI",
-      "description": "AI Compilers Class (CSE 598)",
-      "updated_at": "2025-12-24T08:03:58Z",
-      "language": "Python",
-      "languages": {
-        "Python": 9119
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "7 months ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": true
-    },
-    {
-      "name": "studystream",
-      "full_name": "vaibhavgurunathan/studystream",
-      "html_url": "https://github.com/vaibhavgurunathan/studystream",
-      "description": "mhacks 2024 submission",
-      "updated_at": "2024-09-29T16:28:08Z",
-      "language": "Python",
-      "languages": {
-        "Python": 16227
-      },
-      "topLanguages": [
-        "Python"
-      ],
-      "relativeTime": "22 months ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": true
-    },
-    {
-      "name": "AmazonPrimeGPT",
-      "full_name": "vaibhavgurunathan/AmazonPrimeGPT",
-      "html_url": "https://github.com/vaibhavgurunathan/AmazonPrimeGPT",
-      "description": "This is an Amazon Prime chatbot & chrome extension capable of scouring through thousands of customer reviews/FAQs and answering any questions about an online product.",
-      "updated_at": "2024-09-29T16:20:00Z",
-      "language": null,
-      "languages": {
-        "Python": 19037,
-        "JavaScript": 5385,
-        "HTML": 2552
-      },
-      "topLanguages": [
-        "Python",
-        "JavaScript",
-        "HTML"
-      ],
-      "relativeTime": "22 months ago",
-      "isStarred": false,
-      "isContributed": false,
-      "isPinned": true
     }
   ],
   "commitStats": {
-    "lastDay": 5,
-    "lastMonth": 15,
-    "lastYear": 158
+    "lastDay": 0,
+    "lastMonth": 0,
+    "lastYear": 105
   },
   "languageColors": {
     "JavaScript": "#f1e05a",
@@ -241,11 +96,13 @@ function updateScrollProgress() {
 
 // Tab switching functionality
 document.addEventListener('DOMContentLoaded', function() {
-    // Hide draft (agent-edited) pages when in publish mode
-    if (window.INCLUDE_DRAFT_PAGES === false && window.DRAFT_PAGE_HREFS && Array.isArray(window.DRAFT_PAGE_HREFS)) {
-        document.querySelectorAll('[data-draft-href]').forEach(function(el) {
-            var href = el.getAttribute('data-draft-href');
-            if (href && window.DRAFT_PAGE_HREFS.indexOf(href) !== -1) {
+    // Hide pages marked false in pages.yml
+    if (window.HIDDEN_PAGE_HREFS && Array.isArray(window.HIDDEN_PAGE_HREFS)) {
+        const hidden = window.HIDDEN_PAGE_HREFS;
+        document.querySelectorAll('.blog-post, .project, .timeline-item').forEach(function(el) {
+            const link = el.querySelector('a[href]');
+            const href = link && link.getAttribute('href');
+            if (href && hidden.indexOf(href) !== -1) {
                 el.style.display = 'none';
             }
         });

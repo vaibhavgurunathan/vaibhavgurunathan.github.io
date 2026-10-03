@@ -3,6 +3,10 @@
 # Add this to your ~/.bashrc file to run GitHub data updates automatically
 
 # Check if we're in the website directory
+if [ -f "index.html" ]; then
+    python3 pages.py
+fi
+
 if [ -f "update-github-data.py" ] && [ -f "index.html" ]; then
     echo "🔄 Updating GitHub data for personal website..."
     python3  "/Users/vaibhavgurunathan/Desktop/Personal_Projects/Personal Website/update-github-data.py"
