@@ -1,27 +1,27 @@
 {
   "username": "vaibhavgurunathan",
-  "lastUpdated": "2026-10-03T16:47:20.211908",
+  "lastUpdated": "2026-10-10T22:20:34.997395",
   "repositories": [
     {
       "name": "vaibhavgurunathan.github.io",
       "full_name": "vaibhavgurunathan/vaibhavgurunathan.github.io",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan.github.io",
       "description": "Personal Website ",
-      "updated_at": "2026-08-10T12:27:43Z",
+      "updated_at": "2026-10-10T07:18:30Z",
       "language": "HTML",
       "languages": {
-        "HTML": 87407,
-        "Python": 26097,
+        "HTML": 75006,
+        "Python": 41486,
         "CSS": 24466,
-        "JavaScript": 23036,
-        "Shell": 533
+        "JavaScript": 19512,
+        "Shell": 587
       },
       "topLanguages": [
         "HTML",
         "Python",
         "CSS"
       ],
-      "relativeTime": "1 month ago",
+      "relativeTime": "22 hours ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
@@ -31,20 +31,20 @@
       "full_name": "vaibhavgurunathan/vaibhavgurunathan",
       "html_url": "https://github.com/vaibhavgurunathan/vaibhavgurunathan",
       "description": "Just the README file. ",
-      "updated_at": "2026-07-11T18:48:19Z",
+      "updated_at": "2026-10-03T23:50:45Z",
       "language": null,
       "languages": {},
       "topLanguages": [],
-      "relativeTime": "2 months ago",
+      "relativeTime": "7 days ago",
       "isStarred": false,
       "isContributed": false,
       "isPinned": false
     }
   ],
   "commitStats": {
-    "lastDay": 0,
-    "lastMonth": 0,
-    "lastYear": 105
+    "lastDay": 1,
+    "lastMonth": 4,
+    "lastYear": 107
   },
   "languageColors": {
     "JavaScript": "#f1e05a",

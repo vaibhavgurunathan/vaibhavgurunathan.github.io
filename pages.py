@@ -2,7 +2,7 @@
 """Page catalog and listings.
 
   python3 pages.py          Apply pages.yml (listings, visibility, order)
-  python3 pages.py new      Create a new blog or project page
+  python3 pages.py new      Create a new project page
   python3 new_page.py       Same as pages.py new
 
 Dates in pages.yml are for ordering only and are never shown on the site.
@@ -22,10 +22,11 @@ ROOT = Path(__file__).resolve().parent
 YAML_PATH = ROOT / "pages.yml"
 INDEX_PATH = ROOT / "index.html"
 JS_PATH = ROOT / "assets" / "js" / "pages-config.js"
+# blog kept in YAML for archived HTML files; only projects are listed on the site
 SECTIONS = ("blog", "projects")
+INDEX_SECTIONS = ("projects",)
 
 MARKERS = {
-    "blog": ("<!-- PAGE_LIST_BLOG_START -->", "<!-- PAGE_LIST_BLOG_END -->"),
     "projects": ("<!-- PAGE_LIST_PROJECTS_START -->", "<!-- PAGE_LIST_PROJECTS_END -->"),
 }
 
@@ -287,8 +288,9 @@ def timeline_items(pages: list[dict]) -> str:
 def rewrite_index(sections: dict[str, dict[str, dict]]) -> None:
     pages = flatten(sections)
     html = INDEX_PATH.read_text(encoding="utf-8")
-    html = replace_between(html, *MARKERS["blog"], blog_cards(pages))
-    html = replace_between(html, *MARKERS["projects"], project_cards(pages))
+    for name in INDEX_SECTIONS:
+        if name == "projects":
+            html = replace_between(html, *MARKERS["projects"], project_cards(pages))
     INDEX_PATH.write_text(html, encoding="utf-8")
 
 
@@ -397,9 +399,9 @@ def cmd_build() -> None:
 
 def cmd_new() -> None:
     print("Create a new page")
-    section = ask("Section (blog / projects)", "blog").lower()
-    if section not in SECTIONS:
-        raise SystemExit("Section must be blog or projects")
+    section = ask("Section (projects)", "projects").lower()
+    if section not in INDEX_SECTIONS:
+        raise SystemExit("Section must be projects")
 
     title = ask("Title")
     if not title:
