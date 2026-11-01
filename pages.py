@@ -104,6 +104,7 @@ def dump_yml(sections: dict[str, dict[str, dict]]) -> str:
         "date",
         "title",
         "summary",
+        "image",
         "show_in_blog",
         "show_in_projects",
         "show_in_timeline",
@@ -252,10 +253,21 @@ def project_cards(pages: list[dict]) -> str:
         return ""
     cards = []
     for page in items:
+        href = escape(page["href"])
+        title = escape(page.get("title") or title_from_slug(page["slug"]))
+        summary = escape(page.get("summary") or "")
+        image = page.get("image") or ""
+        image_html = ""
+        if image:
+            image_html = (
+                f'\n                    <img class="project-image" src="{escape(image)}" alt="{title}">'
+            )
         cards.append(
             f"""                <div class="project">
-                    <h3><a href="{escape(page["href"])}">{escape(page.get("title") or title_from_slug(page["slug"]))}</a></h3>
-                    <p>{escape(page.get("summary") or "")}</p>
+                    <a class="project-card-link" href="{href}">{image_html}
+                    <h3>{title}</h3>
+                    <p>{summary}</p>
+                    </a>
                 </div>"""
         )
     return "\n".join(cards) + "\n"
