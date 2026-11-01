@@ -115,6 +115,11 @@ blog:
     summary: Amyloid-beta research paper.
 
 projects:
+  depth-split-optimizers:
+    on: true
+    date: 2026-10-31
+    title: Depth-split optimizers on FineWeb
+    summary: Equal-FLOP bake-off of AdamW, SOAP, Muon, and depth splits on a small FineWeb-Edu GPT. Optimizer cost counted. One seed.
   tiny-nerf-model:
     on: false
     date: 2025-04-15

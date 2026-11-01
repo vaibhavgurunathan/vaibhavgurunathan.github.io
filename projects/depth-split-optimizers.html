@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depth-split optimizers on FineWeb - Vaibhav Gurunathan</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="window.location.href='../index.html'" style="cursor: pointer; transition: opacity 0.3s;">Vaibhav Gurunathan</h1>
+        <nav>
+            <a href="javascript:history.back()" class="back-link">Back</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="project-detail">
+            <h2>Depth-split optimizers on FineWeb</h2>
+
+            <div class="project-content">
+                <p>A small experiment: does it help to use different optimizers on different parts of a model?</p>
+                <p>Code and notebooks: <a href="https://github.com/vaibhavgurunathan/depth-split-optimizers">https://github.com/vaibhavgurunathan/depth-split-optimizers</a></p>
+                <h3>TL;DR</h3>
+                <ul>
+                    <li>At equal compute (FLOPs), Muon and SOAP are about tied, and both clearly beat AdamW. Muon got 5.258 val loss, SOAP 5.274, AdamW 5.533.</li>
+                    <li>Most of the mixed-optimizer splits I tried were worse than just using one optimizer everywhere.</li>
+                    <li>The one split that did better was Muon on the bottom of the model and SOAP on the top. It beat full Muon by 0.056. But that is a single seed, so I&#x27;m treating it as a hint and not a result.</li>
+                    <li>This is a tiny model (about 18M params) on a single T4. I&#x27;m not claiming any of this carries over to bigger models.</li>
+                </ul>
+                <h3>Why I ran this</h3>
+                <p>Usually you pick one optimizer and use it for the whole model. I wanted to know whether early and late layers might want different kinds of updates, and whether the expensive optimizers are still worth it once you count what they cost.</p>
+                <p>My guess going in was that you&#x27;d want a heavy, expensive update on the early layers and something cheaper on the later layers, so you could afford more steps. That guess turned out to be mostly untested, and what I did see pointed somewhere else. More on that below.</p>
+                <p>I still think the question is reasonable. One optimizer everywhere is a convenience, not something we have evidence for. Layers do different jobs. The embedding is not a residual block, and the last block is not the first. It would be surprising if the same update rule was best for all of them, at the same price, on every budget.</p>
+                <p>This run is too small and too embed-heavy to settle that. If I were actually chasing the question I would not stop at three cuts on a 6-layer net. I would try more depths, including cuts that are not symmetric, and I would try more pairs than Muon, SOAP, AdamW, and a leftover SGD. I would also want a model where the embedding is not most of the parameters, so bottom versus top is actually early layers versus late layers. The point of this write-up is not that the idea failed. It is that I barely tested it, and the little I saw was not the story I expected.</p>
+                <h3>What I trust, and what I don&#x27;t</h3>
+                <p>The part I trust: at equal FLOPs, with the optimizer&#x27;s own cost counted in the budget, Muon and SOAP are close to each other and both beat AdamW by a clear margin (about 0.26 to 0.28 in val loss). Muon and SOAP themselves are only 0.016 apart, so calling them tied is the right read.</p>
+                <p>The part I don&#x27;t trust yet: the Muon-bottom / SOAP-top result. It&#x27;s one seed, and the gap (0.056) is small enough that I can&#x27;t say it&#x27;s outside normal run-to-run noise. There are also two things in the setup, weight decay and learning rates, both explained below, that could be helping or hurting that 0.056. I wouldn&#x27;t use them to talk the gap up or talk it down.</p>
+                <p>Because the model is so embedding-heavy, bottom mostly means the embedding plus a couple of blocks. So if the split really does something, the more likely story is which optimizer updates the embedding, not a deep early-versus-late-layers story.</p>
+                <h3>Setup</h3>
+                <p>Model: a small GPT with 6 layers, 4 heads, d = 256, sequence length 256, batch size 16, the GPT-2 tokenizer, and a tied embedding. About 17.7M unique parameters.</p>
+                <p>Training: constant learning rate, no schedule. Weight decay is 0.1 for AdamW and Muon, and 0.01 for SOAP. I did not sweep weight decay, so that difference is baked into every comparison involving SOAP.</p>
+                <p>Data: FineWeb-Edu sample-10BT, a 30M-token shard, with 50k tokens held out for validation.</p>
+                <p>Hardware: Colab T4, seed 42 for everything.</p>
+                <p>Compute budget: every run gets the same FLOP budget, which is the measured AdamW FLOPs per step times 5000. That&#x27;s about 20M tokens if you&#x27;re running AdamW. Forward pass, backward pass, and the optimizer update all count toward the budget.</p>
+                <p>One thing worth knowing: AdamW&#x27;s fused kernels barely show up in the FLOP counter, so AdamW gets its full 5000 steps and the heavier optimizers only get about 4100. That tilts the comparison toward AdamW, and it still lost.</p>
+                <p>The three optimizers:</p>
+                <ul>
+                    <li>AdamW is the standard first-order baseline.</li>
+                    <li>SOAP is Shampoo-style. It&#x27;s slower per step, and it&#x27;s the kind of heavy update I thought might help most on the early layers.</li>
+                    <li>Muon orthogonalizes the momentum with Newton-Schulz on the 2D weights, and uses AdamW on everything else.</li>
+                </ul>
+                <p>In this run Muon and SOAP each spent about 17% of the budget on the update. So this isn&#x27;t really a cheap-versus-expensive comparison. It&#x27;s two similarly expensive update rules, placed on different parts of the network.</p>
+                <p>I also tried SGD on the top of a few splits, as a quick check of the cheap late layers idea. I used learning rate 0.1 and didn&#x27;t retune it, so I wouldn&#x27;t read much into those runs beyond the fact that an untuned cheap top did not help.</p>
+                <p>How the model is split: by depth. Bottom is the token embedding (tied to the output layer), the position embedding, and blocks [0, split_at). Top is the remaining blocks plus the final LayerNorm. I cut at 25%, 50%, and 75% of the 6 blocks, which is split_at = 2, 3, and 5. A split is written bottom|top, so muon|soap means Muon on the bottom and SOAP on the top.</p>
+                <h3>Picking learning rates</h3>
+                <p>Before comparing anything I needed a fair learning rate for each optimizer on this model and data. Otherwise saying Muon beat AdamW could just mean I picked a bad AdamW rate.</p>
+                <p>I ran a separate sweep for each optimizer, on the same model and data but with a shorter budget (AdamW FLOPs per step times 1000, so AdamW trains about 1000 steps and the others somewhat fewer). That was 46 trials in total:</p>
+                <ul>
+                    <li>14 AdamW rates, from 5×10⁻⁵ to 3×10⁻³</li>
+                    <li>16 SOAP rates, from 3×10⁻⁴ to 3×10⁻²</li>
+                    <li>16 Muon rates, from 5×10⁻⁴ to 5×10⁻²</li>
+                </ul>
+                <p>Each trial was scored by the mean of its last few validation points, not by its best spike. The winning rate for each optimizer landed inside its grid, not on an edge.</p>
+                <table>
+                    <thead><tr><th>Optimizer</th><th>Locked LR</th></tr></thead>
+                    <tbody>
+                        <tr><td>AdamW</td><td>6.21×10⁻⁴</td></tr>
+                        <tr><td>SOAP</td><td>2.57×10⁻³</td></tr>
+                        <tr><td>Muon</td><td>5.83×10⁻³</td></tr>
+                    </tbody>
+                </table>
+                <p>These three numbers were then frozen. Every split reuses them, with no pair-specific tuning.</p>
+                <figure>
+                    <img src="../images/depth-split/lr_tune_overview.png" alt="Winning LR curves on the tune budget (left) and late-mean val vs LR (right)." />
+                    <figcaption>Left: the three winning curves on the tune budget. Right: late-mean val against learning rate. Winners sit in the middle of each grid, not on an endpoint.</figcaption>
+                </figure>
+                <h3>Results</h3>
+                <p>1) Each optimizer on the full model, full budget</p>
+                <table>
+                    <thead><tr><th>Optimizer</th><th>Val</th><th>Steps</th><th>Optimizer FLOP share</th></tr></thead>
+                    <tbody>
+                        <tr><td>Muon</td><td>5.258</td><td>4133</td><td>17.4%</td></tr>
+                        <tr><td>SOAP</td><td>5.274</td><td>4151</td><td>16.8%</td></tr>
+                        <tr><td>AdamW</td><td>5.533</td><td>5000</td><td>0%</td></tr>
+                    </tbody>
+                </table>
+                <p>Paying roughly 17% of the budget for a better update still beat free AdamW, even though AdamW got more steps. This full-model ranking is the part of the report I&#x27;d stand behind. It doesn&#x27;t tell us where in the network each update should go.</p>
+                <figure>
+                    <img src="../images/depth-split/01_full_ranking.png" alt="Full-model validation loss after an equal-FLOP budget." />
+                    <figcaption>Muon a bit ahead of SOAP. AdamW cheaper per step and worse, even after getting the extra steps the FLOP counter handed it.</figcaption>
+                </figure>
+                <p>2) The splits</p>
+                <p>I ran ten bottom|top pairs at three cuts, which is 33 trials once you include the three full-model runs.</p>
+                <p>The best run was Muon on the bottom and SOAP on the top, cut at 50%, with a val loss of 5.202. The 25% cut was nearly the same at 5.204, and the 75% cut gave 5.235. Same pairing at every cut, one seed, not three independent trials. At 75%, Muon covers five of the six blocks, so the run starts to look like full Muon and the gap to it shrinks to 0.023.</p>
+                <p>Flipping the order (SOAP on the bottom, Muon on the top) was worse:</p>
+                <table>
+                    <thead><tr><th>Cut</th><th>muon|soap</th><th>soap|muon</th><th>full Muon</th><th>full SOAP</th></tr></thead>
+                    <tbody>
+                        <tr><td>25%</td><td>5.204</td><td>5.316</td><td>5.258</td><td>5.274</td></tr>
+                        <tr><td>50%</td><td>5.202</td><td>5.296</td><td>5.258</td><td>5.274</td></tr>
+                        <tr><td>75%</td><td>5.235</td><td>5.263</td><td>5.258</td><td>5.274</td></tr>
+                    </tbody>
+                </table>
+                <p>soap|muon is worse than full SOAP at 25% and 50%. At 75% it slips just under SOAP (5.263 vs 5.274) but not under Muon. Only Muon-bottom / SOAP-top beats both full-model runs, and that&#x27;s the single-seed result I&#x27;m cautious about.</p>
+                <figure>
+                    <img src="../images/depth-split/02_split_heatmap.png" alt="Split heatmap. Yellow is better." />
+                    <figcaption>The full pair grid, one seed. Yellow is lower val. Most cells are worse than just running Muon or SOAP everywhere.</figcaption>
+                </figure>
+                <figure>
+                    <img src="../images/depth-split/04_order_muon_soap.png" alt="muon|soap versus soap|muon, with full Muon and full SOAP as dashed lines." />
+                    <figcaption>soap|muon is worse than full SOAP at 25% and 50%. Only Muon on the bottom and SOAP on the top beats both full models in this run.</figcaption>
+                </figure>
+                <p>3) Controls</p>
+                <p>I ran muon|muon and soap|soap as sanity checks. If cutting the model without changing the update changed the loss, the splitting itself would be the problem.</p>
+                <ul>
+                    <li>muon|muon gave 5.258 at every cut, identical to full Muon.</li>
+                    <li>soap|soap gave 5.274 at 25% and 50%, and 5.270 at 75%.</li>
+                </ul>
+                <p>So the splitting machinery isn&#x27;t adding any effect by itself.</p>
+                <p>4) The cheap late layers idea</p>
+                <p>As far as I tested it, it lost. soap|sgd scored 5.394 at 25%, 5.368 at 50%, and 5.304 at 75%, worse than full SOAP at every cut. Any split with AdamW on the bottom was also worse.</p>
+                <p>But I didn&#x27;t really give this idea a fair shot. Muon and SOAP cost about the same, so there was no cheap heavy-optimizer option, and the one cheap top I tried was untuned SGD.</p>
+                <h3>What I&#x27;d actually claim</h3>
+                <ul>
+                    <li>Muon is about even with SOAP, and both clearly beat AdamW at equal FLOPs on this model.</li>
+                    <li>Most of the mixed splits did worse than a single optimizer used everywhere.</li>
+                    <li>If you do mix these two, the order doesn&#x27;t look cosmetic. Muon on the bottom did better than Muon on the top.</li>
+                </ul>
+                <p>What I would not claim is that 0.056 is a real improvement. I&#x27;d call it a hint worth following up.</p>
+                <h3>Limitations</h3>
+                <ul>
+                    <li>One seed. I have no estimate of run-to-run noise, so I can&#x27;t say whether a 0.056 gap is outside it. This is the biggest caveat.</li>
+                    <li>Weight decay isn&#x27;t matched. SOAP used 0.01 and the others used 0.1. That affects the Muon-versus-SOAP comparison, and it also affects every mixed split, since the two optimizers are on different parts of the model with different weight decay.</li>
+                    <li>Learning rates were tuned on the full model at a shorter budget (about a fifth as long). A rate that works well at about 1000 AdamW-equivalent steps may not be the best at 5000. And a rate tuned for an optimizer on the whole model may not be best when it only handles part of the model.</li>
+                    <li>No learning rate schedule. I used a constant rate for everything, which may affect the optimizers differently.</li>
+                    <li>Lost learning curves. A Colab wipe deleted most of them, so the ranking is based on end-of-budget validation loss only. I can&#x27;t tell whether muon|soap led the whole way or just won at the end.</li>
+                    <li>Small scale. About 18M params, 6 layers, one T4. The embedding makes up most of the parameters. I&#x27;m not claiming this transfers to something like a 7B model.</li>
+                </ul>
+                <h3>What&#x27;s next</h3>
+                <p>The next thing that would change this write-up is two more seeds each of full Muon and 50% muon|soap, with the learning curves logged, plus full SOAP and 50% soap|muon so I can see the noise on every config that matters. I would also check SOAP at weight decay 0.1, so the comparison isn&#x27;t carrying that mismatch.</p>
+                <p>I would not grow this particular 10-pair grid on this 6-layer model. If the 0.056 disappears, the honest summary of this run is: Muon was a bit better than SOAP, both beat AdamW, and splitting did not clearly help.</p>
+                <p>That would still leave the original question open. I think people should be doing this, just not as a one-seed bake-off on an embed-heavy toy. More depth cuts, including ones that are not 25/50/75. More pairs, including ones where the two sides actually differ in cost. A deeper model, so bottom versus top is not mostly who owns the embedding. If the gap holds up here, the first thing I&#x27;d want to know is whether it is specifically Muon on the embedding. If it does not, I would still keep playing with the split, just at a scale where the question can actually fail.</p>
+                <h3>Code</h3>
+                <p>The final comparison is in final_LR_tuned_optimizers_by_depth.ipynb. The learning rate sweep is in verify_lrs_optimizers.ipynb.</p>
+            </div>
+        </article>
+    </main>
+    <script src="../assets/js/site-config.js"></script>
+    <script src="../assets/js/analytics.js"></script>
+</body>
+</html>

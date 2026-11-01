@@ -1200,6 +1200,41 @@ footer {
     margin-bottom: 20px;
 }
 
+.project-content table, .blog-content table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95rem;
+    margin: 0.8rem 0 1.3rem;
+}
+
+.project-content th, .project-content td,
+.blog-content th, .blog-content td {
+    border-bottom: 1px solid #ddd;
+    padding: 0.35rem 0.4rem;
+    text-align: left;
+}
+
+.project-content td:not(:first-child), .project-content th:not(:first-child),
+.blog-content td:not(:first-child), .blog-content th:not(:first-child) {
+    text-align: right;
+}
+
+.project-content figure, .blog-content figure {
+    margin: 1.2rem 0 1.5rem;
+}
+
+.project-content figure img, .blog-content figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-content figcaption, .blog-content figcaption {
+    font-style: italic;
+    color: #555;
+    margin-top: 0.4rem;
+}
+
 .project-links {
     margin-top: 30px;
     display: flex;
